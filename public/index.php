@@ -8,6 +8,8 @@ use Phalcon\Mvc\Application;
 use Phalcon\DI\FactoryDefault;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
+require_once(dirname(__FILE__).'/../configs/constants.php');
+
 try {
 
     // Register an autoloader

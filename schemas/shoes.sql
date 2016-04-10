@@ -6,18 +6,20 @@ create table if not exists shoes(
   primary key(id),
   index name(name),
   index article(article)
-)type = InnoDb;
+)engine = InnoDb;
 
 create table if not exists categories(
   id int unsigned not null auto_increment,
   name varchar(255) not null,
+  url  varchar(255) default null,
   parent_id int unsigned not null default 0,
   order_number int unsigned not null default 0,
   primary key(id),
   index name(name),
+  index url(url),
   index parent_id(parent_id),
   index order_number(order_number)
-);
+)engine = InnoDb;
 
 
 truncate table categories;
