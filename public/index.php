@@ -26,9 +26,9 @@ try {
     $di['db'] = function() {
         return new DbAdapter(array(
             "host"     => "localhost",
-            "username" => "root",
-            "password" => "secret",
-            "dbname"   => "tutorial"
+            "username" => "shoes",
+            "password" => "shoes",
+            "dbname"   => "shoes"
         ));
     };
 
@@ -42,7 +42,7 @@ try {
     // Setup a base URI so that all generated URIs include the "tutorial" folder
     $di['url'] = function() {
         $url = new Url();
-        $url->setBaseUri('/tutorial/');
+        $url->setBaseUri('/');
         return $url;
     };
 
