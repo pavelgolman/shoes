@@ -8,6 +8,14 @@ use Phalcon\Mvc\Application;
 use Phalcon\DI\FactoryDefault;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
+// Register an autoloader
+$loader = new Loader();
+$loader->registerDirs(
+    array(
+        '../app/controllers/',
+        '../app/models/'
+    )
+)->register();
 
 /*
  * Images path:
