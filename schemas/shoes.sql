@@ -40,7 +40,7 @@ insert into categories (id, parent_id, `name`, order_number) values
 
 (2, 1, 'Демисезонные', 1),
 (3, 1, 'Лето', 2),
-(4, 1, 'Зима', 3),
+(4, 1, 'Зима', 3)
 
 
 ;
@@ -49,20 +49,20 @@ create table if not exists shoes_categories(
   shoes_id int unsigned not null,
   category_id int unsigned not null,
   unique key unq(shoes_id, category_id)
-)type=InnoDb;
+)engine=InnoDb;
 
 create table if not exists attributes(
   id int unsigned not null auto_increment,
-  name varchar(255) not null,
+  `name` varchar(255) not null,
   primary key(id),
-  index name(name)
-);
+  index `name`(`name`)
+)engine=InnoDb;;
 
 
 truncate table attributes;
-insert into attributes (id, name) values
+insert into attributes (id, `name`) values
 
-(1, 'Высота Каблука'),
+(1, 'Высота Каблука')
 
 ;
 
@@ -70,5 +70,5 @@ create table if not exists shoes_attributes(
   shoes_id int unsigned not null,
   attribute_id int unsigned not null,
   unique key unq(shoes_id, attribute_id)
-)type=InnoDb;
+)engine=InnoDb;
 
