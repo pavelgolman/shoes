@@ -10,12 +10,12 @@ create table if not exists shoes(
 
 create table if not exists categories(
   id int unsigned not null auto_increment,
-  name varchar(255) not null,
+  `name` varchar(255) not null,
   url  varchar(255) default null,
   parent_id int unsigned not null default 0,
   order_number int unsigned not null default 0,
   primary key(id),
-  index name(name),
+  index `name`(`name`),
   index url(url),
   index parent_id(parent_id),
   index order_number(order_number)
@@ -23,7 +23,7 @@ create table if not exists categories(
 
 
 truncate table categories;
-insert into categories (id, parent_id, name, order_number) values
+insert into categories (id, parent_id, `name`, order_number) values
 
 (1, 0, 'Сезон', 1),
 (2, 0, 'Пол', 2),
