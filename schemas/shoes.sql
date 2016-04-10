@@ -3,11 +3,15 @@ create table if not exists shoes(
   id int unsigned not null auto_increment,
   `name` varchar(255) not null,
   price int unsigned not null,
+  sale int unsigned not null DEFAULT 0,
   article  varchar(255) not null,
   primary key(id),
   index name(name),
   index article(article)
 )engine = InnoDb;
+
+insert into shoes (id, name, price, sale, article) values
+(1, 'Тапочки', 10000, 20, 'AWS100200');
 
 drop table if exists categories;
 create table if not exists categories(
@@ -91,3 +95,18 @@ create table if not exists shoes_attributes(
   unique key unq(shoes_id, attribute_id)
 )engine=InnoDb;
 
+
+drop table if exists shoes_images;
+create table if not exists shoes_images(
+  shoes_id int unsigned not null,
+  storage_id varchar(8) not null,
+  image_original varchar(255) not null,
+  extension varchar(255) not null,
+  unique key unq(shoes_id, image_original),
+  unique key storage_id(storage_id)
+)engine=InnoDb;
+
+insert into shoes_images (shoes_id, image_original) values
+(1, 'DSCN0005.JPG', 'jpg')
+
+;
