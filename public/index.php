@@ -16,6 +16,12 @@ $di->set('router', function () {
 
     $router->setDefaultModule("frontend");
 
+    $router->add('/:controller/:action', array(
+        'module' => 'frontend',
+        'controller' => 1,
+        'action' => 2,
+    ));
+
     $router->add(
         "/login",
         array(
@@ -34,13 +40,6 @@ $di->set('router', function () {
         )
     );
 
-    $router->add(
-        "/products/:action",
-        array(
-            'controller' => 'products',
-            'action'     => 1
-        )
-    );
 
     return $router;
 });

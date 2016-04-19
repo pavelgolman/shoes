@@ -42,7 +42,7 @@ class Module implements ModuleDefinitionInterface
         // Registering the view component
         $di->set('view', function () {
             $view = new View();
-            $view->setViewsDir('../apps/backend/views/');
+            $view->setViewsDir('../apps/frontend/views/');
             return $view;
         });
     }
