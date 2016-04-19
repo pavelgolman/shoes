@@ -33,11 +33,11 @@ $di->set('router', function () {
     );
 
     $router->add(
-        "/admin/products/:action",
+        "/admin/:controller/:action",
         array(
             'module'     => 'backend',
-            'controller' => 'products',
-            'action'     => 1
+            'controller' => 1,
+            'action'     => 2
         )
     );
 
