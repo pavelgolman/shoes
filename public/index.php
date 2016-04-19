@@ -57,25 +57,6 @@ try {
         ));
     };
 
-    // Setting up the view component
-    $di['view'] = function() {
-        $view = new View();
-        $view->setViewsDir('../app/views/');
-        return $view;
-    };
-
-    // Setup a base URI so that all generated URIs include the "tutorial" folder
-    $di['url'] = function() {
-        $url = new Url();
-        $url->setBaseUri('/');
-        return $url;
-    };
-
-    // Setup the tag helpers
-    $di['tag'] = function() {
-        return new Tag();
-    };
-
     // Create an application
     $application = new Application($di);
 
