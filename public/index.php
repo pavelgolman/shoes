@@ -3,7 +3,7 @@
 use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
-use Phalcon\Db\Adapter;
+use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
 
 require_once(dirname(__FILE__).'/../configs/constants.php');
 
