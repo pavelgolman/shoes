@@ -19,8 +19,8 @@ class Module implements ModuleDefinitionInterface
 
         $loader->registerNamespaces(
             array(
-                'Multiple\Backend\Controllers' => '../apps/frontend/controllers/',
-                'Multiple\Backend\Models'      => '../apps/frontend/models/',
+                'Multiple\Frontend\Controllers' => '../apps/frontend/controllers/',
+                'Multiple\Frontend\Models'      => '../apps/frontend/models/',
             )
         );
 
