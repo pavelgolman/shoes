@@ -1,28 +1,51 @@
 <?php
 
-use Phalcon\Loader;
-use Phalcon\Tag;
-use Phalcon\Mvc\Url;
-use Phalcon\Mvc\View;
+use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Application;
-use Phalcon\DI\FactoryDefault;
-use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
+use Phalcon\Di\FactoryDefault;
 
 require_once(dirname(__FILE__).'/../configs/constants.php');
 
-try {
+$di = new FactoryDefault();
 
-    // Register an autoloader
-    $loader = new Loader();
-    $loader->registerDirs(
+// Specify routes for modules
+// More information how to set the router up https://docs.phalconphp.com/en/latest/reference/routing.html
+$di->set('router', function () {
+
+    $router = new Router();
+
+    $router->setDefaultModule("frontend");
+
+    $router->add(
+        "/login",
         array(
-            '../app/controllers/',
-            '../app/models/'
+            'module'     => 'backend',
+            'controller' => 'login',
+            'action'     => 'index'
         )
-    )->register();
+    );
 
-    // Create a DI
-    $di = new FactoryDefault();
+    $router->add(
+        "/admin/products/:action",
+        array(
+            'module'     => 'backend',
+            'controller' => 'products',
+            'action'     => 1
+        )
+    );
+
+    $router->add(
+        "/products/:action",
+        array(
+            'controller' => 'products',
+            'action'     => 1
+        )
+    );
+
+    return $router;
+});
+
+try {
 
     // Set the database service
     $di['db'] = function() {
@@ -53,11 +76,26 @@ try {
         return new Tag();
     };
 
-    // Handle the request
+    // Create an application
     $application = new Application($di);
 
+    // Register the installed modules
+    $application->registerModules(
+        array(
+            'frontend' => array(
+                'className' => 'Multiple\Frontend\Module',
+                'path'      => '../apps/frontend/Module.php',
+            ),
+            'backend'  => array(
+                'className' => 'Multiple\Backend\Module',
+                'path'      => '../apps/backend/Module.php',
+            )
+        )
+    );
+
+    // Handle the request
     echo $application->handle()->getContent();
 
-} catch (Exception $e) {
-     echo "Exception: ", $e->getMessage();
+} catch (\Exception $e) {
+    echo $e->getMessage();
 }

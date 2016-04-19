@@ -1,5 +1,7 @@
 <?php
 
+namespace Multiple\Backend;
+
 use Phalcon\Mvc\Controller;
 
 class SignupController extends Controller
