@@ -1,6 +1,6 @@
 <?php
 
-$categories = Categories::query()
+$categories = Multiple\Frontend\Models\Categories::query()
     ->where("parent_id = :parent_id:")
     //->andWhere("year < 2000")
     ->bind(array("parent_id" => CATEGORIES_TYPE_ID))
