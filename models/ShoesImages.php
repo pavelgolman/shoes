@@ -3,6 +3,7 @@
 namespace Models;
 
 use Phalcon\Mvc\Model;
+use Phalcon\Text;
 
 class ShoesImages extends Model
 {
