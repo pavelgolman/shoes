@@ -25,7 +25,7 @@ class ShoesController extends Controller
             $isUploaded = false;
             #do a loop to handle each file individually
             foreach($uploads as $upload){
-                $image = new ShoesImages();
+                $image = new Models\ShoesImages();
                 $image->generateUniqueHash();
                 $image->upload_date_year = date('Y');
                 $image->upload_date_month = date('m');
