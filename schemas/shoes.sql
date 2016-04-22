@@ -109,7 +109,3 @@ create table if not exists shoes_images(
   unique key storage_id(storage_id)
 )engine=InnoDb;
 
-insert into shoes_images (shoes_id, image_original, extension) values
-(1, 'DSCN0005.JPG', 'jpg')
-
-;
