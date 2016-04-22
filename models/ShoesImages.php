@@ -10,8 +10,6 @@ class ShoesImages extends Model
 
     public $shoes_id;
 
-    public $image_original;
-
     public $storage_id;
 
     public $extension;

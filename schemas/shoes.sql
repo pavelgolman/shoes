@@ -98,9 +98,9 @@ create table if not exists shoes_attributes(
 
 drop table if exists shoes_images;
 create table if not exists shoes_images(
-  shoes_id int unsigned not null,
+  id int unsigned not null auto_increment,
+  shoes_id int unsigned default null,
   storage_id varchar(8) not null,
-  image_original varchar(255) not null,
   extension varchar(255) not null,
   upload_date_year int unsigned not null,
   upload_date_month int unsigned not null,

@@ -31,7 +31,7 @@ class ShoesController extends Controller
                 $image->upload_date_month = date('m');
                 $image->upload_date_day = date('d');
                 $image->save();
-var_dump($image->getMessages(), $image->originalPath());
+var_dump($upload,$image->getMessages(), $image->originalPath());
                 ($result = $upload->moveTo($image->originalPath())) ? $isUploaded = true : $isUploaded = false;
             }
 var_dump($result);
