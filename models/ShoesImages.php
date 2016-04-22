@@ -25,7 +25,7 @@ class ShoesImages extends Model
     }
 
     public function originalPath(){
-        return UNSORTED_IMAGES_PATH.$this->upload_date_year.'/'.$this->upload_date_month.'/'.$this->upload_date_day.'/'.$this->storage_id;
+        return UNSORTED_IMAGES_PATH.$this->upload_date_year.'/'.$this->upload_date_month.'/'.$this->upload_date_day.'/'.$this->storage_id.'.'.$this->extension;
     }
 
     public function thumbnailURL($width, $height){
