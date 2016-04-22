@@ -22,6 +22,7 @@ class ShoesController extends Controller
     {
         if($this->request->hasFiles() == true){
             $uploads = $this->request->getUploadedFiles();
+            var_dump($uploads);
             $isUploaded = false;
             #do a loop to handle each file individually
             foreach($uploads as $upload){
@@ -32,9 +33,9 @@ class ShoesController extends Controller
                 $image->upload_date_day = date('d');
                 $image->save();
 
-                ($upload->moveTo($image->originalPath())) ? $isUploaded = true : $isUploaded = false;
+                ($result = $upload->moveTo($image->originalPath())) ? $isUploaded = true : $isUploaded = false;
             }
-
+var_dump($result);
             ($isUploaded) ? die('Files successfully uploaded.') : die('Some error ocurred.');
         }else{
             die('You must choose at least one file to send. Please try again.');
