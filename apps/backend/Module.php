@@ -20,7 +20,7 @@ class Module implements ModuleDefinitionInterface
         $loader->registerNamespaces(
             array(
                 'Multiple\Backend\Controllers' => '../apps/backend/controllers/',
-                'Multiple\Backend\Models'      => '../apps/backend/models/',
+                'Models'      => '../models/',
             )
         );
 

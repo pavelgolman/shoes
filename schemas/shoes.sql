@@ -102,6 +102,9 @@ create table if not exists shoes_images(
   storage_id varchar(8) not null,
   image_original varchar(255) not null,
   extension varchar(255) not null,
+  upload_date_year int unsigned not null,
+  upload_date_month int unsigned not null,
+  upload_date_day int unsigned not null,
   unique key unq(shoes_id, image_original),
   unique key storage_id(storage_id)
 )engine=InnoDb;

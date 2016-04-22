@@ -28,7 +28,7 @@ $loader->registerDirs(
 $images = ShoesImages::find();
 foreach($images as $si){
     if(empty($si->storage_id)){
-        $si->storage_id = Phalcon\Text::random(Phalcon\Text::RANDOM_ALNUM, 8);
+        $si-
         $si->save();
     }
 
