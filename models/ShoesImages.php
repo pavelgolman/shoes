@@ -24,8 +24,12 @@ class ShoesImages extends Model
         $this->hasMany("id", "ShoesImages", "shoes_id");
     }
 
-    public function originalPath(){
-        return UNSORTED_IMAGES_PATH.$this->upload_date_year.'/'.$this->upload_date_month.'/'.$this->upload_date_day.'/'.$this->storage_id.'.'.$this->extension;
+    public function originalPath($withName = true){
+        $path = UNSORTED_IMAGES_PATH.$this->upload_date_year.'/'.$this->upload_date_month.'/'.$this->upload_date_day.'/';
+        if($withName) {
+            return $path.$this->storage_id . '.' . $this->extension;
+        }
+        return $path;
     }
 
     public function thumbnailURL($width, $height){
