@@ -16,7 +16,7 @@ class ShoesController extends Controller
 
     public function editAction()
     {
-        $this->form = new ShoesForm(new Shoes());
+        $this->view->form = new ShoesForm(new Shoes());
     }
 
     public function uploadAction()
