@@ -38,7 +38,7 @@ class ShoesController extends Controller
                 }
                 ($result = $upload->moveTo($image->originalPath())) ? $isUploaded = true : $isUploaded = false;
             }
-var_dump($result);
+var_dump($result, $upload->getError());
             ($isUploaded) ? die('Files successfully uploaded.') : die('Some error ocurred.');
         }else{
             die('You must choose at least one file to send. Please try again.');
