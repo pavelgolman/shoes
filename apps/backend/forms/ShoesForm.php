@@ -1,6 +1,6 @@
 <?php
 
-namespace Multiple\Backend\Forms
+namespace Multiple\Backend\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
