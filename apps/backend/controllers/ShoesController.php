@@ -3,7 +3,7 @@
 namespace Multiple\Backend\Controllers;
 
 use Phalcon\Mvc\Controller;
-use Models;
+use Models\Shoes;
 use Multiple\Backend\Forms\ShoesForm;
 
 class ShoesController extends Controller
