@@ -32,7 +32,10 @@ class ShoesController extends Controller
                 $image->upload_date_day = date('d');
                 $image->extension = $upload->getExtension();
                 $image->save();
-var_dump($upload,$image->getMessages(), $image->originalPath());
+                if (is_dir($image->originalPath()) == false)
+                {
+                    mkdir($image->originalPath(), 0644, true); // Create directory if it does not exist
+                }
                 ($result = $upload->moveTo($image->originalPath())) ? $isUploaded = true : $isUploaded = false;
             }
 var_dump($result);
