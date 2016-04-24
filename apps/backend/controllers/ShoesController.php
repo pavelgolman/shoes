@@ -3,6 +3,7 @@
 namespace Multiple\Backend\Controllers;
 
 use Phalcon\Mvc\Controller;
+use Phalcon\Http\Response;
 use Models\Shoes;
 use Multiple\Backend\Forms\ShoesForm;
 
@@ -57,7 +58,7 @@ class ShoesController extends Controller
                 ));
             } else {
                 $this->flashSession->success("Обувь сохранена");
-                $response = new \Phalcon\Http\Response();
+                $response = new Response();
                 $response->redirect("/admin/shoes/edit?id=".$shoes->id);
             }
         }
