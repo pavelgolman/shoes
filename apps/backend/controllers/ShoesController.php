@@ -60,7 +60,7 @@ class ShoesController extends Controller
                 ));
             } else {
                 $this->flashSession->success("Обувь сохранена");
-                return $this->dispatcher->forward(array(
+                return $this->response->redirect(array(
                     "action" => "edit",
                     "params" => array($shoes->id)
                 ));
@@ -99,17 +99,17 @@ class ShoesController extends Controller
     {
         $shoes = Shoes::findFirstById($id);
         if (!$shoes) {
-            $this->flashSession->error("Обувь не найдена");
+            //$this->flashSession->error("Обувь не найдена");
             return $this->dispatcher->forward(array(
                 'action' => 'index'
             ));
         }
         if (!$shoes->delete()) {
             foreach($shoes->getMessages() as $message) {
-                $this->flashSession->error($message);
+                //$this->flashSession->error($message);
             }
         } else {
-            $this->flashSession->success("Обувь удалена");
+            //$this->flashSession->success("Обувь удалена");
         }
         return $this->dispatcher->forward(array(
             'action' => 'index'

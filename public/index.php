@@ -57,6 +57,12 @@ $di->set('router', function () {
     return $router;
 });
 
+$di->set('url', function() use ($config){
+    $url = new \Phalcon\Mvc\Url();
+    $url->setBaseUri( '/' );
+    return $url;
+});
+
 try {
 
     // Set the database service
