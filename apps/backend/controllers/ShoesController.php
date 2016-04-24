@@ -32,7 +32,7 @@ class ShoesController extends Controller
         $shoes = new Shoes();
         $this->view->form = new ShoesForm($shoes);
 
-        $this->view->render('shoes/edit');
+        $this->view->render('shoes/edit', array('form' => $this->view->form));
     }
 
     public function saveAction()
