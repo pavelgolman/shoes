@@ -321,12 +321,14 @@
 
             foreach(array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning') as $type => $class):?>
                 <?php
-                if(!($message = $this->flashSession->getMessages($type))) {continue;}?>
-                <div role="alert" class="alert <?=$class?> alert-dismissible fade in">
-                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
-                    </button>
-                    <?=$message?>
-                </div>
+                if(!($messages = $this->flashSession->getMessages($type))) {continue;}?>
+                <?php foreach($messages as $message):?>
+                    <div role="alert" class="alert <?=$class?> alert-dismissible fade in">
+                        <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
+                        </button>
+                        <?=$message?>
+                    </div>
+                <?php endforeach?>
             <?php endforeach?>
             <div>
                 <?php echo $this->getContent(); ?>
