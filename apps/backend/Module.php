@@ -21,7 +21,7 @@ class Module implements ModuleDefinitionInterface
             array(
                 'Multiple\Backend\Controllers' => '../apps/backend/controllers/',
                 'Models'      => '../models/',
-                //'Multiple\Backend\Forms' => '../apps/backend/forms/',
+                'Multiple\Backend\Forms' => '../apps/backend/forms/',
             )
         );
 

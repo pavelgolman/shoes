@@ -1,6 +1,6 @@
 <?php
 
-namespace Multiple\Backend\Models;
+namespace Models;
 
 use Phalcon\Mvc\Model;
 
