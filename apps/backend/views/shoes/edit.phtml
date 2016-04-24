@@ -61,11 +61,9 @@
                         <div class="thumbnail">
                             <div class="image view view-first">
                                 <?=$image->id?>
-                                <img alt="image" src="images/4.jpg" style="width: 100%; display: block;">
+                                <img alt="image" src="<?=$image->originalPath()?>" width="200px" style="width: 100%; display: block;">
                             </div>
-                            <div class="caption">
-                                <p>Snow and Ice Incoming for the South</p>
-                            </div>
+                           
                         </div>
                     </div>
                     <?php endforeach?>
