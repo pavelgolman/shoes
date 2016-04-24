@@ -94,4 +94,26 @@ class ShoesController extends Controller
         }
     }
 
+    public function deleteAction($id)
+    {
+        $shoes = Shoes::findFirstById($id);
+        if (!$shoes) {
+            $this->flashSession->error("Обувь не найдена");
+            return $this->dispatcher->forward(array(
+                'action' => 'index'
+            ));
+        }
+        if (!$shoes->delete()) {
+            foreach($shoes->getMessages() as $message) {
+                $this->flashSession->error($message);
+            }
+        } else {
+            $this->flashSession->success("Обувь удалена");
+        }
+        return $this->dispatcher->forward(array(
+            'action' => 'index'
+        ));
+    }
+
+
 }
