@@ -5,6 +5,7 @@ namespace Multiple\Backend\Controllers;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 use Models\Shoes;
+use Models\ShoesImages;
 use Multiple\Backend\Forms\ShoesForm;
 
 class ShoesController extends Controller
