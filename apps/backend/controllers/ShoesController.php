@@ -31,6 +31,8 @@ class ShoesController extends Controller
     {
         $shoes = new Shoes();
         $this->view->form = new ShoesForm($shoes);
+
+        echo $this->view->render('edit');
     }
 
     public function saveAction()
