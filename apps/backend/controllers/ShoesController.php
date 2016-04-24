@@ -52,7 +52,7 @@ class ShoesController extends Controller
                 if($shoes->id){
                     return $this->dispatcher->forward(array(
                         "action" => "edit",
-                        "params" => $shoes->id
+                        "params" => array($shoes->id)
                     ));
                 }
                 return $this->dispatcher->forward(array(
@@ -62,7 +62,7 @@ class ShoesController extends Controller
                 $this->flashSession->success("Обувь сохранена");
                 return $this->dispatcher->forward(array(
                     "action" => "edit",
-                    "params" => $shoes->id
+                    "params" => array($shoes->id)
                 ));
             }
         }
