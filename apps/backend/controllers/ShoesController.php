@@ -32,6 +32,7 @@ class ShoesController extends Controller
                 $response->redirect("shoes/edit?id=".$shoes->id);
                 $this->flash->success("Обувь сохранена");
             }
+            die('2');
         }elseif($this->request->get('id')){
             $shoes = Shoes::findFirst($this->request->get('id'));
         }
