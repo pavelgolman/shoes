@@ -52,7 +52,7 @@ class ShoesController extends Controller
                 if($shoes->id){
                     return $this->dispatcher->forward(array(
                         "action" => "edit",
-                        "params" => array("id" => $shoes->id)
+                        "params" => $shoes->id
                     ));
                 }
                 return $this->dispatcher->forward(array(
@@ -61,7 +61,7 @@ class ShoesController extends Controller
             } else {
                 $this->flashSession->success("Обувь сохранена");
                 $response = new Response();
-                $response->redirect("backend/shoes/edit?id=".$shoes->id);
+                $response->redirect("backend/shoes/edit/".$shoes->id);
                 $this->view->disable();
             }
         }
