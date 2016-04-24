@@ -318,14 +318,12 @@
         <!-- page content -->
         <div class="right_col" role="main">
             <?php
-            foreach(array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning') as $type => $class):
-                foreach ($this->flashSession->getMessages($type) as $message):?>
-                    <div role="alert" class="alert alert-info alert-dismissible fade in">
-                        <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
-                        </button>
-                        <?=$message?>
-                    </div>
-                <?php endforeach?>
+            foreach(array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning') as $type => $class):?>
+                <div role="alert" class="alert <?=$class?> alert-dismissible fade in">
+                    <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
+                    </button>
+                    <?=$this->flashSession->getMessages($type)?>
+                </div>
             <?php endforeach?>
             <div>
                 <?php echo $this->getContent(); ?>
