@@ -9,12 +9,17 @@ class Shoes extends Model
 
     public $id;
 
-    public $image_original;
+    public $name;
 
+    public $article;
+
+    public $price;
+
+    public $sale;
 
 
     public function initialize()
     {
-        $this->belongsTo("shoes_id", "Shoes", "id");
+        //$this->belongsTo("shoes_id", "Shoes", "id");
     }
 }

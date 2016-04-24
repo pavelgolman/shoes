@@ -11,6 +11,8 @@ class ShoesForm extends Form
 {
     public function initialize(Shoes $shoes)
     {
+        $this->add(new Hidden("id"));
+
         $this->add(new Text("name"));
 
         $this->add(new Text("article"));

@@ -16,7 +16,23 @@ class ShoesController extends Controller
 
     public function editAction()
     {
-        $this->view->form = new ShoesForm(new Shoes());
+        $shoes = new Shoes();
+
+        if ($this->request->isPost()) {
+            $shoes->assign(array(
+                'id' => $this->request->getPost('id'),
+                'name' => $this->request->getPost('name'),
+                'article' => $this->request->getPost('article')
+            ));
+            if (!$shoes->save()) {
+                $this->flash->error($shoes->getMessages());
+            } else {
+                $this->flash->success("Обувь сохранена");
+            }
+        }elseif($this->request->get('id')){
+            $shoes = Shoes::findFirst($this->request->get('id'));
+        }
+        $this->view->form = new ShoesForm($shoes);
     }
 
     public function uploadAction()
