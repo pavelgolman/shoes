@@ -317,19 +317,31 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
+            <?php if($this->flashSession->hasMessages()):?>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Обувь</small></h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
             <?php
 
-            foreach(array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning') as $type => $class):?>
-                <?php
-                if(!($messages = $this->flashSession->getMessages($type))) {continue;}?>
-                <?php foreach($messages as $message):?>
-                    <div role="alert" class="alert <?=$class?> alert-dismissible fade in">
-                        <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
-                        </button>
-                        <?=$message?>
-                    </div>
+                foreach(array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning') as $type => $class):?>
+                    <?php
+                    if(!($messages = $this->flashSession->getMessages($type))) {continue;}?>
+                    <?php foreach($messages as $message):?>
+                        <div role="alert" class="alert <?=$class?> alert-dismissible fade in">
+                            <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
+                            </button>
+                            <?=$message?>
+                        </div>
+                    <?php endforeach?>
                 <?php endforeach?>
-            <?php endforeach?>
+                        </div>
+                    </div>
+            <?php endif?>
+
             <div>
                 <?php echo $this->getContent(); ?>
             </div>
