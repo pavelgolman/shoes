@@ -24,15 +24,17 @@ class ShoesController extends Controller
             return $this->forward("shoes/index");
         }
 
+        $this->view->shoes = $shoes;
         $this->view->form = new ShoesForm($shoes);
     }
 
     public function createAction()
     {
         $shoes = new Shoes();
+
+        $this->view->shoes = $shoes;
         $this->view->form = new ShoesForm($shoes);
 
-        $this->view->render('shoes/edit', array('form' => $this->view->form));
     }
 
     public function saveAction()
@@ -65,8 +67,10 @@ class ShoesController extends Controller
         }
     }
 
-    public function uploadAction()
+    public function imageAction($id)
     {
+        $shoes = Shoes::findFirst($id);
+
         if($this->request->hasFiles() == true){
             $uploads = $this->request->getUploadedFiles();
             $isUploaded = false;
@@ -74,6 +78,7 @@ class ShoesController extends Controller
             foreach($uploads as $upload){
                 $image = new Models\ShoesImages();
                 $image->generateUniqueHash();
+                $image->shoes_id = $shoes->id;
                 $image->upload_date_year = date('Y');
                 $image->upload_date_month = date('m');
                 $image->upload_date_day = date('d');

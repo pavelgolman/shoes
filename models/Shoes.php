@@ -17,6 +17,6 @@ class Shoes extends Model
 
     public function initialize()
     {
-        //$this->belongsTo("shoes_id", "Shoes", "id");
+        $this->hasMany("id", "ShoesImages", "shoes_id");
     }
 }

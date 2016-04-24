@@ -21,7 +21,7 @@ class ShoesImages extends Model
     public $upload_date_day;
 
     public function initialize(){
-        $this->hasMany("id", "ShoesImages", "shoes_id");
+        $this->belongsTo("shoes_id", "Shoes", "id");
     }
 
     public function originalPath($withName = true){
