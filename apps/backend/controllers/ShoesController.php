@@ -81,7 +81,7 @@ class ShoesController extends Controller
                 $image->generateUniqueHash();
                 $image->shoes_id = $shoes->id;
                 $image->upload_date_year = date('Y');
-                $image->upload_date_month = date('m');
+                $image->upload_date_month = date('n');
                 $image->upload_date_day = date('d');
                 $image->extension = $upload->getExtension();
                 $image->save();
