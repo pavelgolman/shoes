@@ -33,7 +33,8 @@ class ShoesImages extends Model
     }
 
     public function thumbnailURL($width, $height){
-        return APP_PATH."public/images/shoes/".$this->shoes_id.'/'.$this->storage_id.'/'.$width.'_'.$height.'.'.$this->extension;
+        //return APP_PATH."public/images/shoes/".$this->shoes_id.'/'.$this->storage_id.'/'.$width.'_'.$height.'.'.$this->extension;
+        return PUBLIC_UPLOADS_PATH.$this->upload_date_year.'/'.$this->upload_date_month.'/'.$this->upload_date_day.'/'.$this->storage_id . '.' . $this->extension;
     }
 
     public function generateUniqueHash(){
