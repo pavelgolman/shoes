@@ -16,6 +16,7 @@ class ShoesController extends Controller
 
     public function editAction()
     {
+        $response = new \Phalcon\Http\Response();
         $shoes = new Shoes();
 
         if ($this->request->isPost()) {
@@ -27,6 +28,7 @@ class ShoesController extends Controller
             if (!$shoes->save()) {
                 $this->flash->error($shoes->getMessages());
             } else {
+                $response->redirect("shoes/edit?id=".$shoes->id);
                 $this->flash->success("Обувь сохранена");
             }
         }elseif($this->request->get('id')){
