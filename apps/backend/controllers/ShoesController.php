@@ -42,8 +42,7 @@ class ShoesController extends Controller
                 'article' => $this->request->getPost('article')
             ));
             if (!$shoes->save()) {
-                var_dump($shoes->getMessages());
-                $this->flash->error($shoes->getMessages());
+                $this->flashSession->error($shoes->getMessages());
                 if($shoes->id){
                     return $this->dispatcher->forward(array(
                         "action" => "edit",
@@ -54,7 +53,7 @@ class ShoesController extends Controller
                     "action" => "create"
                 ));
             } else {
-                $this->flash->success("Обувь сохранена");
+                $this->flashSession->success("Обувь сохранена");
                 return $this->dispatcher->forward(array(
                     "action" => "edit",
                     "params" => array("id" => $shoes->id)
