@@ -4,6 +4,8 @@ use Phalcon\Mvc\Router;
 use Phalcon\Mvc\Application;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
+use Phalcon\Session\Adapter\Files as Session;
+
 
 require_once(dirname(__FILE__).'/../configs/constants.php');
 
@@ -66,6 +68,13 @@ try {
             "dbname"   => "shoes"
         ));
     };
+
+    // Сессии запустятся один раз, при первом обращении к объекту
+    $di->setShared('session', function () {
+        $session = new Session();
+        $session->start();
+        return $session;
+    });
 
     // Create an application
     $application = new Application($di);
