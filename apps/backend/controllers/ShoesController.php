@@ -26,13 +26,11 @@ class ShoesController extends Controller
                 'article' => $this->request->getPost('article')
             ));
             if (!$shoes->save()) {
-                var_dump($shoes->getMessages());
                 $this->flash->error($shoes->getMessages());
             } else {
                 $response->redirect("shoes/edit?id=".$shoes->id);
                 $this->flash->success("Обувь сохранена");
             }
-            die('2');
         }elseif($this->request->get('id')){
             $shoes = Shoes::findFirst($this->request->get('id'));
         }
