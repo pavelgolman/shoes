@@ -14,11 +14,29 @@ class ShoesController extends Controller
 
     }
 
-    public function editAction()
+    public function editAction($id)
+    {
+        $shoes = Shoes::findFirst($id);
+        if (!$shoes) {
+            $this->flash->error("Обувь не найдена");
+
+            return $this->forward("shoes/index");
+        }
+
+        $this->view->form = new ShoesForm($shoes);
+    }
+
+    public function createAction()
+    {
+        $shoes = new Shoes();
+        $this->view->form = new ShoesForm($shoes);
+    }
+
+    public function saveAction()
     {
         $response = new \Phalcon\Http\Response();
-        $shoes = new Shoes();
 
+        $shoes = new Shoes();
         if ($this->request->isPost()) {
             $shoes->assign(array(
                 'id' => $this->request->getPost('id'),
@@ -27,17 +45,23 @@ class ShoesController extends Controller
             ));
             if (!$shoes->save()) {
                 $this->flash->error($shoes->getMessages());
+                if($shoes->id){
+                    return $this->dispatcher->forward(array(
+                        "action" => "edit",
+                        "params" => array("id" => $shoes->id)
+                    ));
+                }
                 return $this->dispatcher->forward(array(
-                    "action" => "edit"
+                    "action" => "create"
                 ));
             } else {
-                $response->redirect("shoes/edit?id=".$shoes->id);
                 $this->flash->success("Обувь сохранена");
+                return $this->dispatcher->forward(array(
+                    "action" => "edit",
+                    "params" => array("id" => $shoes->id)
+                ));
             }
-        }elseif($this->request->get('id')){
-            $shoes = Shoes::findFirst($this->request->get('id'));
         }
-        $this->view->form = new ShoesForm($shoes);
     }
 
     public function uploadAction()
