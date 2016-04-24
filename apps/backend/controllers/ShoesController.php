@@ -18,7 +18,7 @@ class ShoesController extends Controller
     {
         $shoes = Shoes::findFirst($id);
         if (!$shoes) {
-            $this->flash->error("Обувь не найдена");
+            $this->flashSession->error("Обувь не найдена");
 
             return $this->forward("shoes/index");
         }
@@ -42,7 +42,9 @@ class ShoesController extends Controller
                 'article' => $this->request->getPost('article')
             ));
             if (!$shoes->save()) {
-                $this->flashSession->error($shoes->getMessages());
+                foreach($shoes->getMessages() as $message) {
+                    $this->flashSession->error($message);
+                }
                 if($shoes->id){
                     return $this->dispatcher->forward(array(
                         "action" => "edit",
