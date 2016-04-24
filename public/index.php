@@ -33,7 +33,7 @@ $di->set('router', function () {
     );
 
     $router->add(
-        "/admin/:controller/:action",
+        "/admin/:controller/:action/:params",
         array(
             'module'     => 'backend',
             'controller' => 1,
