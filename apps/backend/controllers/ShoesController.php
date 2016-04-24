@@ -12,7 +12,7 @@ class ShoesController extends Controller
 
     public function indexAction()
     {
-
+        $this->view->shoes = Shoes::find();
     }
 
     public function editAction($id)
@@ -59,7 +59,7 @@ class ShoesController extends Controller
             } else {
                 $this->flashSession->success("Обувь сохранена");
                 $response = new Response();
-                $response->redirect("/admin/shoes/edit?id=".$shoes->id);
+                $response->redirect("backend/shoes/edit?id=".$shoes->id);
             }
         }
     }
