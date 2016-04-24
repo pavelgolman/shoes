@@ -18,5 +18,7 @@ class ShoesForm extends Form
 
         $this->add(new Text("article"));
 
+        $this->add(new Text("price"));
+
     }
 }

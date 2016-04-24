@@ -3,15 +3,12 @@ create table if not exists shoes(
   id int unsigned not null auto_increment,
   `name` varchar(255) not null,
   price int unsigned not null,
-  sale int unsigned not null DEFAULT 0,
   article  varchar(255) not null,
   primary key(id),
   index name(name),
   index article(article)
 )engine = InnoDb;
 
-insert into shoes (id, name, price, sale, article) values
-(1, 'Тапочки', 10000, 20, 'AWS100200');
 
 drop table if exists categories;
 create table if not exists categories(

@@ -15,9 +15,6 @@ class Shoes extends Model
 
     public $price;
 
-    public $sale;
-
-
     public function initialize()
     {
         //$this->belongsTo("shoes_id", "Shoes", "id");
