@@ -57,10 +57,8 @@ class ShoesController extends Controller
                 ));
             } else {
                 $this->flashSession->success("Обувь сохранена");
-                return $this->dispatcher->forward(array(
-                    "action" => "edit",
-                    "params" => array("id" => $shoes->id)
-                ));
+                $response = new \Phalcon\Http\Response();
+                $response->redirect("/admin/shoes/edit?id=".$shoes->id);
             }
         }
     }
