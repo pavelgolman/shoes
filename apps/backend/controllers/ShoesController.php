@@ -40,7 +40,7 @@ class ShoesController extends Controller
                 'id' => $this->request->getPost('id'),
                 'name' => $this->request->getPost('name'),
                 'article' => $this->request->getPost('article'),
-                'price' => $this->request->getPost('price')
+                'price' => $this->request->getPost('price'),
             ));
             if (!$shoes->save()) {
                 foreach($shoes->getMessages() as $message) {
