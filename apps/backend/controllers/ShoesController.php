@@ -26,6 +26,7 @@ class ShoesController extends Controller
                 'article' => $this->request->getPost('article')
             ));
             if (!$shoes->save()) {
+                var_dump($shoes->getMessages());
                 $this->flash->error($shoes->getMessages());
             } else {
                 $response->redirect("shoes/edit?id=".$shoes->id);

@@ -319,10 +319,11 @@
         <div class="right_col" role="main">
             <?php
             foreach(array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning') as $type => $class):?>
+                <?php if(!($message = $this->flashSession->getMessages($type))) {continue;}?>
                 <div role="alert" class="alert <?=$class?> alert-dismissible fade in">
                     <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
                     </button>
-                    <?=$this->flashSession->getMessages($type)?>
+                    <?=$message?>
                 </div>
             <?php endforeach?>
             <div>
