@@ -34,8 +34,6 @@ class ShoesController extends Controller
 
     public function saveAction()
     {
-        $response = new \Phalcon\Http\Response();
-
         $shoes = new Shoes();
         if ($this->request->isPost()) {
             $shoes->assign(array(
