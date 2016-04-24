@@ -62,6 +62,7 @@ class ShoesController extends Controller
                 $this->flashSession->success("Обувь сохранена");
                 $response = new Response();
                 $response->redirect("backend/shoes/edit?id=".$shoes->id);
+                $this->view->disable();
             }
         }
     }
