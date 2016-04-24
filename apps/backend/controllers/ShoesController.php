@@ -27,6 +27,7 @@ class ShoesController extends Controller
             ));
             if (!$shoes->save()) {
                 $this->flash->error($shoes->getMessages());
+                return $this->forward('shoes/edit');
             } else {
                 $response->redirect("shoes/edit?id=".$shoes->id);
                 $this->flash->success("Обувь сохранена");
