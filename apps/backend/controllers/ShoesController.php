@@ -60,9 +60,10 @@ class ShoesController extends Controller
                 ));
             } else {
                 $this->flashSession->success("Обувь сохранена");
-                $response = new Response();
-                $response->redirect("backend/shoes/edit/".$shoes->id);
-                $this->view->disable();
+                return $this->dispatcher->forward(array(
+                    "action" => "edit",
+                    "params" => $shoes->id
+                ));
             }
         }
     }

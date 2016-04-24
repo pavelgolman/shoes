@@ -25,7 +25,7 @@
                     <td class=" "><?=$s->price?></td>
                     <td class=" last">
                         <a href="/admin/shoes/edit/<?=$s->id?>">Редактировать</a>
-                        <a href="/admin/shoes/delete/<?=$s->id?>">Удалить</a>
+                        <a href="/admin/shoes/delete/<?=$s->id?>" onclick="return confirm('Удалить \'<?=$s->name?>\'?');">Удалить</a>
                     </td>
                 </tr>
                 <?php endforeach?>
