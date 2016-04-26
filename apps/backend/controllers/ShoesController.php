@@ -68,6 +68,14 @@ class ShoesController extends Controller
         }
     }
 
+    public function thumbnailsAction($id){
+        $shoes = Shoes::findFirst($id);
+        foreach($shoes->shoesImages as $image){
+            $image->reGenerateThumbnails();
+        }
+        return $this->response->redirect("admin/shoes/edit/".$shoes->id);
+    }
+
     public function imageAction($id)
     {
         $shoes = Shoes::findFirst($id);
