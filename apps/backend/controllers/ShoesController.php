@@ -71,7 +71,7 @@ class ShoesController extends Controller
     public function thumbnailsAction($id){
         $shoes = Shoes::findFirst($id);
         foreach($shoes->shoesImages as $image){
-            $image->reGenerateThumbnails();
+
         }
         return $this->response->redirect("admin/shoes/edit/".$shoes->id);
     }
@@ -98,6 +98,10 @@ class ShoesController extends Controller
                     mkdir($image->originalPath(false), 0777, true); // Create directory if it does not exist
                 }
                 ($result = $upload->moveTo($image->originalPath())) ? $isUploaded = true : $isUploaded = false;
+
+                if($isUploaded){
+                    $image->reGenerateThumbnails();
+                }
 
             }
             ($isUploaded) ? die('Files successfully uploaded.') : die('Some error ocurred.');

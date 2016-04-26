@@ -49,7 +49,6 @@ class ShoesImages extends Model
         foreach($SHOES_THUMBNAILS_MAP as $size){
             $image = new Phalcon\Image\Adapter\Imagick($this->originalPath());
             $image->resize($size['width'], $size['height']);
-            var_dump(APP_PATH.'public'.$this->thumbnailURL($size['width'], $size['height']));
 
             $path = APP_PATH.'public'.$this->thumbnailURL($size['width'], $size['height'], false);
             if (is_dir($path) == false)
@@ -60,6 +59,5 @@ class ShoesImages extends Model
 
             }
         }
-        die();
     }
 }
