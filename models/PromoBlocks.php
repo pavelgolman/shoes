@@ -38,7 +38,7 @@ class PromoBlocks extends Model
             "\Models\PromoBlocksShoes",
             "shoes_id",
             "promo_blocks_id",
-            "Shoes",
+            "\Models\Shoes",
             "id",
             array(
                 'alias' => 'shoes',
