@@ -25,7 +25,7 @@ class ShoesImages extends Model
     }
 
     public function originalPath($withName = true){
-        $path = UNSORTED_IMAGES_PATH.$this->upload_date_year.'/'.$this->upload_date_month.'/'.$this->upload_date_day.'/';
+        $path = ORIGINALS_IMAGES_PATH.$this->shoes_id.'/';
         if($withName) {
             return $path.$this->storage_id . '.' . $this->extension;
         }
