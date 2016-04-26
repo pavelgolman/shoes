@@ -3,9 +3,11 @@ create table if not exists shoes(
   id int unsigned not null auto_increment,
   `name` varchar(255) not null,
   price int unsigned not null,
+  main_image_id int unsigned default null,
   article  varchar(255) not null,
   primary key(id),
-  index name(name),
+  index `name`(`name`),
+  index main_image_id(main_image_id),
   index article(article)
 )engine = InnoDb;
 
@@ -106,3 +108,24 @@ create table if not exists shoes_images(
   unique key storage_id(storage_id)
 )engine=InnoDb;
 
+
+
+
+
+drop table if exists promo_blocks;
+create table if not exists promo_blocks(
+  id int unsigned not null auto_increment,
+  `const` varchar(255) not null,
+  `name` varchar(255) not null,
+  primary key(id),
+  index `name`(`name`),
+  index `const`(`const`)
+)engine = InnoDb;
+
+
+drop table if exists promo_blocks_shoes;
+create table if not exists promo_blocks_shoes(
+  shoes_id int unsigned not null,
+  promo_blocks_id int unsigned not null,
+  unique key unq(shoes_id, promo_blocks_id)
+)engine=InnoDb;
