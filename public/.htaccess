@@ -4,14 +4,10 @@ AddType application/vnd.ms-fontobject eot
 AddType font/truetype ttf
 AddType application/x-font-woff woff
 
-# Apache config
-<FilesMatch ".(eot|ttf|otf|woff)">
- Header set Access-Control-Allow-Origin "*"
-</FilesMatch>
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png)$ [NC]
+    RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png|eot|woff|woff2|svg)$ [NC]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
 
