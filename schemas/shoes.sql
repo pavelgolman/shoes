@@ -172,7 +172,24 @@ INSERT INTO promo_blocks_shoes (promo_blocks_id, shoes_id) VALUES
 ((select id from promo_blocks where `const` = 'FEATURED'), 13),
 ((select id from promo_blocks where `const` = 'FEATURED'), 13),
 ((select id from promo_blocks where `const` = 'FEATURED'), 13),
-((select id from promo_blocks where `const` = 'FEATURED'), 13)
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+
+
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20)
 
 
 ;
