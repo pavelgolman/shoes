@@ -145,7 +145,7 @@ create table if not exists promo_blocks_shoes(
 )engine=InnoDb;
 
 
-
+TRUNCATE TABLE promo_blocks_shoes;
 INSERT INTO promo_blocks_shoes (promo_blocks_id, shoes_id) VALUES
 ((select id from promo_blocks where `const` = 'SALE_OFF'), 10),
 ((select id from promo_blocks where `const` = 'SALE_OFF'), 10),
@@ -158,7 +158,23 @@ INSERT INTO promo_blocks_shoes (promo_blocks_id, shoes_id) VALUES
 ((select id from promo_blocks where `const` = 'SALE_OFF'), 10),
 ((select id from promo_blocks where `const` = 'SALE_OFF'), 10),
 ((select id from promo_blocks where `const` = 'SALE_OFF'), 10),
-((select id from promo_blocks where `const` = 'SALE_OFF'), 10)
+((select id from promo_blocks where `const` = 'SALE_OFF'), 10),
+
+
+
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13),
+((select id from promo_blocks where `const` = 'FEATURED'), 13)
+
+
 ;
 
 
