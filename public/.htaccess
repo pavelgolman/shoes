@@ -1,7 +1,7 @@
 AddDefaultCharset UTF-8
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png)$ [NC]
+    RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png|eot|ttf|woff|woff2|svg)$ [NC]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
 
