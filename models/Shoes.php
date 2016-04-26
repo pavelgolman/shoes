@@ -19,9 +19,9 @@ class Shoes extends Model
 
     public function initialize()
     {
-        $this->hasMany("id", "\Models\ShoesImages", "shoes_id",  array(
-            'alias' => 'shoesImages'
-        ));
+        //$this->hasMany("id", "\Models\ShoesImages", "shoes_id",  array(
+        //    'alias' => 'shoesImages'
+        //));
         $this->hasOne('main_image_id', "\Models\ShoesImages", 'shoes_id', array(
             'alias' => 'image'
         ));
