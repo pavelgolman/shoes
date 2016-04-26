@@ -6,7 +6,7 @@
 
         <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::SALE_OFF."'");
         $shoes = $promo->shoes;
-
+        $shoes->next();
         ?>
 
         <div class="slide-product">
@@ -17,7 +17,7 @@
                 <div class="item3">
                     <div class="product-image">
                         <a href="single-product.html">
-                            <img src="img/product-mini/printed-summer-dress1.jpg" alt="">
+                            <img src="<?=$sh->image->thumbnailURL(125, 125)?>" alt="">
                         </a>
                         <span class="price-percent-reduction">-5%</span>
                     </div>
