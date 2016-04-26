@@ -36,8 +36,8 @@ class PromoBlocks extends Model
         $this->hasManyToMany(
             "id",
             "\Models\PromoBlocksShoes",
-            "shoes_id",
             "promo_blocks_id",
+            "shoes_id",
             "\Models\Shoes",
             "id",
             array(
