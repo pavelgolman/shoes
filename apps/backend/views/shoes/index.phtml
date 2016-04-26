@@ -10,7 +10,8 @@
             <table class="table table-striped responsive-utilities jambo_table bulk_action">
                 <thead>
                 <tr class="headings">
-                    <th class="column-title">Навзание </th>
+                    <th class="column-title">Название </th>
+                    <th class="column-title">Изображения </th>
                     <th class="column-title">Артикул</th>
                     <th class="column-title">Цена</th>
                     <th class="column-title">&nbsp;</th>
@@ -21,6 +22,11 @@
                 <?php foreach($shoes as $s):?>
                 <tr class="even pointer">
                     <td class=" "><?=$s->name?></td>
+                    <td class=" ">
+                        <?php foreach($s->shoesImages as $image):?>
+                            <img alt="image" src="<?=$image->thumbnailURL(85, 85)?>" />
+                        <?php endforeach?>
+                    </td>
                     <td class=" "><?=$s->article?></td>
                     <td class=" "><?=$s->price?></td>
                     <td class=" last">
