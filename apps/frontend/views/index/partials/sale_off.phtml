@@ -13,7 +13,7 @@
             <?php for($i = 1; $i <= 4; $i++):?>
             <div class="slide-product-item">
                 <?php for($j=1; $j<=3; $j++):?>
-                    <?php $sh = $shoes[$i*$j]?>
+                    <?php $sh = $shoes->current()?>
                 <div class="item3">
                     <div class="product-image">
                         <a href="single-product.html">
@@ -25,6 +25,7 @@
                         <a href="single-product.html"><?=$sh->name?></a>
                     </div>
                 </div>
+                    <?php $shoes->next();?>
                 <?php endfor?>
             </div>
             <?php endfor?>
