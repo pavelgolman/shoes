@@ -1,5 +1,9 @@
 AddDefaultCharset UTF-8
 
+AddType application/vnd.ms-fontobject eot
+AddType font/truetype ttf
+AddType application/x-font-woff woff
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png)$ [NC]
