@@ -15,6 +15,8 @@ class Shoes extends Model
 
     public $price;
 
+    public $main_image_id;
+
     public function initialize()
     {
         $this->hasMany("id", "\Models\ShoesImages", "shoes_id",  array(
