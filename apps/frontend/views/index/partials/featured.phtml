@@ -8,8 +8,8 @@
             </div>
             <div class="featured-product">
                 <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::FEATURED."'");?>
-                <?php foreach($promo->shoes as $shoes):?>
                 <div class="featured-item">
+                    <?php foreach($promo->shoes as $shoes):?>
                     <!-- Start featured item -->
                     <div class="col-sm-3">
                         <div class="featured-inner">
