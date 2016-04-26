@@ -21,7 +21,11 @@ class ShoesImages extends Model
     public $upload_date_day;
 
     public function initialize(){
-        $this->belongsTo("shoes_id", "Shoes", "id");
+        $this->belongsTo("shoes_id", "\Models\Shoes", "id");
+
+        $this->hasOne("id", "\Models\Shoes", "main_image_id", array(
+            'alias' => 'mainImageIn'
+        ));
     }
 
     public function originalPath($withName = true){
