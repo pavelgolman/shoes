@@ -4,7 +4,7 @@
             <h3>Распродажа</h3>
         </div>
 
-        <?php $promo = \Models\PromoBlocks::findFirst("const = ".\Models\PromoBlocks::SALE_OFF);
+        <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::SALE_OFF."'");
         $shoes = $promo->shoes;
 
         ?>
