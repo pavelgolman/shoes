@@ -1,4 +1,10 @@
 AddDefaultCharset UTF-8
+<FilesMatch ".(ttf|otf|eot|woff)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png|eot|ttf|woff|woff2|svg)$ [NC]
