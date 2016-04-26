@@ -1,12 +1,5 @@
 AddDefaultCharset UTF-8
 
-    # Add correct content-type for fonts
-    AddType application/vnd.ms-fontobject .eot
-    AddType font/ttf .ttf
-    AddType font/otf .otf
-    AddType font/x-woff .woff
-    AddType image/svg+xml .svg
-    
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png|eot|woff|woff2|svg)$ [NC]
