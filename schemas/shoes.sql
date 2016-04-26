@@ -124,15 +124,15 @@ create table if not exists promo_blocks(
 
 
 insert into promo_blocks(`name`, `const`) VALUES
-('Распродажа', 'SALE_OFF'),
-('Акции', 'FEATURED'),
-('Бестселлеры', 'BESTSELLER'),
-('Сандалии', 'CATEGORY_SANDALS'),
-('Туфли', 'CATEGORY_SHOES'),
-('Ботинки', 'CATEGORY_BOOTS'),
-('Кроссовки,Кеды', 'CATEGORY_SNEAKERS'),
-('Сабо', 'CATEGORY_SABO'),
-('Сапоги', 'CATEGORY_HIGH_BOOT'),
+('', 'SALE_OFF'),
+('', 'FEATURED'),
+('', 'BESTSELLER'),
+('', 'CATEGORY_SANDALS'),
+('', 'CATEGORY_SHOES'),
+('', 'CATEGORY_BOOTS'),
+('', 'CATEGORY_SNEAKERS'),
+('', 'CATEGORY_SABO'),
+('', 'CATEGORY_HIGH_BOOT')
 ;
 
 
@@ -141,7 +141,7 @@ drop table if exists promo_blocks_shoes;
 create table if not exists promo_blocks_shoes(
   shoes_id int unsigned not null,
   promo_blocks_id int unsigned not null,
-  unique key unq(shoes_id, promo_blocks_id)
+   key unq(shoes_id, promo_blocks_id)
 )engine=InnoDb;
 
 

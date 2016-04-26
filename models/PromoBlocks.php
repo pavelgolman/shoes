@@ -3,6 +3,7 @@
 namespace Models;
 
 use Phalcon\Mvc\Model;
+use Phalcon\Mvc\Model\Relation;
 
 class PromoBlocks extends Model
 {
@@ -42,7 +43,7 @@ class PromoBlocks extends Model
             array(
                 'alias' => 'shoes',
                 'foreignKey' => array(
-                    'action' => Phalcon\Mvc\Model\Relation::ACTION_CASCADE
+                    'action' => Relation::ACTION_CASCADE
                 )
             )
         );
