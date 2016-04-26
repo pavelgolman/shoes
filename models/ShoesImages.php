@@ -32,8 +32,12 @@ class ShoesImages extends Model
         return $path;
     }
 
-    public function thumbnailURL($width, $height){
-        return PUBLIC_THUMBNAILS_PATH.$this->shoes_id.'/'.$this->storage_id.'/'.$width.'_'.$height.'.'.$this->extension;
+    public function thumbnailURL($width, $height, $withName = true){
+        $path = PUBLIC_THUMBNAILS_PATH.$this->shoes_id.'/'.$this->storage_id.'/';
+        if($withName) {
+            $path .= $width . '_' . $height . '.' . $this->extension;
+        }
+        return $path;
     }
 
     public function generateUniqueHash(){
@@ -46,6 +50,12 @@ class ShoesImages extends Model
             $image = new Phalcon\Image\Adapter\Imagick($this->originalPath());
             $image->resize($size['width'], $size['height']);
             var_dump(APP_PATH.'public'.$this->thumbnailURL($size['width'], $size['height']));
+
+            $path = APP_PATH.'public'.$this->thumbnailURL($size['width'], $size['height'], false);
+            if (is_dir($path) == false)
+            {
+                mkdir($path, 0777, true); // Create directory if it does not exist
+            }
             if ($image->save(APP_PATH.'public'.$this->thumbnailURL($size['width'], $size['height']))) {
 
             }
