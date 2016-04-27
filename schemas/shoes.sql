@@ -132,7 +132,9 @@ insert into promo_blocks(`name`, `const`) VALUES
 ('', 'CATEGORY_BOOTS'),
 ('', 'CATEGORY_SNEAKERS'),
 ('', 'CATEGORY_SABO'),
-('', 'CATEGORY_HIGH_BOOT')
+('', 'CATEGORY_HIGH_BOOT'),
+('Весна-Лето', 'SPRING_SUMMER'),
+('Осень-Зима', 'AUTUMN_WINTER')
 ;
 
 
@@ -189,8 +191,33 @@ INSERT INTO promo_blocks_shoes (promo_blocks_id, shoes_id) VALUES
 ((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
 ((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
 ((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
-((select id from promo_blocks where `const` = 'BESTSELLER'), 20)
+((select id from promo_blocks where `const` = 'BESTSELLER'), 20),
 
+
+
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+((select id from promo_blocks where `const` = 'SPRING_SUMMER'), 15),
+
+
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12)
 
 ;
 
