@@ -153,10 +153,10 @@
     <div class="container">
         <div class="row">
             <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::SPRING_SUMMER."'");?>
-            <?php $this->partial("index/partials/bestsellers", array('promo' => $promo)); ?>
+            <?php $this->partial("index/partials/season", array('promo' => $promo)); ?>
 
             <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::AUTUMN_WINTER."'");?>
-            <?php $this->partial("index/partials/bestsellers", array('promo' => $promo)); ?>
+            <?php $this->partial("index/partials/season", array('promo' => $promo)); ?>
         </div>
     </div>
 </div>
