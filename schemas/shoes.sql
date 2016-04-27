@@ -137,7 +137,7 @@ create table if not exists promo_blocks_shoes(
   shoes_id int unsigned not null,
   promo_blocks_id int unsigned not null,
    key unq(shoes_id, promo_blocks_id)
-)engine = InnoDb DEFAULT CHARACTER SET=utf8 COLLATE utf8_unicode_ci;
+)engine=InnoDb DEFAULT CHARACTER SET=utf8;
 
 
 TRUNCATE TABLE promo_blocks_shoes;
