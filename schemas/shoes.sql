@@ -9,7 +9,7 @@ create table if not exists shoes(
   index `name`(`name`),
   index main_image_id(main_image_id),
   index article(article)
-)engine = InnoDb;
+)engine = InnoDb DEFAULT CHARACTER SET=utf8;
 
 
 drop table if exists categories;
@@ -24,7 +24,7 @@ create table if not exists categories(
   index url(url),
   index parent_id(parent_id),
   index order_number(order_number)
-)engine = InnoDb;
+)engine = InnoDb DEFAULT CHARACTER SET=utf8;
 
 
 truncate table categories;
@@ -69,7 +69,7 @@ create table if not exists shoes_categories(
   shoes_id int unsigned not null,
   category_id int unsigned not null,
   unique key unq(shoes_id, category_id)
-)engine=InnoDb;
+)engine=InnoDb DEFAULT CHARACTER SET=utf8;
 
 drop table if exists attributes;
 create table if not exists attributes(
@@ -77,7 +77,7 @@ create table if not exists attributes(
   `name` varchar(255) not null,
   primary key(id),
   index `name`(`name`)
-)engine=InnoDb;;
+)engine=InnoDb DEFAULT CHARACTER SET=utf8;
 
 
 truncate table attributes;
@@ -92,7 +92,7 @@ create table if not exists shoes_attributes(
   shoes_id int unsigned not null,
   attribute_id int unsigned not null,
   unique key unq(shoes_id, attribute_id)
-)engine=InnoDb;
+)engine=InnoDb DEFAULT CHARACTER SET=utf8;
 
 
 drop table if exists shoes_images;
@@ -106,7 +106,7 @@ create table if not exists shoes_images(
   upload_date_day int unsigned not null,
   PRIMARY  key(id),
   unique key storage_id(storage_id)
-)engine=InnoDb;
+)engine=InnoDb DEFAULT CHARACTER SET=utf8;
 
 
 
@@ -120,7 +120,8 @@ create table if not exists promo_blocks(
   primary key(id),
   index `name`(`name`),
   index `const`(`const`)
-)engine = InnoDb;
+)engine = InnoDb DEFAULT CHARACTER SET=utf8;
+
 
 
 insert into promo_blocks(`name`, `const`) VALUES
@@ -133,8 +134,8 @@ insert into promo_blocks(`name`, `const`) VALUES
 ('', 'CATEGORY_SNEAKERS'),
 ('', 'CATEGORY_SABO'),
 ('', 'CATEGORY_HIGH_BOOT'),
-('', 'SPRING_SUMMER'),
-('', 'AUTUMN_WINTER')
+(' ', 'SPRING_SUMMER'),
+(' ', 'AUTUMN_WINTER')
 ;
 
 
@@ -144,7 +145,7 @@ create table if not exists promo_blocks_shoes(
   shoes_id int unsigned not null,
   promo_blocks_id int unsigned not null,
    key unq(shoes_id, promo_blocks_id)
-)engine=InnoDb;
+)engine=InnoDb DEFAULT CHARACTER SET=utf8;
 
 
 TRUNCATE TABLE promo_blocks_shoes;
@@ -217,7 +218,78 @@ INSERT INTO promo_blocks_shoes (promo_blocks_id, shoes_id) VALUES
 ((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
 ((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
 ((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
-((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12)
+((select id from promo_blocks where `const` = 'AUTUMN_WINTER'), 12),
+
+
+
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+((select id from promo_blocks where `const` = 'CATEGORY_SANDALS'), 13),
+
+
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+((select id from promo_blocks where `const` = 'CATEGORY_SHOES'), 18),
+
+
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+((select id from promo_blocks where `const` = 'CATEGORY_BOOTS'), 16),
+
+
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+((select id from promo_blocks where `const` = 'CATEGORY_SNEAKERS'), 11),
+
+
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+((select id from promo_blocks where `const` = 'CATEGORY_SABO'), 10),
+
+
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12),
+((select id from promo_blocks where `const` = 'CATEGORY_HIGH_BOOT'), 12)
 
 ;
 
