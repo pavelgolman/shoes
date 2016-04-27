@@ -53,7 +53,7 @@
                         5 => \Models\PromoBlocks::CATEGORY_SHOES,
                         6 => \Models\PromoBlocks::CATEGORY_SNEAKERS
                                   ) as $k=>$const):?>
-                    <div class="tab-pane active" id="tab<?=$k?>">
+                    <div class="tab-pane <?=$k==1 ? 'active' : ''?>" id="tab<?=$k?>">
                         <?php $promo = \Models\PromoBlocks::findFirst("const = '".$const."'");?>
                         <?php $this->partial("index/partials/best_from_category", array('promo' => $promo))?>
                     </div>

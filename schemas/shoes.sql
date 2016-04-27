@@ -120,7 +120,7 @@ create table if not exists promo_blocks(
   primary key(id),
   index `name`(`name`),
   index `const`(`const`)
-)engine = InnoDb DEFAULT CHARACTER SET=utf8;
+)engine = InnoDb DEFAULT CHARACTER SET=utf8 COLLATE utf8_unicode_ci;
 
 
 
