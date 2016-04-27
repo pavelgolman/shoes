@@ -127,8 +127,8 @@ insert into promo_blocks(`name`, `const`) VALUES
 ('', 'CATEGORY_SNEAKERS'),
 ('', 'CATEGORY_SABO'),
 ('', 'CATEGORY_HIGH_BOOT'),
-(' ', 'SPRING_SUMMER'),
-(' ', 'AUTUMN_WINTER')
+('ВЕСНА-ЛЕТО', 'SPRING_SUMMER'),
+('ОСЕНЬ-ЗИМА', 'AUTUMN_WINTER')
 ;
 
 
