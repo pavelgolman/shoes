@@ -24,7 +24,7 @@ create table if not exists categories(
   index url(url),
   index parent_id(parent_id),
   index order_number(order_number)
-)engine = InnoDb DEFAULT CHARACTER SET=utf8;
+)engine = InnoDb DEFAULT CHARACTER SET=utf8 COLLATE utf8_unicode_ci;
 
 
 truncate table categories;
@@ -47,21 +47,13 @@ insert into categories (id, parent_id, `name`, order_number) values
 (103, 1, 'Зима', 3),
 
 (301, 3, 'Сапоги', 1),
-(302, 3, 'Ботильоны', 2),
 (303, 3, 'Ботинки', 3),
 (304, 3, 'Кроссовки и кеды', 4),
-(305, 3, 'Дутики и луноходы', 5),
 (306, 3, 'Угги и унты', 6),
-(307, 3, 'Мокасины и еспадрильи', 7),
-(308, 3, 'Балетки', 8),
-(309, 3, 'Резиновая обувь', 9),
-(310, 3, 'Валенки', 10),
 (311, 3, 'Босоножки', 11),
 (312, 3, 'Сандалии', 12),
 (313, 3, 'Сабо', 13),
-(314, 3, 'Шлепанцы', 14),
-(315, 3, 'Домашняя', 15)
-
+(314, 3, 'Шлепанцы', 14)
 ;
 
 drop table if exists shoes_categories;

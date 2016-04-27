@@ -71,7 +71,8 @@ try {
             "host"     => "localhost",
             "username" => "shoes",
             "password" => "shoes",
-            "dbname"   => "shoes"
+            "dbname"   => "shoes",
+            'charset'   =>'utf8'
         ));
     };
 
