@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-sm-6">
     <div class="area-title">
         <h3><?=$promo->name?></h3>
-    </div>
+    </div> 
     <div class="camera-area">
         <div class="row">
             <div class="camera-slide featured-product-area">
