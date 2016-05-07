@@ -26,7 +26,7 @@
                         <div id="content-eleyas">
                             <div class="tab-content" id="my-tab-content">
                                 <?php foreach($shoes->images as $k => $image):?>
-                                <div id="view<?=$k?>" class="tab-pane active">
+                                <div id="view<?=$k?>" class="tab-pane <?=$k==0 ? 'active' : ''?>">
 
                                     <a title="" data-fancybox-group="gallery" href="<?=$image->originalURL()?>" class="fancybox">
                                         <img alt="" src="<?=$image->originalURL()?>">
