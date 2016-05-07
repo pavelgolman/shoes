@@ -19,12 +19,16 @@ class ShoesController extends Controller
         $paginator   = new PaginatorModel(
             array(
                 "data"  => $shoes,
-                "limit" => 100,
+                "limit" => 999,
                 "page"  => $currentPage
             )
         );
 
         $this->view->shoes = $paginator->getPaginate();
+    }
+
+    public function view($id){
+        $this->view->shoes = \Models\Shoes::find($id);
     }
 
 }

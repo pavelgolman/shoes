@@ -16,9 +16,11 @@
                             <?php
                                 $filter_url = '/shoes/index?';
                                 $filter_add = $filter_remove = $filter_url;
+
                                 foreach($filter as $key => $value) {
-                                    $filter_add .= 'filter['.$key.']='.$value.'&';
                                     if($key != $attribute->id){
+                                        $filter_add .= 'filter['.$key.']='.$value.'&';
+                                    }else{
                                         $filter_remove .= 'filter['.$key.']='.$value.'&';
                                     }
                                 }
@@ -27,7 +29,10 @@
                         <li>
                             <span><input type="checkbox" class="checkbox"></span>
                             <label>
-                                <a href="<?=$filter_add?>"><?=$attribute->name?></a>&nbsp;<a href="<?=$filter_remove?>">X</a>
+                                <a href="<?=$filter_add?>"><?=$attribute->name?></a>
+                                <?php if($filter[$attribute->id]):?>
+                                    <a href="<?=$filter_remove?>">X</a>
+                                <?php endif?>
                             </label>
                         </li>
                         <?php endforeach?>

@@ -1,0 +1,770 @@
+<div class="page-content">
+    <!-- Start breadcume area -->
+    <div class="breadcume-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="breadcrumb">
+                        <a class="home" href="/" title="Новинки"><i class="fa fa-home"></i></a>
+                        <span class="navigation-pipe">&gt;</span>
+                        <a href="/shoes/index" title="Automotive &amp; Motorcycle" class="hidden-xs">Обувь</a>
+                        <span class="hidden-xs navigation-pipe">&gt;</span>
+                        <?=$shoes->name?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End breadcume area -->
+    <!-- Start single product area -->
+    <div class="container">
+        <div class="row">
+            <div class="single-products">
+                <!-- Start single product image -->
+                <div class="col-sm-5">
+                    <div class="single-product-image">
+                        <div id="content-eleyas">
+                            <div class="tab-content" id="my-tab-content">
+                                <?php foreach($shoes->images as $k => $image):?>
+                                <div id="view<?=$k?>" class="tab-pane active">
+
+                                    <a title="" data-fancybox-group="gallery" href="<?=$image->originalURL()?>" class="fancybox">
+                                        <img alt="" src="<?=$image->originalURL()?>">
+                                        <span>Увеличить<i class="fa fa-search-plus"></i></span>
+                                    </a>
+                                </div>
+                                <?php endforeach?>
+                            </div>
+                            <div data-tabs="tabs" class="nav nav-tabs product-view owl-carousel owl-theme" id="viewproduct" style="opacity: 1; display: block;">
+                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 940px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 94px;"><div class="pro-view active"><a data-toggle="tab" href="#view1"><img alt="" src="img/single-product/faded-short-sleeves-tshirt1m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view2"><img alt="" src="img/single-product/faded-short-sleeves-tshirt2m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view3"><img alt="" src="img/single-product/faded-short-sleeves-tshirt3m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view4"><img alt="" src="img/single-product/faded-short-sleeves-tshirt4m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view5"><img alt="" src="img/single-product/printed-chiffon-dress.jpg"></a></div></div></div></div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End single product image -->
+                <!-- Start single product details -->
+                <div class="col-sm-7">
+                    <div class="single-product-details">
+                        <h1>Printed Chiffon Dress</h1>
+                        <div class="sin-social">
+                            <p>
+                                <a href="#" class="btn btn-default twitter"><i class="fa fa-twitter"></i>Tweet</a>
+                                <a href="#" class="btn btn-default facebook"><i class="fa fa-facebook"></i>Share</a>
+                                <a href="#" class="btn btn-default google-plus"><i class="fa fa-google-plus"></i>Google+</a>
+                                <a href="#" class="btn btn-default pinterest"><i class="fa fa-pinterest"></i>Pinterest</a>
+                            </p>
+                        </div>
+                        <p class="rating-and-review">
+                            <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                            <a href="#">Read reviews (0)</a>
+                            <a href="#">Write a review</a>
+                        </p>
+                        <h2><span>£ 19.81</span></h2>
+                        <p><strong>Reference:</strong> demo_1 </p>
+                        <p><strong>Condition:</strong> New product </p>
+                        <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!</p>
+                        <p class="sin-item"><span class="sin-item-text"> 292 Items </span><span class="sin-item-btn">In stock</span></p>
+                        <form action="#" method="post">
+                            <div class="numbers-row">
+                                <label>Quantity</label>
+                                <input type="number" id="french-hens" name="french-hens">
+                                <div class="inc button">+</div><div class="dec button">-</div></div>
+                        </form>
+                        <p class="selector1">
+                            <label>Size</label>
+                            <select class="selectProductSort form-control" id="selectProductSort1">
+                                <option selected="selected" value="position:asc">S</option>
+                                <option value="price:asc">M</option>
+                                <option value="price:desc">L</option>
+                            </select>
+                        </p>
+                        <p class="selector1">
+                            <label>Color</label>
+                            <a class="color orange" title="Orange" href="#"></a><a class="color blue" title="Blue" href="#"></a>
+                        </p>
+                        <p id="add_to_cart" class="buttons_bottom_block no-print">
+                            <button type="submit" name="Submit" class="exclusive">
+                                <span>Add to cart</span>
+                            </button>
+                        </p>
+                        <p class="sin-adto-cart-bottom">
+                            <a href="#"><i class="fa fa-envelope-o"></i>Send to a friend</a>
+                            <a href="#"><i class="fa fa-print"></i>Print</a>
+                            <a href="#"><i class="fa fa-heart"></i>Add to wishlist</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- End single product details -->
+            </div>
+        </div>
+    </div>
+    <!-- End single product area -->
+    <!-- Start single product info -->
+    <div class="container">
+        <div class="row">
+            <div class="single-product-info">
+                <div id="content-product-review">
+                    <div class="col-xs-12 col-sm-3">
+                        <ul data-tabs="tabs" class="review-tab" id="tabs">
+                            <li class="active"><a data-toggle="tab" href="#info1">More info</a></li>
+                            <li><a data-toggle="tab" href="#info2">Data sheet</a></li>
+                            <li><a data-toggle="tab" href="#info3">accessories</a></li>
+                            <li><a data-toggle="tab" href="#info4">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-9">
+                        <div class="tab-content" id="my-tab-content-2">
+                            <div id="info1" class="tab-pane active">
+                                <p class="tab-info-one">Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+                            </div>
+                            <div id="info2" class="tab-pane">
+                                <table class="table-data-sheet">
+                                    <tbody>
+                                    <tr class="odd">
+                                        <td>Compositions</td>
+                                        <td>Cotton</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td>Styles</td>
+                                        <td>Casual</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>Properties</td>
+                                        <td>Short Sleeve</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="info3" class="tab-pane">
+                                <div class="tab-info-product owl-carousel owl-theme" style="opacity: 0; display: block;">
+                                    <!-- Start featured item -->
+                                    <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 300px; left: 0px; display: block;"><div class="owl-item" style="width: 25px;"><div class="featured-inner">
+                                                    <div class="featured-image">
+                                                        <a href="single-product.html">
+                                                            <img alt="" src="img/product/faded-short-sleeves-tshirt.jpg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="featured-info">
+                                                        <a href="single-product.html">Faded Short Sleeves T-shirt</a>
+                                                        <span class="price">$16.51</span>
+                                                    </div>
+                                                </div></div><div class="owl-item" style="width: 25px;"><div class="featured-inner">
+                                                    <div class="featured-image">
+                                                        <a href="single-product.html">
+                                                            <img alt="" src="img/product/blouse.jpg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="featured-info">
+                                                        <a href="single-product.html">Blouse</a>
+                                                        <span class="price">$27.00</span>
+                                                    </div>
+                                                </div></div><div class="owl-item" style="width: 25px;"><div class="featured-inner">
+                                                    <div class="featured-image">
+                                                        <a href="single-product.html">
+                                                            <img alt="" src="img/product/printed-dress1.jpg">
+                                                        </a>
+                                                        <span class="price-percent-reduction">-20%</span>
+                                                    </div>
+                                                    <div class="featured-info">
+                                                        <a href="single-product.html">Printed Dress</a>
+                                                        <span class="price">$26.00</span>
+                                                    </div>
+                                                </div></div><div class="owl-item" style="width: 25px;"><div class="featured-inner">
+                                                    <div class="featured-image">
+                                                        <a href="single-product.html">
+                                                            <img alt="" src="img/product/printed-dress2.jpg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="featured-info">
+                                                        <a href="single-product.html">Printed Dress</a>
+                                                        <span class="price">$50.00</span>
+                                                    </div>
+                                                </div></div><div class="owl-item" style="width: 25px;"><div class="featured-inner">
+                                                    <div class="featured-image">
+                                                        <a href="single-product.html">
+                                                            <img alt="" src="img/product/printed-summer-dress4.jpg">
+                                                        </a>
+                                                        <span class="price-percent-reduction">-20%</span>
+                                                    </div>
+                                                    <div class="featured-info">
+                                                        <a href="single-product.html">Printed Summer Dress</a>
+                                                        <span class="price">$28.00</span>
+                                                    </div>
+                                                </div></div><div class="owl-item" style="width: 25px;"><div class="featured-inner">
+                                                    <div class="featured-image">
+                                                        <a href="single-product.html">
+                                                            <img alt="" src="img/product/printed-summer-dress.jpg">
+                                                        </a>
+                                                    </div>
+                                                    <div class="featured-info">
+                                                        <a href="single-product.html">Printed Summer Dress</a>
+                                                        <span class="price">$30.00</span>
+                                                    </div>
+                                                </div></div></div></div>
+                                    <!-- End featured item -->
+                                    <!-- Start featured item -->
+
+                                    <!-- End featured item -->
+                                    <!-- Start featured item -->
+
+                                    <!-- End featured item -->
+                                    <!-- Start featured item -->
+
+                                    <!-- End featured item -->
+                                    <!-- Start featured item -->
+
+                                    <!-- End featured item -->
+                                    <!-- Start featured item -->
+
+                                    <!-- End featured item -->
+                                </div>
+                            </div>
+                            <div id="info4" class="tab-pane">
+                                <div class="product-tab-review">
+                                    <h5>Good</h5>
+                                    <p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </p>
+                                    <span>eleyas ahmed</span>
+                                    <span class="tab-tate-pro">25/11/2015</span>
+                                </div>
+                                <a class="pro-tab-review" href=""><span>Write your review!</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End single product info -->
+    <!-- Start featured product -->
+    <div class="featured-product-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="area-title">
+                        <h3>16 other products in the same category: </h3>
+                    </div>
+                </div>
+                <div class="featured-product">
+                    <div class="featured-item owl-carousel owl-theme" style="opacity: 1; display: block;">
+                        <!-- Start featured item -->
+                        <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 8160px; left: 0px; display: block;"><div class="owl-item" style="width: 240px;"><div class="col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/faded-short-sleeves-tshirt.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Faded Short Sleeves T-shirt</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$16.51</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/blouse.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Blouse</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$27.00</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-dress1.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$26.00</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-dress2.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$50.00</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-summer-dress4.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$28.00</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-summer-dress.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Summer Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$30.00</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress1.jpg">
+                                                </a>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$16.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress4.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$16.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress8.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$16.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress5.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$306.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress3.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$26.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dresst.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$26.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dressac.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$120.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress10.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$20.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dressw.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$30.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress12.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$200.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div><div class="owl-item" style="width: 240px;"><div class="col-xs-12 col-sm-3">
+                                        <div class="featured-inner">
+                                            <div class="featured-image">
+                                                <a href="single-product.html">
+                                                    <img alt="" src="img/product/printed-chiffon-dress13.jpg">
+                                                </a>
+                                                <span class="price-percent-reduction">-20%</span>
+                                            </div>
+                                            <div class="featured-info">
+                                                <a href="single-product.html">Printed Chiffon Dress</a>
+                                                <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                                </p>
+                                                <span class="price">$200.40</span>
+                                                <div class="featured-button">
+                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
+                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
+                                                    <a class="add-to-card" href="cart.html"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></div></div></div>
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <!-- Start featured item -->
+
+                        <!-- End featured item -->
+                        <div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"><i class="icon-left-open"><i class="fa fa-angle-left"></i></i></div><div class="owl-next"><i class="icon-right-open"><i class="fa fa-angle-right"></i></i></div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End featured product -->
+</div>

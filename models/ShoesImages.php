@@ -36,6 +36,10 @@ class ShoesImages extends Model
         return $path;
     }
 
+    public function originalURL(){
+        return PUBLIC_ORIGINALS_PATH.$this->shoes_id.'/'.$this->storage_id.'.'.$this->extension;
+    }
+
     public function thumbnailURL($width, $height, $withName = true){
         $path = PUBLIC_THUMBNAILS_PATH.$this->shoes_id.'/'.$this->storage_id.'/';
         if($withName) {
