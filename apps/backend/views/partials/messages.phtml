@@ -1,5 +1,6 @@
+<?php if(!$this->flashSession->hasMessages()) return;?>
+
 <?php $class = array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning');
-var_dump($this->flashSession->getMessages());
 ?>
     <?php foreach((array) $this->flashSession->getMessages() as $type => $messages):?>
         <?php if(empty($messages)) {continue; }?>
