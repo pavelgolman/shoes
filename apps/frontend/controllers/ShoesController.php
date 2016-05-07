@@ -10,7 +10,7 @@ class ShoesController extends Controller
 
     public function indexAction()
     {
-        $this->view->filter = $this->request->getPost('filter');
+        $this->view->filter = $this->request->get('filter');
 
         $currentPage = 1;
 
