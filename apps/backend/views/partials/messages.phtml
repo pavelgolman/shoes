@@ -1,5 +1,5 @@
 <?php $class = array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning');?>
-    <?php foreach($this->flashSession->getMessages() as $type => $messages):?>
+    <?php foreach((array) $this->flashSession->getMessages() as $type => $messages):?>
         <?php if(empty($messages)) {continue; }?>
         <?php foreach($messages as $message):?>
         <div role="alert" class="alert <?=$class[$type]?> alert-dismissible fade in">
