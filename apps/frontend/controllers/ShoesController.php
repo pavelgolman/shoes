@@ -28,7 +28,7 @@ class ShoesController extends Controller
     }
 
     public function viewAction($id){
-        $this->view->shoes = \Models\Shoes::find($id);
+        $this->view->shoes = \Models\Shoes::findFirst($id);
     }
 
 }
