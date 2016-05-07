@@ -40,7 +40,7 @@
                                     <div class="owl-wrapper" style="width: 940px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
                                         <?php foreach($shoes->images as $k => $image):?>
                                         <div class="owl-item" style="width: 94px;">
-                                            <div class="pro-view active">
+                                            <div class="pro-view <?=$k==0 ? 'active' : ''?>">
                                                 <a data-toggle="tab" href="#view<?=$k?>"><img alt="" src="<?=$image->originalURL()?>"></a>
                                             </div>
                                         </div>
