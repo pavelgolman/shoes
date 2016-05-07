@@ -1,7 +1,7 @@
 <?php
 
 $group = \Models\AttributesGroups::find(array(
-    "conditions" => "`const` = ?1",
+    "conditions" => "const = ?1",
     "bind"       => array(1 => \Models\AttributesGroups::TYPE)
 ));
 ?>
