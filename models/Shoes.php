@@ -26,17 +26,10 @@ class Shoes extends Model
             'alias' => 'mainImage'
         ));
 
-        $this->hasManyToMany(
-            "id",
-            "\Models\AttributesShoes",
-            "shoes_id",
-            "attributes_id",
-            "\Models\Attributes",
-            "id",
-            array(
-                'alias' => 'attributes'
-            )
-        );
+        $this->hasMany("id", "\Models\AttributesShoes", "shoes_id",  array(
+            'alias' => 'attributes'
+        ));
+        
     }
 
     public function hasAttribute(Attributes $attribute){
