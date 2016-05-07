@@ -29,7 +29,7 @@ class Shoes extends Model
         $this->hasMany("id", "\Models\AttributesShoes", "shoes_id",  array(
             'alias' => 'attributes'
         ));
-        
+
     }
 
     public function hasAttribute(Attributes $attribute){
