@@ -5,7 +5,7 @@ namespace Models;
 use Phalcon\Mvc\Model;
 use Phalcon;
 
-class AttributesGroup extends Model
+class AttributesGroups extends Model
 {
 
     public $int;

@@ -16,7 +16,7 @@ class Attributes extends Model
 
     public function initialize()
     {
-        $this->belongsTo("attributes_group_id", "AttributesGroup", "id");
+        $this->belongsTo("attributes_group_id", "AttributesGroups", "id");
 
         $this->hasManyToMany(
             "id",

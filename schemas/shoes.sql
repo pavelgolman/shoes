@@ -241,8 +241,7 @@ create table if not exists attributes(
   attributes_group_id int unsigned not null,
   `name` varchar(255) not null,
   primary key(id),
-  index `name`(`name`),
-  index `const`(`const`)
+  index `name`(`name`)
 )engine = InnoDb DEFAULT CHARACTER SET=utf8 COLLATE utf8_unicode_ci;
 
 
