@@ -281,8 +281,10 @@ insert into attributes(`name`, attributes_group_id) VALUES
 
 drop table if exists attributes_shoes;
 create table if not exists attributes_shoes(
+  id int unsigned not null auto_increment,
   shoes_id int unsigned not null,
   attributes_id int unsigned not null,
+  primary key(id),
    key unq(shoes_id, attributes_id)
 )engine=InnoDb DEFAULT CHARACTER SET=utf8;
 

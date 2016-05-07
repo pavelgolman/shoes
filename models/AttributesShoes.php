@@ -8,6 +8,8 @@ use Phalcon;
 class AttributesShoes extends Model
 {
 
+    public $id;
+
     public $shoes_id;
 
     public $attributes_id;
