@@ -27,7 +27,7 @@ class ShoesController extends Controller
         $this->view->shoes = $paginator->getPaginate();
     }
 
-    public function view($id){
+    public function viewAction($id){
         $this->view->shoes = \Models\Shoes::find($id);
     }
 
