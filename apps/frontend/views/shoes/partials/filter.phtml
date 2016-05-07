@@ -28,11 +28,12 @@
                                         $filter_remove .= $key.'='.$value.'&';
                                     }
                                 }
+                                $filter_add .= $attribute->id.'=1';
                             ?>
                         <li>
                             <span><input type="checkbox" class="checkbox"></span>
                             <label>
-                                <a href="<?=$filter_add?>"><?=$attribute->name?></a>&nbsp;<a href="<?=$filter_remove?>"><?=$attribute->name?>X</a>
+                                <a href="<?=$filter_add?>"><?=$attribute->name?></a>&nbsp;<a href="<?=$filter_remove?>">X</a>
                             </label>
                         </li>
                         <?php endforeach?>
