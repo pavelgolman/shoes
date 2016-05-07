@@ -36,7 +36,6 @@ class PromoBlocks extends Model
 
     public function initialize()
     {
-        //$this->hasMany("id", "\Models\PromoBlocksShoes", "promo_blocks_id",  array('alias' => 'shoes'));
         $this->hasManyToMany(
             "id",
             "\Models\PromoBlocksShoes",
@@ -45,10 +44,7 @@ class PromoBlocks extends Model
             "\Models\Shoes",
             "id",
             array(
-                'alias' => 'shoes',
-                'foreignKey' => array(
-                    'action' => Relation::ACTION_CASCADE
-                )
+                'alias' => 'shoes'
             )
         );
     }

@@ -42,12 +42,13 @@ class ShoesController extends Controller
     {
         $shoes = new Shoes();
         if ($this->request->isPost()) {
-            $shoes->assign(array(
-                'id' => $this->request->getPost('id'),
-                'name' => $this->request->getPost('name'),
-                'article' => $this->request->getPost('article'),
-                'price' => $this->request->getPost('price'),
-            ));
+            if($this->request->getPost('id')){
+                $shoes = Shoes::findFirst($this->request->getPost('id'));
+            }
+            $shoes->name = $this->request->getPost('name');
+            $shoes->article = $this->request->getPost('article');
+            $shoes->price = $this->request->getPost('price');
+
             if (!$shoes->save()) {
                 foreach($shoes->getMessages() as $message) {
                     $this->flashSession->error($message);
