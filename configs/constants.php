@@ -1,6 +1,5 @@
 <?php
 
-const CATEGORIES_TYPE_ID = 3;
 const APP_PATH = '/var/www/html/dom.tkani.dp/';
 const UPLOAD_PATH = '/var/www/html/dom.tkani.dp/public/uploads/';
 const ORIGINALS_IMAGES_PATH = '/var/www/html/dom.tkani.dp/public/uploads/originals/';

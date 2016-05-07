@@ -1,8 +1,10 @@
-<?php if(!$this->flashSession->getMessages()) return;?>
+<?php
+$all_messages = $this->flashSession->getMessages();
+if(!$all_messages) return;?>
 
 <?php $class = array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning');
 ?>
-    <?php foreach((array) $this->flashSession->getMessages() as $type => $messages):?>
+    <?php foreach($all_messages as $type => $messages):?>
         <?php if(empty($messages)) {continue; }?>
         <?php foreach($messages as $message):?>
         <div role="alert" class="alert <?=$class[$type]?> alert-dismissible fade in">
