@@ -51,7 +51,7 @@ class ShoesController extends Controller
             $shoes->price = $this->request->getPost('price');
 
             $shoes->attributes->delete();
-            foreach($this->request->getPost('attributes') as $attribute_id){
+            foreach($this->request->getPost('attributes') as $attribute_id => $value){
                 $attribute = new AttributesShoes();
                 $attribute->shoes_id = $shoes->id;
                 $attribute->attributes_id = $attribute_id;
