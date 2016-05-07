@@ -1,8 +1,8 @@
 <?php
 
 $group = \Models\AttributesGroups::find(array(
-    "conditions" => "`const` = ?const",
-    "bind"       => array('const' => \Models\AttributesGroups::TYPE)
+    "conditions" => "`const` = ?1",
+    "bind"       => array(1 => \Models\AttributesGroups::TYPE)
 ));
 ?>
 <!-- Start categori menu -->
