@@ -27,17 +27,26 @@ class Shoes extends Model
         ));
 
         $this->hasMany("id", "\Models\AttributesShoes", "shoes_id",  array(
-            'alias' => 'attributes'
+            'alias' => 'attributesShoes'
         ));
 
+        $this->hasManyToMany(
+            "id",
+            "\Models\AttributesShoes",
+            "shoes_id",
+            "attributes_id",
+            "\Models\Attributes",
+            "id",
+            array(
+                'alias' => 'attributes'
+            )
+        );
     }
 
     public function hasAttribute(Attributes $attribute){
-        foreach($attribute->group->attributes as $attr){
-            foreach($attr->shoes as $shoes){
-                if($shoes->id == $this->id){
-                    return true;
-                }
+        foreach($attribute->shoes as $shoes){
+            if($shoes->id == $this->id){
+                return true;
             }
         }
 
