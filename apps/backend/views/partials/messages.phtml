@@ -1,4 +1,4 @@
-<?php if(!$this->flashSession->hasMessages()) return;?>
+<?php if(!$this->flashSession->getMessages()) return;?>
 
 <?php $class = array('error' => 'alert-danger', 'success' => 'alert-success', 'notice' => 'alert-info', 'warning' => 'alert-warning');
 ?>
