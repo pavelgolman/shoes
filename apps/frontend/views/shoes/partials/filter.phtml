@@ -23,12 +23,12 @@
                                 $filter_url = '/shoes/index?';
                                 $filter_add = $filter_remove = $filter_url;
                                 foreach($filter as $key => $value) {
-                                    $filter_add .= $key.'='.$value.'&';
+                                    $filter_add .= 'filter['.$key.']='.$value.'&';
                                     if($key != $attribute->id){
-                                        $filter_remove .= $key.'='.$value.'&';
+                                        $filter_remove .= 'filter['.$key.']='.$value.'&';
                                     }
                                 }
-                                $filter_add .= $attribute->id.'=1';
+                                $filter_add .= 'filter['.$attribute->id.']=1';
                             ?>
                         <li>
                             <span><input type="checkbox" class="checkbox"></span>
