@@ -2,6 +2,7 @@
 
 namespace Multiple\Backend\Controllers;
 
+use Models\AttributesShoes;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 use Models\Shoes;
@@ -48,6 +49,14 @@ class ShoesController extends Controller
             $shoes->name = $this->request->getPost('name');
             $shoes->article = $this->request->getPost('article');
             $shoes->price = $this->request->getPost('price');
+
+            $shoes->attributes->delete();
+            foreach($this->request->getPost('attributes') as $attribute_id){
+                $attribute = new AttributesShoes();
+                $attribute->shoes_id = $shoes->id;
+                $attribute->attributes_id = $attribute_id;
+                $attribute->save();
+            }
 
             if (!$shoes->save()) {
                 foreach($shoes->getMessages() as $message) {

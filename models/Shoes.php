@@ -25,5 +25,29 @@ class Shoes extends Model
         $this->hasOne('main_image_id', "\Models\ShoesImages", 'id', array(
             'alias' => 'mainImage'
         ));
+
+        $this->hasManyToMany(
+            "id",
+            "\Models\AttributesShoes",
+            "shoes_id",
+            "attributes_id",
+            "\Models\Attributes",
+            "id",
+            array(
+                'alias' => 'attributes'
+            )
+        );
+    }
+
+    public function hasAttribute(Attribute $attribute){
+        foreach($attribute->group->attributes as $attr){
+            foreach($attr->shoes as $shoes){
+                if($shoes->id == $this->id){
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
