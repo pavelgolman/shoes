@@ -23,7 +23,7 @@
                 <tr class="even pointer">
                     <td class=" "><?=$s->name?></td>
                     <td class=" ">
-                        <?php foreach($s->shoesImages as $image):?>
+                        <?php foreach($s->images as $image):?>
                             <img alt="image" src="<?=$image->thumbnailURL(85, 85)?>" />
                         <?php endforeach?>
                     </td>

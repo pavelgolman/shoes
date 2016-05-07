@@ -80,7 +80,7 @@ class ShoesController extends Controller
 
     public function thumbnailsAction($id){
         $shoes = Shoes::findFirst($id);
-        foreach($shoes->shoesImages as $image){
+        foreach($shoes->images as $image){
 
         }
         return $this->response->redirect("admin/shoes/edit/".$shoes->id);
