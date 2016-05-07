@@ -10,6 +10,8 @@ class ShoesController extends Controller
 
     public function indexAction()
     {
+        $this->view->filter = $this->request->getPost('filter');
+
         $currentPage = 1;
 
         $shoes      = \Models\Shoes::find();

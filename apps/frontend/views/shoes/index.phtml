@@ -18,7 +18,7 @@
     <div class="shop-area">
         <div class="container">
             <div class="row">
-                <?php $this->partial("shoes/partials/filter"); ?>
+                <?php $this->partial("shoes/partials/filter", array('filter' => $filter)); ?>
                 <!-- Start categori content -->
                 <div class="col-xs-12 col-sm-8 col-md-9">
                     <div class="categori-content" id="content-shop">
@@ -39,13 +39,6 @@
                                         <option value="quantity:desc">In stock</option>
                                         <option value="reference:asc">Reference: Lowest first</option>
                                         <option value="reference:desc">Reference: Highest first</option>
-                                    </select>
-                                </p>
-                                <p class="selector1 selector2">
-                                    <label>Show</label>
-                                    <select id="selectProductSort2" class="selectProductSort form-control">
-                                        <option value="position:asc" selected="selected">12</option>
-                                        <option value="price:asc">24</option>
                                     </select>
                                 </p>
                             </div>
