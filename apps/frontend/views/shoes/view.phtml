@@ -36,7 +36,15 @@
                                 <?php endforeach?>
                             </div>
                             <div data-tabs="tabs" class="nav nav-tabs product-view owl-carousel owl-theme" id="viewproduct" style="opacity: 1; display: block;">
-                                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 940px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);"><div class="owl-item" style="width: 94px;"><div class="pro-view active"><a data-toggle="tab" href="#view1"><img alt="" src="img/single-product/faded-short-sleeves-tshirt1m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view2"><img alt="" src="img/single-product/faded-short-sleeves-tshirt2m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view3"><img alt="" src="img/single-product/faded-short-sleeves-tshirt3m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view4"><img alt="" src="img/single-product/faded-short-sleeves-tshirt4m.jpg"></a></div></div><div class="owl-item" style="width: 94px;"><div class="pro-view"><a data-toggle="tab" href="#view5"><img alt="" src="img/single-product/printed-chiffon-dress.jpg"></a></div></div></div></div>
+                                <div class="owl-wrapper-outer">
+                                    <div class="owl-wrapper" style="width: 940px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                                        <?php foreach($shoes->images as $k => $image):?>
+                                        <div class="owl-item" style="width: 94px;">
+                                            <div class="pro-view active">
+                                                <a data-toggle="tab" href="#view<?=$k?>"><img alt="" src="<?=$image->originalURL()?>"></a>
+                                            </div>
+                                        </div>
+                                        <?php endforeach?>
 
 
 
