@@ -39,7 +39,7 @@ class Shoes extends Model
         );
     }
 
-    public function hasAttribute(Attribute $attribute){
+    public function hasAttribute(Attributes $attribute){
         foreach($attribute->group->attributes as $attr){
             foreach($attr->shoes as $shoes){
                 if($shoes->id == $this->id){
