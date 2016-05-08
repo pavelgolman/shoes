@@ -11,7 +11,7 @@ create table if not exists shoes(
   index article(article)
 )engine = InnoDb DEFAULT CHARACTER SET=utf8;
 
-update shoes set main_image_id = (select id from shoes_images where shoes_images.shoes_id = shoes.id limit 1);
+update shoes set main_image_id = (select id from shoes_images where shoes_images.shoes_id = shoes.id limit 1) where main_image_id is null;
 
 drop table if exists shoes_descriptions;
 create table if not exists shoes_descriptions(
