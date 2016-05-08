@@ -54,8 +54,8 @@ class ShoesController extends Controller
             if(!$shoes->description){
                 $shoes->description = new \Models\ShoesDescriptions();
             }
-            $shoes->descripion->description = $this->request->getPost('description');
-            $shoes->descripion->save();
+            $shoes->description->description = $this->request->getPost('description');
+            $shoes->description->save();
 
             $shoes->attributesShoes->delete();
             foreach($this->request->getPost('attributes') as $attribute_id => $value){
