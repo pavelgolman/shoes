@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="breadcrumb">
-                        <a class="home" href="index.html" title="Return to Home"><i class="fa fa-home"></i></a>
+                        <a class="home" href="/" title="Новинки"><i class="fa fa-home"></i></a>
                         <span class="navigation-pipe">&gt;</span>
-                        <a href="index.html" title="Automotive &amp; Motorcycle" class="hidden-xs">Automotive &amp; Motorcycle</a>
+                        <a href="/shoes/index" title="Automotive &amp; Motorcycle" class="hidden-xs">Обувь</a>
                         <span class="hidden-xs navigation-pipe">&gt;</span>
-                        Electronics
+                        <?=$shoes->name?>
                     </div>
                 </div>
             </div>
@@ -22,14 +22,44 @@
             <div class="single-products">
                 <!-- Start single product image -->
                 <div class="col-sm-5">
+                    <!--
                     <div class="single-product-image">
                         <div id="content-eleyas">
                             <div class="tab-content" id="my-tab-content">
-                                <div id="view1" class="tab-pane">
+                                <?php foreach($shoes->images as $k => $image):?>
+                                <div id="view<?=$k?>" class="tab-pane <?=$k==0 ? 'active' : ''?>">
+
+                                    <a title="" data-fancybox-group="gallery" href="<?=$image->originalURL()?>" class="fancybox">
+                                        <img alt="" src="<?=$image->originalURL()?>">
+                                        <span>Увеличить<i class="fa fa-search-plus"></i></span>
+                                    </a>
+                                </div>
+                                <?php endforeach?>
+                            </div>
+                            <div data-tabs="tabs" class="nav nav-tabs product-view owl-carousel owl-theme" id="viewproduct" style="opacity: 1; display: block;">
+                                <div class="owl-wrapper-outer">
+                                    <div class="owl-wrapper" style="width: 940px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                                        <?php foreach($shoes->images as $k => $image):?>
+                                        <div class="owl-item" style="width: 94px;">
+                                            <div class="pro-view <?=$k==0 ? 'active' : ''?>">
+                                                <a data-toggle="tab" href="#view<?=$k?>"><img alt="" src="<?=$image->originalURL()?>"></a>
+                                            </div>
+                                        </div>
+                                        <?php endforeach?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="single-product-image">
+                        <div id="content-eleyas">
+                            <div class="tab-content" id="my-tab-content">
+                                <div id="view1" class="tab-pane active">
                                                 <span class="new-box">
                                                     <span class="new-label">New</span>
                                                 </span>
-                                    <a title="" data-fancybox-group="gallery" href="/img/single-product/faded-short-sleeves-tshirt1.jpg" class="fancybox">
+                                    <a title="" data-fancybox-group="gallery" href="img/single-product/faded-short-sleeves-tshirt1.jpg" class="fancybox">
                                         <img alt="" src="/img/single-product/faded-short-sleeves-tshirt1.jpg">
                                         <span>View larger<i class="fa fa-search-plus"></i></span>
                                     </a>
@@ -38,16 +68,16 @@
                                                 <span class="new-box">
                                                     <span class="new-label">New</span>
                                                 </span>
-                                    <a title="" data-fancybox-group="gallery" href="/img/single-product/faded-short-sleeves-tshirt2.jpg" class="fancybox">
+                                    <a title="" data-fancybox-group="gallery" href="img/single-product/faded-short-sleeves-tshirt2.jpg" class="fancybox">
                                         <img alt="" src="/img/single-product/faded-short-sleeves-tshirt2.jpg">
                                         <span>View larger<i class="fa fa-search-plus"></i></span>
                                     </a>
                                 </div>
-                                <div id="view3" class="tab-pane active">
+                                <div id="view3" class="tab-pane">
                                                 <span class="new-box">
                                                     <span class="new-label">New</span>
                                                 </span>
-                                    <a title="" data-fancybox-group="gallery" href="/img/single-product/faded-short-sleeves-tshirt3.jpg" class="fancybox">
+                                    <a title="" data-fancybox-group="gallery" href="img/single-product/faded-short-sleeves-tshirt3.jpg" class="fancybox">
                                         <img alt="" src="/img/single-product/faded-short-sleeves-tshirt3.jpg">
                                         <span>View larger<i class="fa fa-search-plus"></i></span>
                                     </a>
@@ -56,7 +86,7 @@
                                                 <span class="new-box">
                                                     <span class="new-label">New</span>
                                                 </span>
-                                    <a title="" data-fancybox-group="gallery" href="/img/single-product/faded-short-sleeves-tshirt4.jpg" class="fancybox">
+                                    <a title="" data-fancybox-group="gallery" href="img/single-product/faded-short-sleeves-tshirt4.jpg" class="fancybox">
                                         <img alt="" src="/img/single-product/faded-short-sleeves-tshirt4.jpg"><span>View larger<i class="fa fa-search-plus"></i></span>
                                     </a>
                                 </div>
@@ -64,7 +94,7 @@
                                                 <span class="new-box">
                                                     <span class="new-label">New</span>
                                                 </span>
-                                    <a title="" data-fancybox-group="gallery" href="/img/single-product/printed-chiffon-dress1.jpg" class="fancybox">
+                                    <a title="" data-fancybox-group="gallery" href="img/single-product/printed-chiffon-dress1.jpg" class="fancybox">
                                         <img alt="" src="/img/single-product/printed-chiffon-dress1.jpg"><span>View larger<i class="fa fa-search-plus"></i></span>
                                     </a>
                                 </div>
@@ -83,25 +113,23 @@
                 <!-- Start single product details -->
                 <div class="col-sm-7">
                     <div class="single-product-details">
-                        <h1>Printed Chiffon Dress</h1>
-                        <div class="sin-social">
-                            <p>
-                                <a href="#" class="btn btn-default twitter"><i class="fa fa-twitter"></i>Tweet</a>
-                                <a href="#" class="btn btn-default facebook"><i class="fa fa-facebook"></i>Share</a>
-                                <a href="#" class="btn btn-default google-plus"><i class="fa fa-google-plus"></i>Google+</a>
-                                <a href="#" class="btn btn-default pinterest"><i class="fa fa-pinterest"></i>Pinterest</a>
-                            </p>
-                        </div>
-                        <p class="rating-and-review">
-                            <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-                            <a href="#">Read reviews (0)</a>
-                            <a href="#">Write a review</a>
-                        </p>
-                        <h2><span>£ 19.81</span></h2>
-                        <p><strong>Reference:</strong> demo_1 </p>
-                        <p><strong>Condition:</strong> New product </p>
-                        <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!</p>
-                        <p class="sin-item"><span class="sin-item-text"> 292 Items </span><span class="sin-item-btn">In stock</span></p>
+                        <h1><?=$shoes->name?></h1>
+
+                        <h2><span><?=$shoes->price?> грн.</span></h2>
+                        <?php
+                        $attributes = array();
+                        foreach($shoes->attributes as $attribute){
+                            if(!$attributes[$attribute->group->name]){
+                                $attributes[$attribute->group->name] = array();
+                            }
+                            $attributes[$attribute->group->name][] = $attribute->name;
+                        }?>
+
+                        <?php foreach($attributes as $name => $values):?>
+                            <p><strong><?=$name?>:</strong> <?=implode(', ', $values)?> </p>
+                        <?php endforeach?>
+                        <div><?php echo $shoes->description->description?></div>
+                        <p>&nbsp;</p>
                         <form action="#" method="post">
                             <div class="numbers-row">
                                 <label>Quantity</label>
@@ -122,14 +150,10 @@
                         </p>
                         <p id="add_to_cart" class="buttons_bottom_block no-print">
                             <button type="submit" name="Submit" class="exclusive">
-                                <span>Add to cart</span>
+                                <span>Купить</span>
                             </button>
                         </p>
-                        <p class="sin-adto-cart-bottom">
-                            <a href="#"><i class="fa fa-envelope-o"></i>Send to a friend</a>
-                            <a href="#"><i class="fa fa-print"></i>Print</a>
-                            <a href="#"><i class="fa fa-heart"></i>Add to wishlist</a>
-                        </p>
+
                     </div>
                 </div>
                 <!-- End single product details -->
@@ -801,99 +825,4 @@
         </div>
     </div>
     <!-- End featured product -->
-</div>
-
-
-<div class="brand-and-client">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="area-title">
-                    <h3>BRAND &amp; CLIENTS</h3>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="brand-logo featured-product-area owl-carousel owl-theme" style="opacity: 1; display: block;">
-                    <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3510px; left: 0px; display: block;"><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/1.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/2.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/3.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/4.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/5.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/6.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/1.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/3.jpg"></a>
-                                </div></div><div class="owl-item" style="width: 195px;"><div class="clients">
-                                    <a href="#"><img alt="" src="/img/brand-logo/4.jpg"></a>
-                                </div></div></div></div>
-
-
-
-
-
-
-
-
-                    <div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"><i class="icon-left-open"><i class="fa fa-angle-left"></i></i></div><div class="owl-next"><i class="icon-right-open"><i class="fa fa-angle-right"></i></i></div></div></div></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="blog-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="area-title">
-                    <h3>The Blog</h3>
-                </div>
-            </div>
-            <div class="blog-box featured-product-area owl-carousel owl-theme" style="opacity: 1; display: block;">
-                <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 3200px; left: 0px; display: block;"><div class="owl-item" style="width: 400px;"><div class="col-sm-4">
-                                <a href="single-blog.html"><img alt="" src="/img/blog/4-home-default.jpg"></a>
-                                <span class="blog-date">2015-08-12 04:40:21</span>
-                                <div class="blog-info">
-                                    <h3><a href="single-blog.html">Share the Love for PrestaShop 1.6</a></h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...</p>
-                                    <a class="readmore" href="single-blog.html">Read more<i class="fa fa-arrow-right"></i></a>
-                                </div>
-                            </div></div><div class="owl-item" style="width: 400px;"><div class="col-sm-4">
-                                <a href="single-blog.html"><img alt="" src="/img/blog/3-home-default.jpg"></a>
-                                <span class="blog-date">2015-08-12 04:40:21</span>
-                                <div class="blog-info">
-                                    <h3><a href="single-blog.html">Answers to your Questions about PrestaShop</a></h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...</p>
-                                    <a class="readmore" href="single-blog.html">Read more<i class="fa fa-arrow-right"></i></a>
-                                </div>
-                            </div></div><div class="owl-item" style="width: 400px;"><div class="col-sm-4">
-                                <a href="single-blog.html"><img alt="" src="/img/blog/2-home-default.jpg"></a>
-                                <span class="blog-date">2015-08-12 04:40:21</span>
-                                <div class="blog-info">
-                                    <h3><a href="single-blog.html">What is Bootstrap? &ndash; The History and the Hype</a></h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...</p>
-                                    <a class="readmore" href="single-blog.html">Read more<i class="fa fa-arrow-right"></i></a>
-                                </div>
-                            </div></div><div class="owl-item" style="width: 400px;"><div class="col-sm-4">
-                                <a href="single-blog.html"><img alt="" src="/img/blog/1-home-default.jpg"></a>
-                                <span class="blog-date">2015-08-12 04:40:21</span>
-                                <div class="blog-info">
-                                    <h3><a href="single-blog.html">From Now we are certified web agency</a></h3>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been...</p>
-                                    <a class="readmore" href="single-blog.html">Read more<i class="fa fa-arrow-right"></i></a>
-                                </div>
-                            </div></div></div></div>
-
-
-
-                <div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"><i class="icon-left-open"><i class="fa fa-angle-left"></i></i></div><div class="owl-next"><i class="icon-right-open"><i class="fa fa-angle-right"></i></i></div></div></div></div>
-        </div>
-    </div>
 </div>
