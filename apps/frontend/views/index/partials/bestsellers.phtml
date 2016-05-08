@@ -14,12 +14,12 @@
                     <div class="col-xs-12 col-sm-3">
                         <div class="featured-inner">
                             <div class="featured-image">
-                                <a href="single-product.html">
+                                <a href="/shoes/view/<?=$shoes->id?>">
                                     <img src="<?=$shoes->mainImage->thumbnailURL(250, 250)?>" alt="">
                                 </a>
                             </div>
                             <div class="featured-info">
-                                <a href="single-product.html"><?=$shoes->name?></a>
+                                <a href="/shoes/view/<?=$shoes->id?>"><?=$shoes->name?></a>
                                 <span class="price"><?=$shoes->price?></span>
                                 <div class="featured-button">
                                     <a href="cart.html" class="add-to-card"><i class="fa fa-shopping-cart"></i>Купить</a>

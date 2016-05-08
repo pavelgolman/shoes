@@ -11,7 +11,7 @@ $group = \Models\AttributesGroups::findFirstByConst(\Models\AttributesGroups::TY
         <div class="sidebar-menu">
             <ul>
                 <?php foreach($group->attributes as $attribute):?>
-                    <li><a href="shop-grid.html" class="single-menu"><?=$attribute->name?></a></li>
+                    <li><a href="/shoes/index?filter[<?=$attribute->id?>]=1" class="single-menu"><?=$attribute->name?></a></li>
                 <?php endforeach?>
             </ul>
         </div>
