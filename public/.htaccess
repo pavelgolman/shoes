@@ -1,5 +1,15 @@
 AddDefaultCharset UTF-8
 
+<Location /admin>
+   AuthType Basic
+     AuthName "Authentication Required"
+     AuthUserFile "/etc/htpasswd/.htpasswd"
+     Require valid-user
+
+     Order allow,deny
+     Allow from all
+</Location>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_URI} !^.*\.(jpg|css|js|gif|png|eot|woff|woff2|svg)$ [NC]
