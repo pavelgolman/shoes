@@ -258,7 +258,7 @@ create table if not exists attributes(
 
 insert into attributes(`name`, attributes_group_id) VALUES
 ('Натуральная кожа', (select id from attributes_groups where `const` = 'MATERIAL')),
-('Лакированная натуральная кожа', (select id from attributes_groups where `const` = 'MATERIAL')),
+('Лакированная кожа', (select id from attributes_groups where `const` = 'MATERIAL')),
 ('Натуральная замша', (select id from attributes_groups where `const` = 'MATERIAL')),
 ('Натуральная цегейка', (select id from attributes_groups where `const` = 'MATERIAL')),
 ('Лето', (select id from attributes_groups where `const` = 'SEASON')),
