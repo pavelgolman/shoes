@@ -50,6 +50,7 @@ class ShoesController extends Controller
             $shoes->name = $this->request->getPost('name');
             $shoes->article = $this->request->getPost('article');
             $shoes->price = $this->request->getPost('price');
+            $shoes->main_image_id = $this->request->getPost('main_image_id');
 
             if(!$shoes->description){
                 $shoes->description = new \Models\ShoesDescriptions();
