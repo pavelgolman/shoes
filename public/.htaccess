@@ -3,7 +3,7 @@ AddDefaultCharset UTF-8
 <Location /admin>
    AuthType Basic
      AuthName "Authentication Required"
-     AuthUserFile "/etc/htpasswd/.htpasswd"
+     AuthUserFile "/var/www/html/dom.tkani.dp/.htpasswd"
      Require valid-user
 
      Order allow,deny
