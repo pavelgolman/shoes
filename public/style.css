@@ -3480,7 +3480,7 @@ body.single-product .tab-content {
   padding: 10px 0;
   position: absolute;
   text-align: center;
-  top: 80%;
+  top: 50%;
   transition: all 0.3s ease 0s;
   width: 136px;
 }

@@ -1,21 +1,19 @@
 <div class="page-content">
-    <!-- Start breadcume area -->
     <div class="breadcume-area">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="breadcrumb">
-                        <a class="home" href="index.html" title="Return to Home"><i class="fa fa-home"></i></a>
+                        <a class="home" href="/" title="Новинки"><i class="fa fa-home"></i></a>
                         <span class="navigation-pipe">&gt;</span>
-                        <a href="index.html" title="Automotive &amp; Motorcycle" class="hidden-xs">Automotive &amp; Motorcycle</a>
+                        <a href="/shoes/index" title="Automotive &amp; Motorcycle" class="hidden-xs">Обувь</a>
                         <span class="hidden-xs navigation-pipe">&gt;</span>
-                        Electronics
+                        <?=$shoes->name?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End breadcume area -->
     <!-- Start single product area -->
     <div class="container">
         <div class="row">
@@ -24,59 +22,30 @@
                 <div class="col-sm-5">
                     <div class="single-product-image">
                         <div id="content-eleyas">
-                        <div id="my-tab-content" class="tab-content">
-                            <div class="tab-pane active" id="view1">
-                                                <span class="new-box">
-                                                    <span class="new-label">New</span>
-                                                </span>
-                                <a class="fancybox" href="/img/single-product/faded-short-sleeves-tshirt1.jpg" data-fancybox-group="gallery" title="">
-                                    <img src="/img/single-product/faded-short-sleeves-tshirt1.jpg" alt="">
-                                    <span>View larger<i class="fa fa-search-plus"></i></span>
-                                </a>
-                            </div>
-                            <div class="tab-pane" id="view2">
-                                                <span class="new-box">
-                                                    <span class="new-label">New</span>
-                                                </span>
-                                <a class="fancybox" href="/img/single-product/faded-short-sleeves-tshirt2.jpg" data-fancybox-group="gallery" title="">
-                                    <img src="/img/single-product/faded-short-sleeves-tshirt2.jpg" alt="">
-                                    <span>View larger<i class="fa fa-search-plus"></i></span>
-                                </a>
-                            </div>
-                            <div class="tab-pane" id="view3">
-                                                <span class="new-box">
-                                                    <span class="new-label">New</span>
-                                                </span>
-                                <a class="fancybox" href="/img/single-product/faded-short-sleeves-tshirt3.jpg" data-fancybox-group="gallery" title="">
-                                    <img src="/img/single-product/faded-short-sleeves-tshirt3.jpg" alt="">
-                                    <span>View larger<i class="fa fa-search-plus"></i></span>
-                                </a>
-                            </div>
-                            <div class="tab-pane" id="view4">
-                                                <span class="new-box">
-                                                    <span class="new-label">New</span>
-                                                </span>
-                                <a class="fancybox" href="/img/single-product/faded-short-sleeves-tshirt4.jpg" data-fancybox-group="gallery" title="">
-                                    <img src="/img/single-product/faded-short-sleeves-tshirt4.jpg" alt=""><span>View larger<i class="fa fa-search-plus"></i></span>
-                                </a>
-                            </div>
-                            <div class="tab-pane" id="view5">
-                                                <span class="new-box">
-                                                    <span class="new-label">New</span>
-                                                </span>
-                                <a class="fancybox" href="/img/single-product/printed-chiffon-dress1.jpg" data-fancybox-group="gallery" title="">
-                                    <img src="/img/single-product/printed-chiffon-dress1.jpg" alt=""><span>View larger<i class="fa fa-search-plus"></i></span>
-                                </a>
+                            <div id="my-tab-content" class="tab-content">
+                                <?php foreach($shoes->images as $k => $image):?>
+                                    <div class="tab-pane <?=$k==0 ? 'active' : ''?>" id="view<?=$k?>">
+                                                    <span class="new-box">
+                                                        <span class="new-label">New</span>
+                                                    </span>
+                                    <a class="fancybox" href="<?=$image->originalURL()?>" data-fancybox-group="gallery" title="">
+                                        <img src="<?=$image->originalURL()?>" alt="">
+                                        <span>Увеличить<i class="fa fa-search-plus"></i></span>
+                                    </a>
+                                </div>
+                                <?php endforeach?>
+
+                        </div>
+                            <div id="viewproduct" class="nav nav-tabs product-view" data-tabs="tabs">
+                                <?php foreach($shoes->images as $k => $image):?>
+                                    <div class="pro-view <?=$k==0 ? 'active' : ''?>"><a href="#view<?=$k?>" data-toggle="tab"><img src="<?=$image->originalURL()?>" alt=""></a></div>
+
+
+                                <?php endforeach?>
+
+                                
                             </div>
                         </div>
-                        <div id="viewproduct" class="nav nav-tabs product-view" data-tabs="tabs">
-                            <div class="pro-view active"><a href="#view1" data-toggle="tab"><img src="/img/single-product/faded-short-sleeves-tshirt1m.jpg" alt=""></a></div>
-                            <div class="pro-view"><a href="#view2" data-toggle="tab"><img src="/img/single-product/faded-short-sleeves-tshirt2m.jpg" alt=""></a></div>
-                            <div class="pro-view"><a href="#view3" data-toggle="tab"><img src="/img/single-product/faded-short-sleeves-tshirt3m.jpg" alt=""></a></div>
-                            <div class="pro-view"><a href="#view4" data-toggle="tab"><img src="/img/single-product/faded-short-sleeves-tshirt4m.jpg" alt=""></a></div>
-                            <div class="pro-view"><a href="#view5" data-toggle="tab"><img src="/img/single-product/printed-chiffon-dress.jpg" alt=""></a></div>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 <!-- End single product image -->
