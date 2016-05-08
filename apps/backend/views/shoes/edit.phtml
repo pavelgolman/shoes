@@ -1,4 +1,4 @@
-
+<form class="form-horizontal form-label-left" method="post" action="/admin/shoes/save">
 
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
@@ -9,7 +9,6 @@
         <div class="x_content">
             <?php $this->partial("partials/messages"); ?>
             <br>
-            <form class="form-horizontal form-label-left" method="post" action="/admin/shoes/save">
                 <?php echo $form->render("id"); ?>
 
                 <div class="form-group">
@@ -132,15 +131,6 @@
                     </div>
                 <?php endforeach?>
 
-                <div class="ln_solid"></div>
-                <div class="form-group">
-                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                        <button class="btn btn-primary" type="submit">Отмена</button>
-                        <button class="btn btn-success" type="submit" id="button-save">Сохранить</button>
-                    </div>
-                </div>
-
-            </form>
         </div>
     </div>
 </div>
@@ -173,6 +163,18 @@
         </div>
     </div>
 
+    <div class="col-md-12">
+        <div class="x_panel">
+            <div class="x_content">
+                <div class="form-group">
+                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                        <button class="btn btn-primary" type="submit">Отмена</button>
+                        <button class="btn btn-success" type="submit" id="button-save">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
@@ -193,6 +195,8 @@
     </div>
 </div>
 <?php endif?>
+
+</form>
 
 
 <script type="text/javascript">
