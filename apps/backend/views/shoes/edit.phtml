@@ -102,7 +102,7 @@
                         </div>
 
                         <div id="editor" contenteditable="true">
-
+                            <?=$shoes->description->description?>
                         </div>
                         <textarea name="description" id="description" style="display:none;"><?=$shoes->description->description?></textarea>
                         <br>
@@ -237,7 +237,7 @@
 
         initToolbarBootstrapBindings();
         $('#editor').wysiwyg({
-           
+
         });
     });
 </script>
