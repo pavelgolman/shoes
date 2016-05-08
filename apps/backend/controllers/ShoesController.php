@@ -3,6 +3,7 @@
 namespace Multiple\Backend\Controllers;
 
 use Models\AttributesShoes;
+use Models\ShoesDescriptions;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
 use Models\Shoes;
@@ -50,6 +51,9 @@ class ShoesController extends Controller
             $shoes->article = $this->request->getPost('article');
             $shoes->price = $this->request->getPost('price');
 
+            if(!$shoes->description){
+                $shoes->description = new \Models\ShoesDescriptions();
+            }
             $shoes->descripion->description = $this->request->getPost('description');
             $shoes->descripion->save();
 
