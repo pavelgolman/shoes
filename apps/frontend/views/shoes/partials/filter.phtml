@@ -15,15 +15,15 @@
                         <?php foreach($group->attributes as $attribute):?>
                             <?php
                                 $filter_url = '/shoes/index?';
-                                $filter_add = $filter_remove = $filter_url;
+                                $filter_add = $filter_url;
 
                                 foreach($filter as $key => $value) {
                                     if($key != $attribute->id){
                                         $filter_add .= 'filter['.$key.']='.$value.'&';
-                                    }else{
-                                        $filter_remove .= 'filter['.$key.']='.$value.'&';
                                     }
                                 }
+                                $filter_remove = $filter_add;
+                            
                                 $filter_add .= 'filter['.$attribute->id.']=1';
                             ?>
                         <li>
