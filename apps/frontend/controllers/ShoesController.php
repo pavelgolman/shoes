@@ -31,10 +31,10 @@ class ShoesController extends Controller
         $this->view->shoes = \Models\Shoes::findFirst($id);
 
 
-        $featured = \Models\Shoes::find(
-            array(
-                "limit" => 16)
-        );
+        $featured = \Models\Shoes::find(array(
+            'order' => 'RAND()',
+            "limit" => 16
+        ));
     }
 
 }
