@@ -34,16 +34,11 @@
                                     </a>
                                 </div>
                                 <?php endforeach?>
-
                         </div>
                             <div id="viewproduct" class="nav nav-tabs product-view" data-tabs="tabs">
                                 <?php foreach($shoes->images as $k => $image):?>
                                     <div class="pro-view <?=$k==0 ? 'active' : ''?>"><a href="#view<?=$k?>" data-toggle="tab"><img src="<?=$image->originalURL()?>" alt=""></a></div>
-
-
                                 <?php endforeach?>
-
-                                
                             </div>
                         </div>
                     </div>
@@ -52,7 +47,7 @@
                 <!-- Start single product details -->
                 <div class="col-sm-7">
                     <div class="single-product-details">
-                        <h1>Printed Chiffon Dress</h1>
+                        <h1><?=$shoes->name?></h1>
                         <div class="sin-social">
                             <p>
                                 <a href="#" class="btn btn-default twitter"><i class="fa fa-twitter"></i>Tweet</a>
@@ -66,11 +61,22 @@
                             <a href="#">Read reviews (0)</a>
                             <a href="#">Write a review</a>
                         </p>
-                        <h2><span>£ 19.81</span></h2>
-                        <p><strong>Reference:</strong> demo_1 </p>
-                        <p><strong>Condition:</strong> New product </p>
-                        <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!</p>
-                        <p class="sin-item"><span class="sin-item-text"> 292 Items </span><span class="sin-item-btn">In stock</span></p>
+                        <h2><span><?=$shoes->price?> грн.</span></h2>
+                        <?php
+                        $attributes = array();
+                        foreach($shoes->attributes as $attribute){
+                            if(!$attributes[$attribute->group->name]){
+                                $attributes[$attribute->group->name] = array();
+                            }
+                            $attributes[$attribute->group->name][] = $attribute->name;
+                        }?>
+
+                        <?php foreach($attributes as $name => $values):?>
+                            <p><strong><?=$name?>:</strong> <?=implode(', ', $values)?> </p>
+                        <?php endforeach?>
+                        <div><?php echo $shoes->description->description?></div>
+                        <p>&nbsp;</p>
+                        
                         <form action="#" method="post">
                             <div class="numbers-row">
                                 <label>Quantity</label>
