@@ -58,8 +58,17 @@
                         <h1><?=$shoes->name?></h1>
 
                         <h2><span><?=$shoes->price?> грн.</span></h2>
-                        <?php foreach($shoes->attributes as $attribute):?>
-                            <p><strong><?=$attribute->group->name?>:</strong> <?=$attribute->name?> </p>
+                        <?php
+                        $attributes = array();
+                        foreach($shoes->attributes as $attribute){
+                            if(!$attributes[$attribute->group->name]){
+                                $attributes[$attribute->group->name] = array();
+                            }
+                            $attributes[$attribute->group->name][] = $attribute->name;
+                        }?>
+
+                        <?php foreach($attributes as $name => $values):?>
+                            <p><strong><?=$name?>:</strong> <?=implode(', ', $values)?> </p>
                         <?php endforeach?>
                         <div><?php echo $shoes->description->description?></div>
                         <form action="#" method="post">
