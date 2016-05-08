@@ -26,6 +26,10 @@ class Shoes extends Model
             'alias' => 'mainImage'
         ));
 
+        $this->hasOne('main_image_id', "\Models\ShoesDescriptions", 'id', array(
+            'alias' => 'description'
+        ));
+
         $this->hasMany("id", "\Models\AttributesShoes", "shoes_id",  array(
             'alias' => 'attributesShoes'
         ));

@@ -13,6 +13,16 @@ create table if not exists shoes(
 
 update shoes set main_image_id = (select id from shoes_images where shoes_images.shoes_id = shoes.id limit 1);
 
+drop table if exists shoes_descriptions;
+create table if not exists shoes_descriptions(
+  id int unsigned not null auto_increment,
+  shoes_id int unsigned default null,
+  description TEXT DEFAULT null,
+  PRIMARY  key(id)
+)engine=InnoDb DEFAULT CHARACTER SET=utf8;
+
+
+
 drop table if exists shoes_images;
 create table if not exists shoes_images(
   id int unsigned not null auto_increment,
