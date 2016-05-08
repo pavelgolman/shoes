@@ -29,6 +29,12 @@ class ShoesController extends Controller
 
     public function viewAction($id){
         $this->view->shoes = \Models\Shoes::findFirst($id);
+
+
+        $featured = \Models\Shoes::find(
+            array(
+                "limit" => 16)
+        );
     }
 
 }
