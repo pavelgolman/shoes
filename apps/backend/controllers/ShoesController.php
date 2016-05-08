@@ -53,6 +53,7 @@ class ShoesController extends Controller
 
             if(!$shoes->description){
                 $shoes->description = new \Models\ShoesDescriptions();
+                $shoes->description->shoes_id = $shoes->id;
             }
             $shoes->description->description = $this->request->getPost('description');
             $shoes->description->save();
