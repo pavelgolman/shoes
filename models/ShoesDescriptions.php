@@ -13,7 +13,10 @@ class ShoesDescriptions extends Model
     public $description;
 
     public function initialize(){
-        $this->belongsTo("shoes_id", "\Models\Shoes", "id");
+
+        $this->hasOne('shoes_id', "\Models\Shoes", 'id', array(
+            'alias' => 'shoes'
+        ));
 
     }
 
