@@ -91,8 +91,8 @@ INSERT INTO promo_blocks_shoes (promo_blocks_id, shoes_id) VALUES
 ((select id from promo_blocks where `const` = 'FEATURED'), 27),
 ((select id from promo_blocks where `const` = 'FEATURED'), 25),
 ((select id from promo_blocks where `const` = 'FEATURED'), 24),
-((select id from promo_blocks where `const` = 'FEATURED'), 23),
-((select id from promo_blocks where `const` = 'FEATURED'), 22),
+((select id from promo_blocks where `const` = 'FEATURED'), 20),
+((select id from promo_blocks where `const` = 'FEATURED'), 19),
 ((select id from promo_blocks where `const` = 'FEATURED'), 21),
 
 ((select id from promo_blocks where `const` = 'BESTSELLER'), 31),
