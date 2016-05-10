@@ -188,7 +188,7 @@ $(".popular-tab-product").owlCarousel({
 ---------------------------------- */
   $('.fancybox').fancybox();  
 
-  $('.add-to-cart').click(function(){
+  $('.add-to-card').click(function(){
       swal({
           title: "Отличный выбор!",
           text: "Введите Ваш номер телефона:",
@@ -206,6 +206,8 @@ $(".popular-tab-product").owlCarousel({
               }
               swal("Спасибо!", "Наш менеджер свяжется с Вами по телефону: " + inputValue, "success");
           });
+
+      return false;
   });
 
 })(jQuery);
