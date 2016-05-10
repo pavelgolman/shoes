@@ -187,5 +187,26 @@ $(".popular-tab-product").owlCarousel({
  owlCarousel5
 ---------------------------------- */
   $('.fancybox').fancybox();  
-   
-})(jQuery);    
+
+  $('.add-to-cart').click(function(){
+      swal({
+          title: "Отличный выбор!",
+          text: "Введите Ваш номер телефона:",
+          type: "input",
+          showCancelButton: true,
+          closeOnConfirm: false,
+          animation: "slide-from-top",
+          inputPlaceholder: "Ваш номер телефона" },
+          function(inputValue){
+              if (inputValue === false)
+                  return false;
+              if (inputValue === "") {
+                  swal.showInputError("Введите Ваш номер телефона!");
+                  return false
+              }
+              swal("Спасибо!", "Наш менеджер свяжется с Вами по телефону: " + inputValue, "success");
+          });
+  });
+
+})(jQuery);
+
