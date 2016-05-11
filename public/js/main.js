@@ -213,9 +213,8 @@ function add_to_cart(button){
                 swal.showInputError("Введите Ваш номер телефона!");
                 return false
             }
-            $.get( "/shopping/buy/" + $(button).data('shoes-id'), function( data ) {
+            $.post( "/shopping/buy/" + $(button).data('shoes-id'), { phone:  inputValue} );
 
-            });
             swal("Спасибо!", "Наш менеджер свяжется с Вами по телефону: " + inputValue, "success");
         });
 }
