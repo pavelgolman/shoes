@@ -14,7 +14,8 @@ class ErrorController extends Controller
 
     public function show404Action()
     {
-
+        $this->response->setStatusCode(404, "Not Found");
+        $this->response->send();
     }
 
 }
