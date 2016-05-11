@@ -34,8 +34,24 @@ class Module implements ModuleDefinitionInterface
     {
         // Registering a dispatcher
         $di->set('dispatcher', function () {
+            $eventsManager = new EventsManager();
+            $eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception) {
+
+                if ($exception instanceof DispatchException) {
+                    $dispatcher->forward(array(
+                        'controller' => 'error',
+                        'action'     => 'show404'
+                    ));
+                    return false;
+                }
+
+            });
+
+
             $dispatcher = new Dispatcher();
             $dispatcher->setDefaultNamespace("Multiple\Frontend\Controllers");
+            $dispatcher->setEventsManager($eventsManager);
+
             return $dispatcher;
         });
 
