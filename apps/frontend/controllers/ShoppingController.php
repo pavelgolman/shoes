@@ -18,7 +18,7 @@ class ShoppingController extends Controller
 
         mail($to, $subject, $message, $headers);
 
-        $this->view->setRenderLevel(View::LEVEL_NO_RENDER);
+        die();
     }
 
 }
