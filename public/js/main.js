@@ -197,6 +197,7 @@ $(".popular-tab-product").owlCarousel({
           showCancelButton: true,
           closeOnConfirm: false,
           animation: "slide-from-top",
+              confirmButtonText: "Купить",   cancelButtonText: "Отменить",
           inputPlaceholder: "Ваш номер телефона" },
           function(inputValue){
               if (inputValue === false)
