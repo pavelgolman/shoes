@@ -10,8 +10,8 @@ class ShoppingController extends Controller
     public function buyAction($id){
         $shoes = \Models\Shoes::findFirst($id);
 
-        //$to      = 'arseniy.golman@gmail.com';
-        $to      = 'pavelgolman@gmail.com';
+        $to      = 'arseniy.golman@gmail.com, pavelgolman@gmail.com';
+
         $subject = "Сделан заказ на '{$shoes->name}'";
         $message = "Заказ: '{$shoes->name}', артикул '{$shoes->article}'. Телефон: ".$this->request->getPost('phone');
         $headers = 'From: sale@rumi.store' . "\r\n" .
