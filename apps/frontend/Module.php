@@ -39,13 +39,13 @@ class Module implements ModuleDefinitionInterface
             $eventsManager = new EventsManager();
             $eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception) {
 
-                if ($exception instanceof DispatchException) {
+                //if ($exception instanceof DispatchException) {
                     $dispatcher->forward(array(
                         'controller' => 'error',
                         'action'     => 'show404'
                     ));
                     return false;
-                }
+                //}
 
             });
 
