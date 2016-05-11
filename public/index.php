@@ -17,6 +17,13 @@ $di->set('router', function () {
 
     $router = new Router();
 
+    $router->notFound([
+        'module'        => 'frontend',
+        'namespace'     => 'Frontend\Controllers',
+        'controller'    => 'error',
+        'action'        => 'show404'
+    ]);
+
     $router->setDefaultModule("frontend");
 
     $router->add('/:controller/:action', array(
