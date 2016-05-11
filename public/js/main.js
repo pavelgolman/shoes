@@ -189,6 +189,7 @@ $(".popular-tab-product").owlCarousel({
   $('.fancybox').fancybox();  
 
   $('.add-to-card').click(function(){
+      var self = this;
       swal({
           title: "Отличный выбор!",
           text: "Введите Ваш номер телефона:",
@@ -204,6 +205,9 @@ $(".popular-tab-product").owlCarousel({
                   swal.showInputError("Введите Ваш номер телефона!");
                   return false
               }
+              $.get( "/shopping/buy/" + $(self).data('shoes-id'), function( data ) {
+
+              });
               swal("Спасибо!", "Наш менеджер свяжется с Вами по телефону: " + inputValue, "success");
           });
 
