@@ -189,31 +189,33 @@ $(".popular-tab-product").owlCarousel({
   $('.fancybox').fancybox();  
 
   $('.add-to-card').click(function(){
-      var self = this;
-      swal({
-          title: "Отличный выбор!",
-          text: "Введите Ваш номер телефона:",
-          type: "input",
-          showCancelButton: true,
-          closeOnConfirm: false,
-          animation: "slide-from-top",
-              confirmButtonText: "Купить",   cancelButtonText: "Отменить",
-          inputPlaceholder: "Ваш номер телефона" },
-          function(inputValue){
-              if (inputValue === false)
-                  return false;
-              if (inputValue === "") {
-                  swal.showInputError("Введите Ваш номер телефона!");
-                  return false
-              }
-              $.get( "/shopping/buy/" + $(self).data('shoes-id'), function( data ) {
-
-              });
-              swal("Спасибо!", "Наш менеджер свяжется с Вами по телефону: " + inputValue, "success");
-          });
-
+      add_to_cart(this);
       return false;
   });
 
 })(jQuery);
 
+
+function add_to_cart(button){
+    swal({
+            title: "Отличный выбор!",
+            text: "Введите Ваш номер телефона:",
+            type: "input",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            confirmButtonText: "Купить",   cancelButtonText: "Отменить",
+            inputPlaceholder: "Ваш номер телефона" },
+        function(inputValue){
+            if (inputValue === false)
+                return false;
+            if (inputValue === "") {
+                swal.showInputError("Введите Ваш номер телефона!");
+                return false
+            }
+            $.get( "/shopping/buy/" + $(button).data('shoes-id'), function( data ) {
+
+            });
+            swal("Спасибо!", "Наш менеджер свяжется с Вами по телефону: " + inputValue, "success");
+        });
+}

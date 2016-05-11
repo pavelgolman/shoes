@@ -96,7 +96,7 @@
                             <a class="color orange" title="Orange" href="#"></a><a class="color blue" title="Blue" href="#"></a>
                         </p-->
                         <p id="add_to_cart" class="buttons_bottom_block no-print">
-                            <button type="submit" name="Submit" class="exclusive">
+                            <button type="submit" name="Submit" class="exclusive" data-shoes-id="<?=$shoes->id?>" onclick="add_to_cart(this); return false;">
                                 <span>Купить</span>
                             </button>
                         </p>
@@ -283,7 +283,7 @@
                                     <div class="featured-button">
                                         <a href="wishlists.html" class="wishlist"><i class="fa fa-heart"></i></a>
                                         <a href="#" class="fetu-comment"><i class="fa fa-signal"></i></a>
-                                        <a href="cart.html" class="add-to-card"><i class="fa fa-shopping-cart"></i>Купить</a>
+                                        <a class="add-to-card" data-shoes-id="<?=$f->id?>"><i class="fa fa-shopping-cart"></i>Купить</a>
                                     </div>
                                 </div>
                             </div>
