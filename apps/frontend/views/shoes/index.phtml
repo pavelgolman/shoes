@@ -52,7 +52,7 @@
                                     if($filter) {
                                         foreach ($filter as $attribute_id => $v) {
                                             if (!$item->hasAttributeId($attribute_id)) {
-                                                continue;
+                                                continue 2;
                                             }
                                         }
                                     }
