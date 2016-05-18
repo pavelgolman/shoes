@@ -11,12 +11,12 @@ class ShoesController extends Controller
     public function indexAction()
     {
         $this->view->filter = $this->request->get('filter');
-        $_GLOBAL['filter'] = $this->view->filter;
+        $GLOBALS['filter'] = $this->view->filter;
         $currentPage = 1;
 
         $shoes      = \Models\Shoes::find()->filter(
             function ($s) {
-                foreach($_GLOBAL['filter'] as $filter_attribute_id => $v){
+                foreach($GLOBALS['filter'] as $filter_attribute_id => $v){
                     $exists = false;
                     foreach($s->attributesShoes as $attribute){
                         if($filter_attribute_id == $attribute->id){
