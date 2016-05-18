@@ -39,6 +39,14 @@ class Module implements ModuleDefinitionInterface
             $eventsManager = new EventsManager();
             $eventsManager->attach("dispatch:beforeException", function($event, $dispatcher, $exception) {
 
+                $logger = new \Phalcon\Logger\Adapter\File('/tmp/error-'.date('Ymd').'.log', array(
+                    'mode' => 'a+'
+                ));
+                $logger->error(get_class($exception). '['.$e->getCode().']: '. $e->getMessage());
+                $logger->info($e->getFile().'['.$e->getLine().']');
+                $logger->debug("Trace: \n".$e->getTraceAsString()."\n");
+                $logger->close();
+
                 //if ($exception instanceof DispatchException) {
                     $dispatcher->forward(array(
                         'controller' => 'error',
