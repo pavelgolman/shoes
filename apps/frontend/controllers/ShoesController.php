@@ -16,7 +16,6 @@ class ShoesController extends Controller
 
         $shoes      = \Models\Shoes::find()->filter(
             function ($s) {
-                global $_GLOBAL;
                 foreach($_GLOBAL['filter'] as $filter_attribute_id => $v){
                     $exists = false;
                     foreach($s->attributesShoes as $attribute){
