@@ -48,11 +48,11 @@ class Module implements ModuleDefinitionInterface
                 $logger->close();
 
                 //if ($exception instanceof DispatchException) {
-                    $dispatcher->forward(array(
-                        'controller' => 'error',
-                        'action'     => 'show404'
-                    ));
-                    return false;
+                //    $dispatcher->forward(array(
+                //        'controller' => 'error',
+                //        'action'     => 'show404'
+                //    ));
+                //    return false;
                 //}
 
             });
