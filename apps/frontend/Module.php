@@ -42,9 +42,9 @@ class Module implements ModuleDefinitionInterface
                 $logger = new \Phalcon\Logger\Adapter\File('/tmp/error-'.date('Ymd').'.log', array(
                     'mode' => 'a+'
                 ));
-                $logger->error(get_class($exception). '['.$e->getCode().']: '. $e->getMessage());
-                $logger->info($e->getFile().'['.$e->getLine().']');
-                $logger->debug("Trace: \n".$e->getTraceAsString()."\n");
+                $logger->error(get_class($exception). '['.$exception->getCode().']: '. $exception->getMessage());
+                $logger->info($exception->getFile().'['.$exception->getLine().']');
+                $logger->debug("Trace: \n".$exception->getTraceAsString()."\n");
                 $logger->close();
 
                 //if ($exception instanceof DispatchException) {
