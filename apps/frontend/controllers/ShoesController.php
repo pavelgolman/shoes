@@ -11,26 +11,9 @@ class ShoesController extends Controller
     public function indexAction()
     {
         $this->view->filter = $this->request->get('filter');
-        $GLOBALS['filter'] = $this->view->filter;
         $currentPage = 1;
 
-        $shoes      = \Models\Shoes::find();/*->filter(
-            function ($s) {
-                foreach($GLOBALS['filter'] as $filter_attribute_id => $v){
-                    $exists = false;
-                    foreach($s->attributesShoes as $attribute){
-                        if($filter_attribute_id == $attribute->id){
-                            $exists = true;
-                            break;
-                        }
-                    }
-                    if(!$exists){
-                        return null;
-                    }
-                }
-                return $s;
-            }
-        );*/
+        $shoes      = \Models\Shoes::find();
 
         $paginator   = new PaginatorModel(
             array(

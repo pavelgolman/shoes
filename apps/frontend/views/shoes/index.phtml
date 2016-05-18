@@ -48,6 +48,16 @@
                             <!-- Start categori grid view -->
                             <div class="tab-pane active categoti-grid-view row" id="grid">
                                 <?php foreach($shoes->items as $item):?>
+                                    <?php
+                                    if($filter) {
+                                        foreach ($filter as $attribute_id => $v) {
+                                            if (!$item->hasAttributeId($attribute_id)) {
+                                                continue;
+                                            }
+                                        }
+                                    }
+                                    ?>
+
                                     <div class="col-xs-12 col-sm-6 col-md-4">
                                         <div class="featured-inner">
                                             <div class="featured-image">
@@ -72,14 +82,14 @@
 
                         </div>
                         <!-- Start categori show item -->
-                        <div class="categori-show-item">
+                        <!--div class="categori-show-item">
                             <div class="cat-show-item">
                                 <p>Showing 1 - 8 of 8 items</p>
                             </div>
                             <div class="cat-show-button">
                                 <a href="#" class="cat-button"><span>Compare(0)<i class="fa fa-angle-right"></i></span></a>
                             </div>
-                        </div>
+                        </div-->
                         <!-- End categori show item -->
                     </div>
                 </div>
