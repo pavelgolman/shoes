@@ -14,7 +14,7 @@ class ShoesController extends Controller
         $GLOBALS['filter'] = $this->view->filter;
         $currentPage = 1;
 
-        $shoes      = \Models\Shoes::find()->filter(
+        $shoes      = \Models\Shoes::find();/*->filter(
             function ($s) {
                 foreach($GLOBALS['filter'] as $filter_attribute_id => $v){
                     $exists = false;
@@ -30,7 +30,7 @@ class ShoesController extends Controller
                 }
                 return $s;
             }
-        );
+        );*/
 
         $paginator   = new PaginatorModel(
             array(
