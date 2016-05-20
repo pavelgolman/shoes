@@ -10,7 +10,7 @@ use Models\ShoesImages;
 class ShoesImagesController extends Controller
 {
 
-    public function delete($image_id){
+    public function deleteAction($image_id){
         $image = ShoesImages::findFirstById($image_id);
         if (!$image) {
             //$this->flashSession->error("Обувь не найдена");
