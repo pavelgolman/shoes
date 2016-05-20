@@ -140,13 +140,13 @@
 
                 <div class="col-md-9 col-sm-9 col-xs-12">
                     <?php foreach(\Models\PromoBlocks::find() as $block):?>
-                        <?php $checked = $shoes->hasAttribute($attribute)?>
+                        <?php $checked = $shoes->belongsToPromoBlock($block)?>
                         <div class="checkbox">
                             <label class="">
                                 <div class="icheckbox_flat-green <?=$checked ? 'checked' : ''?>" style="position: relative;">
-                                    <input type="checkbox" name="attributes[<?=$attribute->id?>]" value="1" class="flat" <?=$checked ? 'checked="checked"' : ''?> style="position: absolute; opacity: 0;">
+                                    <input type="checkbox" name="blocks[<?=$block->id?>]" value="1" class="flat" <?=$checked ? 'checked="checked"' : ''?> style="position: absolute; opacity: 0;">
                                     <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins>
-                                </div> <?=$attribute->name?>
+                                </div> <?=$block->name?>
                             </label>
                         </div>
                     <?php endforeach?>
