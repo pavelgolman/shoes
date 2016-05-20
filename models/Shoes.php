@@ -47,6 +47,11 @@ class Shoes extends Model
             )
         );
 
+        $this->hasMany("id", "\Models\PromoBlocksShoes", "shoes_id",  array(
+            'alias' => 'blocksShoes'
+        ));
+
+
         $this->hasManyToMany(
             "id",
             "\Models\PromoBlocksShoes",
@@ -80,7 +85,7 @@ class Shoes extends Model
     }
 
     public function belongsToPromoBlockId($block_id){
-        foreach($this->blocks as $block){
+        foreach($this->blocksShoes as $block){
             if($block->promo_block_id == $block_id){
                 return true;
             }
