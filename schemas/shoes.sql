@@ -51,15 +51,15 @@ create table if not exists promo_blocks(
 
 
 insert into promo_blocks(`name`, `const`) VALUES
-('', 'SALE_OFF'),
-('', 'FEATURED'),
-('', 'BESTSELLER'),
-('', 'CATEGORY_SANDALS'),
-('', 'CATEGORY_SHOES'),
-('', 'CATEGORY_BOOTS'),
-('', 'CATEGORY_SNEAKERS'),
-('', 'CATEGORY_SABO'),
-('', 'CATEGORY_HIGH_BOOT'),
+('Распродажа', 'SALE_OFF'),
+('Акции', 'FEATURED'),
+('Лучший выбор', 'BESTSELLER'),
+('Категория сандалии', 'CATEGORY_SANDALS'),
+('Категория туфли', 'CATEGORY_SHOES'),
+('Категория ботинки', 'CATEGORY_BOOTS'),
+('Категория кроссовки, кеды', 'CATEGORY_SNEAKERS'),
+('Категория сабо', 'CATEGORY_SABO'),
+('Категория сапоги', 'CATEGORY_HIGH_BOOT'),
 ('ВЕСНА-ЛЕТО', 'SPRING_SUMMER'),
 ('ОСЕНЬ-ЗИМА', 'AUTUMN_WINTER')
 ;
@@ -226,6 +226,7 @@ insert into attributes(`name`, attributes_group_id) VALUES
 ('40', (select id from attributes_groups where `const` = 'SIZE')),
 ('41', (select id from attributes_groups where `const` = 'SIZE')),
 ('42', (select id from attributes_groups where `const` = 'SIZE')),
+('Каблук', (select id from attributes_groups where `const` = 'BASE')),
 ('Без каблука', (select id from attributes_groups where `const` = 'BASE')),
 ('Платформа', (select id from attributes_groups where `const` = 'BASE')),
 ('Танкетка', (select id from attributes_groups where `const` = 'BASE')),
@@ -240,6 +241,7 @@ insert into attributes(`name`, attributes_group_id) VALUES
 ('Угги', (select id from attributes_groups where `const` = 'TYPE')),
 ('Ботинки', (select id from attributes_groups where `const` = 'TYPE'))
 ;
+
 
 
 drop table if exists attributes_shoes;

@@ -46,6 +46,18 @@ class Shoes extends Model
                 'alias' => 'attributes'
             )
         );
+
+        $this->hasManyToMany(
+            "id",
+            "\Models\PromoBlocksShoes",
+            "shoes_id",
+            "promo_blocks_id",
+            "\Models\PromoBlocks",
+            "id",
+            array(
+                'alias' => 'blocks'
+            )
+        );
     }
 
     public function hasAttribute(Attributes $attribute){
@@ -55,6 +67,21 @@ class Shoes extends Model
     public function hasAttributeId($attribute_id){
         foreach($this->attributesShoes as $attributesShoes){
             if($attributesShoes->attributes_id == $attribute_id){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    public function belongsToPromoBlock(PromoBlock $block){
+        return $this->belongsToPromoBlockId($block->id);
+    }
+
+    public function belongsToPromoBlockId($block_id){
+        foreach($this->blocks as $block){
+            if($block->promo_block_id == $block_id){
                 return true;
             }
         }

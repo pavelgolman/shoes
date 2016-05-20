@@ -131,6 +131,27 @@
                     </div>
                 <?php endforeach?>
 
+
+            <div class="ln_solid"></div>
+            <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                    Промо блоки
+                </label>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <?php foreach(\Models\PromoBlocks::find() as $block):?>
+                        <?php $checked = $shoes->hasAttribute($attribute)?>
+                        <div class="checkbox">
+                            <label class="">
+                                <div class="icheckbox_flat-green <?=$checked ? 'checked' : ''?>" style="position: relative;">
+                                    <input type="checkbox" name="attributes[<?=$attribute->id?>]" value="1" class="flat" <?=$checked ? 'checked="checked"' : ''?> style="position: absolute; opacity: 0;">
+                                    <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins>
+                                </div> <?=$attribute->name?>
+                            </label>
+                        </div>
+                    <?php endforeach?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
