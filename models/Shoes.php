@@ -86,7 +86,7 @@ class Shoes extends Model
 
     public function belongsToPromoBlockId($block_id){
         foreach($this->blocksShoes as $block){
-            if($block->promo_block_id == $block_id){
+            if($block->promo_blocks_id == $block_id){
                 return true;
             }
         }
