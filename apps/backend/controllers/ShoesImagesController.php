@@ -12,12 +12,10 @@ class ShoesImagesController extends Controller
 
     public function deleteAction($image_id){
         $image = ShoesImages::findFirstById($image_id);
+        $shoes_id = $image->shoes_id;
         if (!$image) {
             //$this->flashSession->error("Обувь не найдена");
-            return $this->dispatcher->forward(array(
-                'controller' => 'shoes',
-                'action' => 'index'
-            ));
+            return $this->response->redirect("admin/shoes/edit/".$shoes_id);
         }
         if (!$image->delete()) {
             foreach($image->getMessages() as $message) {
@@ -26,10 +24,7 @@ class ShoesImagesController extends Controller
         } else {
             //$this->flashSession->success("Обувь удалена");
         }
-        return $this->dispatcher->forward(array(
-            'controller' => 'shoes',
-            'action' => 'index'
-        ));
+        return $this->response->redirect("admin/shoes/edit/".$shoes_id);
     }
 
 
