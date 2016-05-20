@@ -15,6 +15,7 @@ class ShoesImagesController extends Controller
         if (!$image) {
             //$this->flashSession->error("Обувь не найдена");
             return $this->dispatcher->forward(array(
+                'controller' => 'shoes',
                 'action' => 'index'
             ));
         }
@@ -26,6 +27,7 @@ class ShoesImagesController extends Controller
             //$this->flashSession->success("Обувь удалена");
         }
         return $this->dispatcher->forward(array(
+            'controller' => 'shoes',
             'action' => 'index'
         ));
     }
