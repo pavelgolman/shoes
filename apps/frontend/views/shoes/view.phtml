@@ -69,7 +69,9 @@
                                 $attributes[$attribute->group->name] = array();
                             }
                             $attributes[$attribute->group->name][] = $attribute->name;
-                        }?>
+                        }
+                        mb_internal_encoding('UTF-8');
+                        ?>
 
                         <?php foreach($attributes as $name => $values):?>
                             <p><strong><?=$name?>:</strong> <?=mb_strtolower(implode(', ', $values))?> </p>
