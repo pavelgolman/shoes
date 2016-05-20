@@ -75,7 +75,7 @@ class Shoes extends Model
     }
 
 
-    public function belongsToPromoBlock(PromoBlock $block){
+    public function belongsToPromoBlock(PromoBlocks $block){
         return $this->belongsToPromoBlockId($block->id);
     }
 
