@@ -72,7 +72,7 @@
                         }?>
 
                         <?php foreach($attributes as $name => $values):?>
-                            <p><strong><?=$name?>:</strong> <?=implode(', ', $values)?> </p>
+                            <p><strong><?=$name?>:</strong> <?=strtolower(implode(', ', $values))?> </p>
                         <?php endforeach?>
                         <div><?php echo $shoes->description->description?></div>
                         <p>&nbsp;</p>
