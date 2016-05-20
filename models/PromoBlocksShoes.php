@@ -8,6 +8,8 @@ use Phalcon;
 class PromoBlocksShoes extends Model
 {
 
+    public $id;
+
     public $shoes_id;
 
     public $promo_blocks_id;

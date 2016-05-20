@@ -68,8 +68,10 @@ insert into promo_blocks(`name`, `const`) VALUES
 
 drop table if exists promo_blocks_shoes;
 create table if not exists promo_blocks_shoes(
+  id int unsigned not null auto_increment,
   shoes_id int unsigned not null,
   promo_blocks_id int unsigned not null,
+    primary key(id),
    key unq(shoes_id, promo_blocks_id)
 )engine=InnoDb DEFAULT CHARACTER SET=utf8;
 
