@@ -3,6 +3,7 @@
 namespace Multiple\Backend\Controllers;
 
 use Models\AttributesShoes;
+use Models\PromoBlocksShoes;
 use Models\ShoesDescriptions;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
