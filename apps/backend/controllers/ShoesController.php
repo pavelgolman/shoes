@@ -67,6 +67,14 @@ class ShoesController extends Controller
                 $attribute->save();
             }
 
+            $shoes->blocksShoes->delete();
+            foreach($this->request->getPost('blocks') as $promo_blocks_id => $value){
+                $block = new PromoBlocksShoes();
+                $block->shoes_id = $shoes->id;
+                $block->promo_blocks_id = $promo_blocks_id;
+                $block->save();
+            }
+
             if (!$shoes->save()) {
                 foreach($shoes->getMessages() as $message) {
                     $this->flashSession->error($message);
