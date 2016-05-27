@@ -11,7 +11,7 @@ use Models\Shoes;
 use Models\ShoesImages;
 use Multiple\Backend\Forms\ShoesForm;
 
-class ShoesController extends Controller
+class ShoesController extends AdminController
 {
 
     public function indexAction()
