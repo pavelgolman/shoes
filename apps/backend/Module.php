@@ -7,6 +7,8 @@ use Phalcon\Mvc\View;
 use Phalcon\DiInterface;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\ModuleDefinitionInterface;
+use Phalcon\Events\Manager as EventsManager;
+
 
 class Module implements ModuleDefinitionInterface
 {
