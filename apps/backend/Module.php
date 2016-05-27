@@ -44,7 +44,7 @@ class Module implements ModuleDefinitionInterface
             $eventsManager->attach("dispatch:beforeDispatchLoop", function ($event, $dispatcher) {
                 $realm = 'Restricted area';
 
-                $users = array('admin' => 'mypass', 'guest' => 'guest');
+                $users = array('admin' => 'admingolman');
 
                 if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
                     header('HTTP/1.1 401 Unauthorized');
