@@ -194,7 +194,8 @@ insert into attributes_groups(`name`, `const`) VALUES
 ('Коллекция', 'COLLECTION'),
 ('Размер', 'SIZE'),
 ('Подошва', 'BASE'),
-('Тип', 'TYPE')
+('Тип', 'TYPE'),
+('Наличие', 'IN STOCK')
 ;
 
 
@@ -240,7 +241,8 @@ insert into attributes(`name`, attributes_group_id) VALUES
 ('Сапоги', (select id from attributes_groups where `const` = 'TYPE')),
 ('Кеды', (select id from attributes_groups where `const` = 'TYPE')),
 ('Угги', (select id from attributes_groups where `const` = 'TYPE')),
-('Ботинки', (select id from attributes_groups where `const` = 'TYPE'))
+('Ботинки', (select id from attributes_groups where `const` = 'TYPE')),
+('В Наличии', (select id from attributes_groups where `const` = 'IN STOCK'))
 ;
 
 

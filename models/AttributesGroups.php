@@ -20,6 +20,7 @@ class AttributesGroups extends Model
     CONST SIZE = 'SIZE';
     CONST BASE = 'BASE';
     CONST TYPE = 'TYPE';
+    CONST IN_STOCK = 'IN STOCK';
 
     public function initialize()
     {
