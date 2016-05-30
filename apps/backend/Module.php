@@ -68,18 +68,7 @@ class Module implements ModuleDefinitionInterface
                 if ($data['response'] != $valid_response)
                     die('Wrong Credentials!');
 
-                $keyParams = array();
-                $params    = $dispatcher->getParams();
 
-                // Use odd parameters as keys and even as values
-                foreach ($params as $number => $value) {
-                    if ($number & 1) {
-                        $keyParams[$params[$number - 1]] = $value;
-                    }
-                }
-
-                // Override parameters
-                $dispatcher->setParams($keyParams);
             });
 
             $dispatcher = new Dispatcher();
