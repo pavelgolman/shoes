@@ -53,7 +53,7 @@ insert into promo_blocks(`name`, `const`) VALUES
 ('Распродажа', 'SALE_OFF'),
 ('Акции', 'FEATURED'),
 ('Лучший выбор', 'BESTSELLER'),
-('Категория сандалии', 'CATEGORY_SANDALS'),
+('Категория шлепки', 'CATEGORY_SANDALS'),
 ('Категория туфли', 'CATEGORY_SHOES'),
 ('Категория ботинки', 'CATEGORY_BOOTS'),
 ('Категория кроссовки, кеды', 'CATEGORY_SNEAKERS'),
@@ -236,13 +236,14 @@ insert into attributes(`name`, attributes_group_id) VALUES
 ('Удобная', (select id from attributes_groups where `const` = 'BASE')),
 ('Босоножки', (select id from attributes_groups where `const` = 'TYPE')),
 ('Туфли', (select id from attributes_groups where `const` = 'TYPE')),
-('Сандалии', (select id from attributes_groups where `const` = 'TYPE')),
+('Шлепки', (select id from attributes_groups where `const` = 'TYPE')),
 ('Сабо', (select id from attributes_groups where `const` = 'TYPE')),
 ('Сапоги', (select id from attributes_groups where `const` = 'TYPE')),
 ('Кеды', (select id from attributes_groups where `const` = 'TYPE')),
 ('Угги', (select id from attributes_groups where `const` = 'TYPE')),
 ('Ботинки', (select id from attributes_groups where `const` = 'TYPE')),
-('В Наличии', (select id from attributes_groups where `const` = 'IN STOCK'))
+('В Наличии', (select id from attributes_groups where `const` = 'IN STOCK')),
+('Под заказ', (select id from attributes_groups where `const` = 'IN STOCK'))
 ;
 
 
