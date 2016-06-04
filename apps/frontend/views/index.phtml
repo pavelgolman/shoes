@@ -10,8 +10,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?=$title_for_page ? $title_for_page : 'RUMI | Обувь в наличии и под заказ'?></title>
-    <meta name="description" content="<?=$meta_description?>" />
+    <title><?=!empty($title_for_page) ? $title_for_page : 'RUMI | Обувь в наличии и под заказ'?></title>
+    <meta name="description" content="<?=!empty($meta_description) ? $meta_description : 'Купить обувь в Днепропетровске в наличии и под заказ'?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon
@@ -138,7 +138,7 @@
                                 </p>
                             </div>
                             <div class="search-and-cart">
-                                <p>Обращаем Ваше внимание на раздел "Наличие". Все заказы в разделе "Под заказ" будут выполнены после 5 июля.</p>
+                                <p>Обращаем Ваше внимание на раздел "Наличие". Все заказы в разделе "Под заказ" будут выполнены после 12 июля.</p>
                                 <!--div class="search-categori">
                                     <div class="categori">
                                         <form id="select-categoris" method="post" class="form-horizontal">
