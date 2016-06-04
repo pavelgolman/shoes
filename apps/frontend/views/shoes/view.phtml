@@ -65,7 +65,7 @@
                         <?php
                         $attributes = array();
                         foreach($shoes->attributes as $attribute){
-                            if(!$attributes[$attribute->group->name]){
+                            if(empty($attributes[$attribute->group->name])){
                                 $attributes[$attribute->group->name] = array();
                             }
                             $attributes[$attribute->group->name][] = $attribute->name;

@@ -27,7 +27,7 @@
                                 $filter_add .= 'filter['.$attribute->id.']=1';
                             ?>
                         <li>
-                            <span><input disabled="disabled" type="checkbox" class="checkbox" <?=$filter[$attribute->id] ? 'checked="checked"' : ''?> ></span>
+                            <span><input disabled="disabled" type="checkbox" class="checkbox" <?=!empty($filter[$attribute->id]) ? 'checked="checked"' : ''?> ></span>
                             <label>
                                 <a href="<?=$filter_add?>"><?=$attribute->name?></a>
                                 <?php if($filter[$attribute->id]):?>
