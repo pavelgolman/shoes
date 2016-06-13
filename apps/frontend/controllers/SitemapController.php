@@ -19,6 +19,7 @@ class SitemapController extends Controller
     <loc>http://rumi.com.ua<loc>
     <lastmod>{$date}</lastmod>
   </url>
+
 XML;
 
         $shoes      = \Models\Shoes::find();
@@ -29,6 +30,7 @@ XML;
     <loc>http://rumi.com.ua/shoes/view/{$s->id}<loc>
     <lastmod>{$date}</lastmod>
   </url>
+  
 XML;
 
         }
