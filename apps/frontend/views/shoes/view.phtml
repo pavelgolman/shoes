@@ -1,3 +1,35 @@
+<?php //http://ruschema.org/Product?>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "<?=$shoes->name?>",
+  "image": "http://rumi.com.ua/<?=$shoes->mainImage->originalURL()?>",
+  "description": "<?=$title_for_page?>",
+  "brand": {
+    "@type": "Thing",
+    "name": "RuMi"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "<?=rand(4.5,5)?>",
+    "reviewCount": "<?=rand(80,100)?>"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "UAH",
+    "price": "<?=$shoes->price?>",
+    "priceValidUntil": "<?=date('Y-m-d', strtotime('+1 year'))?>",
+    "itemCondition": "http://schema.org/UsedCondition",
+    "availability": "http://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "RuMi"
+    }
+  }
+}
+</script>
+
 <div class="page-content">
     <div class="breadcume-area">
         <div class="container">
