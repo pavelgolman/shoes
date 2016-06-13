@@ -26,6 +26,12 @@ $di->set('router', function () {
         'action' => 2,
     ));
 
+    $router->add('/sitemap.xml', array(
+        'module' => 'frontend',
+        'controller' => "sitemap",
+        'action' => "xml",
+    ));
+
     $router->add(
         "/login",
         array(
