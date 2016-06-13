@@ -10,13 +10,14 @@ class SitemapController extends Controller
     public function xmlAction()
     {
         //    <xhtml:link rel="amphtml" href="http://example.com/dogs/poodles/poodle1.amp.html"/>
+        $date = date('c');
         $xml = <<<XML
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>http://rumi.com.ua<loc>
-    <lastmod><?=date('c')?></lastmod>
+    <lastmod>{$date}</lastmod>
   </url>
 XML;
 
@@ -26,7 +27,7 @@ XML;
             $xml .= <<<XML
 <url>
     <loc>http://rumi.com.ua/shoes/view/{$s->id}<loc>
-    <lastmod><?=date('c')?></lastmod>
+    <lastmod>{$date}</lastmod>
   </url>
 XML;
 
