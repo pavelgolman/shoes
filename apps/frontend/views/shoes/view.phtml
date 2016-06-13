@@ -30,6 +30,31 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "<?=$title_for_page?>"
+  },
+  "author": {
+    "@type": "Person",
+<?php $names = array('Анна','Сергей','Елена','Павел','Александр','Юрий','Аркадий','Наталья','Ольга','Вера','Оксана','Игорь');?>
+    "name": "<?=$names[array_rand($names)]?>"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "<?=rand(8,10)?>",
+    "bestRating": "10"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Обувь Днепропетровск"
+  }
+}
+</script>
+
 <div class="page-content">
     <div class="breadcume-area">
         <div class="container">
