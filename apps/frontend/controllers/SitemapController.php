@@ -30,7 +30,7 @@ XML;
     <loc>http://rumi.com.ua/shoes/view/{$s->id}<loc>
     <lastmod>{$date}</lastmod>
   </url>
-  
+
 XML;
 
         }
