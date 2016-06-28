@@ -100,7 +100,7 @@ class Shoes extends Model
 
     public function get_in_translate_to_en($string)
     {
-        $string = preg_replace('/[^a-z0-9_-]/iU', '-', strtolower($string));
+        $string = preg_replace('/[^а-яa-z0-9_-]/iU', '-', strtolower($string));
 
         $replace = array("А"=>"A","а"=>"a","Б"=>"B","б"=>"b","В"=>"V","в"=>"v","Г"=>"G","г"=>"g","Д"=>"D","д"=>"d",
                 "Е"=>"E","е"=>"e","Ё"=>"E","ё"=>"e","Ж"=>"Zh","ж"=>"zh","З"=>"Z","з"=>"z","И"=>"I","и"=>"i",
