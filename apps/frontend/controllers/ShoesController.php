@@ -27,6 +27,10 @@ class ShoesController extends Controller
     }
 
     public function viewAction($id){
+        if($id > 198545){
+            $id = $id - 198545;
+        }
+
         $this->view->shoes = \Models\Shoes::findFirst($id);
 
 

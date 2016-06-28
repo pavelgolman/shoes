@@ -27,7 +27,7 @@ XML;
             //<xhtml:link rel="amphtml" href="http://example.com/dogs/poodles/poodle1.amp.html"/>
             $xml .= <<<XML
 <url>
-    <loc>http://rumi.com.ua/shoes/view/{$s->id}<loc>
+    <loc>http://rumi.store{$s->getURL()}<loc>
     <lastmod>{$date}</lastmod>
   </url>
 

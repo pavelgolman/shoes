@@ -8,13 +8,13 @@
                 <?php foreach($promo->shoes as $shoes):?>
                 <div class="featured-inner">
                     <div class="featured-image">
-                        <a href="/shoes/view/<?=$shoes->id?>">
+                        <a href="<?=$shoes->getURL()?>">
                             <img src="<?=$shoes->mainImage->thumbnailURL(250, 250)?>" alt="">
                         </a>
                         <span class="price-percent-reduction">-20%</span>
                     </div>
                     <div class="featured-info">
-                        <a href="/shoes/view/<?=$shoes->id?>"><?=$shoes->name?></a>
+                        <a href="<?=$shoes->getURL()?>"><?=$shoes->name?></a>
                         <span class="price"><?=$shoes->price?></span>
                         <div class="featured-button">
                             <a href="#" class="add-to-card" data-shoes-id="<?=$shoes->id?>"><i class="fa fa-shopping-cart"></i>Купить</a>

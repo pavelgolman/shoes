@@ -323,12 +323,12 @@
                             <div class="col-xs-12 col-sm-3">
                             <div class="featured-inner">
                                 <div class="featured-image">
-                                    <a href="/shoes/view/<?=$f->id?>">
+                                    <a href="<?=$f->getURL()?>">
                                         <img src="<?=$f->mainImage->thumbnailURL(250, 250)?>" alt="">
                                     </a>
                                 </div>
                                 <div class="featured-info">
-                                    <a href="/shoes/view/<?=$f->id?>"><?=$f->name?></a>
+                                    <a href="<?=$f->getURL()?>"><?=$f->name?></a>
                                     <p class="reating">
                                                     <span class="rate">
                                                         <i class="fa fa-star"></i>

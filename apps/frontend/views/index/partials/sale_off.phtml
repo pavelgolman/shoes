@@ -17,13 +17,13 @@
                     <?php $sh = $shoes->current()?>
                 <div class="item3">
                     <div class="product-image">
-                        <a href="/shoes/view/<?=$sh->id?>">
+                        <a href="<?=$sh->getURL()?>">
                             <img src="<?=$sh->mainImage->thumbnailURL(125, 125)?>" alt="">
                         </a>
                         <span class="price-percent-reduction"><?=$sh->price?> грн.</span>
                     </div>
                     <div class="product-info">
-                        <a href="/shoes/view/<?=$sh->id?>"><?=$sh->name?></a>
+                        <a href="<?=$sh->getURL()?>"><?=$sh->name?></a>
                     </div>
                 </div>
                     <?php $shoes->next();?>
