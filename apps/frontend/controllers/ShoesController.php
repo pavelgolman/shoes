@@ -41,7 +41,12 @@ class ShoesController extends Controller
 
         $this->view->title_for_page = $this->view->shoes->name.' в Днепропетровск, цена — купить в интернет-магазине RUMI';
 
+        $this->view->og_url = $this->view->shoes->getURL();
+        $this->view->og_title = $this->view->title_for_page;
+        $this->view->og_image = $this->view->shoes->mainImage->originalPath();
+
         $this->view->meta_description = $this->view->shoes->name.' по лучшей цене в Днепропетровске. Огромный выбор обуви ждет Вас в интернет-магазине RUMI. Доставка по всей Украине. Оформите заказ онлайн прямо сейчас!';
+        $this->view->og_description = $this->view->meta_description;
     }
 
 }
