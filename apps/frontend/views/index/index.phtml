@@ -12,7 +12,8 @@
                     <div class="title1"><span class="txt">В наличии</span></div>
                     <div class="title2"><span class="txt">и под заказ без предоплаты до 10 дней</span></div>
                     <div class="pos-slideshow-readmore">
-                        <a href="/shoes/view/58" title="Shop now">Купить</a>
+                        <?php $temp = \Models\Shoes::findFirst(58)?>
+                        <a href="<?=$temp->getURL()?>" title="Shop now">Купить</a>
                     </div>
                 </div>
             </div>
@@ -48,19 +49,22 @@
                 <div class="categori-banner">
                     <div class="banner-left">
                         <div class="banner-image">
-                            <a href="/shoes/view/54">
+                            <?php $temp = \Models\Shoes::findFirst(54)?>
+                            <a href="<?=$temp->getURL()?>">
                                 <img src="/img/banner/cms11.jpg?234" alt="">
                             </a>
                         </div>
                         <div class="banner-image">
-                            <a href="/shoes/view/16">
+                            <?php $temp = \Models\Shoes::findFirst(16)?>
+                            <a href="<?=$temp->getURL()?>">
                                 <img src="/img/banner/cms12.jpg?234" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="banner-right">
                         <div class="banner-image">
-                            <a href="/shoes/view/62">
+                            <?php $temp = \Models\Shoes::findFirst(62)?>
+                            <a href="<?=$temp->getURL()?>">
                                 <img src="/img/banner/cms13.jpg?234" alt="">
                             </a>
                         </div>
