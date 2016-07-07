@@ -24,7 +24,7 @@
                     <td class=" "><?=$s->name?></td>
                     <td class=" ">
                         <?php foreach($s->images as $image):?>
-                            <img alt="image" src="<?=$image->thumbnailURL(85, 85)?>" />
+                            <a target="_blank" href="<?=$image->originalURL()?>"></a><img alt="image" src="<?=$image->thumbnailURL(85, 85)?>" /></a>
                         <?php endforeach?>
                     </td>
                     <td class=" "><?=$s->article?></td>
