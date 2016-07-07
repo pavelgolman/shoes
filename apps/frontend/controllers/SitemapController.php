@@ -16,7 +16,7 @@ class SitemapController extends Controller
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>http://rumi.com.ua<loc>
+    <loc>http://rumi.store<loc>
     <lastmod>{$date}</lastmod>
   </url>
 
