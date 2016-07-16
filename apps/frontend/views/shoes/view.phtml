@@ -102,9 +102,9 @@
                 </div>
                 <!-- End single product image -->
                 <!-- Start single product details -->
-                <div class="col-sm-7">
+                <div class="col-sm-3">
                     <div class="single-product-details">
-                        <h1><?=$shoes->name?> (<?=$shoes->article?>)</h1>
+                        <h1><?=$shoes->name?></h1>
                         <!--div class="sin-social">
                             <p>
                                 <a href="#" class="btn btn-default twitter"><i class="fa fa-twitter"></i>Tweet</a>
@@ -160,15 +160,7 @@
                             </button>
                         </p>
                         <p>
-                            <!-- Load Facebook SDK for JavaScript -->
-                        <div id="fb-root"></div>
-                        <script>(function(d, s, id) {
-                                var js, fjs = d.getElementsByTagName(s)[0];
-                                if (d.getElementById(id)) return;
-                                js = d.createElement(s); js.id = id;
-                                js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.6";
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }(document, 'script', 'facebook-jssdk'));</script>
+
 
                         <!-- Your like button code -->
                         <div class="fb-share-button" data-href="<?=$og_url?>"
@@ -184,6 +176,10 @@
                     </div>
                 </div>
                 <!-- End single product details -->
+
+                <div class="col-sm-3">
+                    <div class="fb-comments" data-href="<?=$og_url?>" data-numposts="5"></div>
+                </div>
             </div>
         </div>
     </div>
