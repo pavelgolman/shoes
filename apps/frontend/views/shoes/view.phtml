@@ -129,7 +129,7 @@
                         }
                         mb_internal_encoding('UTF-8');
                         ?>
-
+                        <p><strong>Артикул:</strong> <?=$shoes->article?></p>
                         <?php foreach($attributes as $name => $values):?>
                             <p><strong><?=$name?>:</strong> <?=mb_strtolower(implode(', ', $values))?> </p>
                         <?php endforeach?>
