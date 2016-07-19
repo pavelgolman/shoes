@@ -10,6 +10,7 @@
             <table class="table table-striped responsive-utilities jambo_table bulk_action shoes-list">
                 <thead>
                 <tr class="headings">
+                    <th class="column-title">ID</th>
                     <th class="column-title">Название </th>
                     <th class="column-title">Изображения </th>
                     <th class="column-title">Артикул</th>
@@ -21,6 +22,7 @@
                 <tbody>
                 <?php foreach($shoes as $s):?>
                 <tr class="even pointer" data-shoes-id="<?=$s->id?>">
+                    <td class=" "><?=$s->id?></td>
                     <td class=" "><?=$s->name?></td>
                     <td class=" ">
                         <?php foreach($s->images as $image):?>
