@@ -19,6 +19,12 @@ class ShoesController extends AdminController
         $this->view->shoes = Shoes::find(array(
             'order' => 'order_index '
         ));
+        $i=1;
+        foreach($this->view->shoes as $s){
+            $s->order_index = $i;
+            $i++;
+            $s->save();
+        }
     }
 
     public function editAction($id)
@@ -47,18 +53,34 @@ class ShoesController extends AdminController
         $shoes_id = $this->request->get('id');
         $order_index = $this->request->get('index');
 
+        $ordered_shoes = Shoes::findFirst($shoes_id);
         $shoes = Shoes::find(
             array(
-                "conditions" => "order_index >= ".$order_index,
+                'order' => 'order_index '
             )
         );
+
         foreach($shoes as $s){
-            $s->order_index++;
-            $s->save();
+            if($s->id != $ordered_shoes->id){
+                //MOVE TO TOP
+                if($order_index < $ordered_shoes->order_index){
+                    if($order_index <= $s->order_index) {
+                        $s->order_index++;
+                        $s->save();
+                    }
+                }else{
+                    //MOVE TO BOTTOM
+                    if($order_index > $s->order_index) {
+                        $s->order_index--;
+                        $s->save();
+                    }
+                }
+            }
         }
-        $shoes = Shoes::findFirst($shoes_id);
-        $shoes->order_index = $order_index;
-        $shoes->save();
+
+        $ordered_shoes->order_index = $order_index;
+        $ordered_shoes->save();
+
     }
 
     public function saveAction()
