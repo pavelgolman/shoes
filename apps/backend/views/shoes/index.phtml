@@ -51,7 +51,7 @@
         },
         stop: function(ui, event){debugger
             var index = event.item.index();
-            var shoes_id=ui.draggable.attr('data-shoes-id');
+            var shoes_id=event.item.data('shoes-id');
 
             $.get( "/admin/shoes/order?id=" + shoes_id + "&index=" + index, function( data ) {
 
