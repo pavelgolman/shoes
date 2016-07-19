@@ -41,12 +41,36 @@ class ShoesController extends AdminController
 
     }
 
+    public function orderAction(){
+        $shoes_id = $this->request->get('id');
+        $order_index = $this->request->get('index');
+
+        $shoes = Shoes::find(
+            array(
+                "conditions" => "order_index >= ".$order_index,
+            )
+        );
+        foreach($shoes as $s){
+            $s->order_index++;
+            $s-save();
+        }
+        $shoes = Shoes::findFirst($shoes_id);
+        $shoes->order_index = $order_index;
+        $shoes->save();
+    }
+
     public function saveAction()
     {
         $shoes = new Shoes();
         if ($this->request->isPost()) {
             if($this->request->getPost('id')){
                 $shoes = Shoes::findFirst($this->request->getPost('id'));
+            }else{
+                $shoes->order_index = Shoes::maximum(
+                    array(
+                        "column" => "order_index"
+                    )
+                ) + 1;
             }
             $shoes->name = $this->request->getPost('name');
             $shoes->article = $this->request->getPost('article');

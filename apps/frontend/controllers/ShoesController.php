@@ -13,7 +13,9 @@ class ShoesController extends Controller
         $this->view->filter = $this->request->get('filter');
         $currentPage = 1;
 
-        $shoes      = \Models\Shoes::find();
+        $shoes      = \Models\Shoes::find(array(
+            'order' => 'FIELD(id, )'
+        ));
 
         $paginator   = new PaginatorModel(
             array(
