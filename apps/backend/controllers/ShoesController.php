@@ -16,7 +16,9 @@ class ShoesController extends AdminController
 
     public function indexAction()
     {
-        $this->view->shoes = Shoes::find();
+        $this->view->shoes = Shoes::find(array(
+            'order' => 'order_index '
+        ));
     }
 
     public function editAction($id)

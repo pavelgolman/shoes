@@ -14,7 +14,7 @@ class ShoesController extends Controller
         $currentPage = 1;
 
         $shoes      = \Models\Shoes::find(array(
-            'order' => 'FIELD(id, )'
+            'order' => 'order_index '
         ));
 
         $paginator   = new PaginatorModel(
