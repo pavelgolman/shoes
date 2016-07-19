@@ -19,12 +19,7 @@ class ShoesController extends AdminController
         $this->view->shoes = Shoes::find(array(
             'order' => 'order_index '
         ));
-        //$i=1;
-        //foreach($this->view->shoes as $s){
-        //    $s->order_index = $i;
-        //    $i++;
-        //    $s->save();
-        //}
+
     }
 
     public function editAction($id)
@@ -59,6 +54,12 @@ class ShoesController extends AdminController
                 'order' => 'order_index '
             )
         );
+        $i=1;
+        foreach($shoes as $s){
+            $s->order_index = $i;
+            $i++;
+            $s->save();
+        }
 
         foreach($shoes as $s){
             if($s->id != $ordered_shoes->id){
