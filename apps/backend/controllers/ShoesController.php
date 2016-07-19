@@ -47,6 +47,7 @@ class ShoesController extends AdminController
     public function orderAction(){
         $shoes_id = $this->request->get('id');
         $order_index = $this->request->get('index');
+        $order_index++;
 
         $ordered_shoes = Shoes::findFirst($shoes_id);
         $shoes = Shoes::find(
