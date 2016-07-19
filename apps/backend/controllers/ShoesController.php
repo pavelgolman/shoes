@@ -52,7 +52,7 @@ class ShoesController extends AdminController
         );
         foreach($shoes as $s){
             $s->order_index++;
-            $s-save();
+            $s->save();
         }
         $shoes = Shoes::findFirst($shoes_id);
         $shoes->order_index = $order_index;
