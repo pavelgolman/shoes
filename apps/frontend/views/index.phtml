@@ -14,17 +14,17 @@
     <meta name="description" content="<?=!empty($meta_description) ? $meta_description : 'Купить обувь в Днепропетровске в наличии и под заказ'?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <?php if($og_url):?>
+    <?php if(!empty($og_url)):?>
         <meta property="og:url"           content="<?=$og_url?>" />
     <?php endif?>
     <meta property="og:type"          content="website" />
-    <?php if($og_url):?>
+    <?php if(!empty($og_url)):?>
         <meta $og_title="og:title"         content="<?=$og_title?>" />
     <?php endif?>
-    <?php if($og_description):?>
+    <?php if(!empty($og_description)):?>
         <meta property="og:description"   content="<?=$og_description?>" />
     <?php endif?>
-    <?php if($og_image):?>
+    <?php if(!empty($og_image)):?>
         <meta property="og:image"         content="<?=$og_image?>" />
     <?php endif?>
 
