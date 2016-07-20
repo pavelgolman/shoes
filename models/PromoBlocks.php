@@ -44,7 +44,10 @@ class PromoBlocks extends Model
             "\Models\Shoes",
             "id",
             array(
-                'alias' => 'shoes'
+                'alias' => 'shoes',
+                'params' => array(
+                    'order' => 'order_index ASC'
+                )
             )
         );
     }
