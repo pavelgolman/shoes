@@ -5,7 +5,10 @@
         </div>
 
         <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::SALE_OFF."'");
-        $shoes = $promo->shoes;
+        $shoes = $promo->getShoes(array(
+            "promo_blocks_id = {$promo->id}",
+            "order" => "order_index asc"
+        ));
         $shoes->next();
 
         ?>
