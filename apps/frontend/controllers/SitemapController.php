@@ -34,7 +34,7 @@ XML;
 XML;
 
         }
-        $xml .= '<urlset>';
+        $xml .= '</urlset>';
 
         echo $xml;
 
