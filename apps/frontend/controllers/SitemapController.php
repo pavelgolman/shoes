@@ -50,7 +50,7 @@ XML;
                 $s->artile,
                 $s->name,
                 'Купить обувь Днепр наличие заказ',
-                $s->description->description,
+                str_replace("\n", ' ', $s->description->description),
                 'u',
                 $s->price,
                 'UAH',
