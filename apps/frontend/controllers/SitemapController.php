@@ -57,7 +57,7 @@ XML;
 
         $shoes      = \Models\Shoes::find();
         foreach($shoes as $s){
-            $xml .= '<item id="'.$s->getCode().'" >'."\n";
+            $xml .= '<item id="'.$s->getCode().'" selling_type="u">'."\n";
             $xml .= '<name>'.$s->name.'</name>'."\n";
             $category_id = null;
             foreach($group->attributes as $attribute){
@@ -67,7 +67,7 @@ XML;
                 }
             }
             $xml .= '<categoryId>'.$category_id.'</categoryId>'."\n";
-            $xml .= '<priceuah>'.$s->price.'</priceuah>'."\n";
+            //$xml .= '<priceuah>'.$s->price.'</priceuah>'."\n";
             $xml .= '<image>http://rumi.store'.$s->mainImage->originalURL().'</image>'."\n";
             $xml .= '<vendorCode>'.$s->article.'</vendorCode>'."\n";
             $xml .= '<description><![CDATA['.$s->description->description.']]</description>'."\n";
