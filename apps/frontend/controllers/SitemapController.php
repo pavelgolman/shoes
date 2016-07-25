@@ -75,6 +75,7 @@ XML;
    <quantity>1</quantity>
   </price>
 </prices>
+
 PRICE;
             $xml .= '<image>http://rumi.store'.$s->mainImage->originalURL().'</image>'."\n";
             $xml .= '<vendorCode>'.$s->article.'</vendorCode>'."\n";
