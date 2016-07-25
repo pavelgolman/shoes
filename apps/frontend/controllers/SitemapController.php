@@ -42,22 +42,22 @@ XML;
     }
 
     public function promuaAction(){
-        $xml = '<?xml version="1.0" encoding="utf-8"?>';
-        $xml .= '<currency code="UAH" rate="1"/>';
-        $xml .= '<catalog>';
+        $xml = '<?xml version="1.0" encoding="utf-8"?>'."\n";
+        $xml .= '<currency code="UAH" rate="1"/>'."\n";
+        $xml .= '<catalog>'."\n";
 
         $group = \Models\AttributesGroups::findFirstByConst(\Models\AttributesGroups::TYPE);
         foreach($group->attributes as $attribute){
-            $xml .= '<category id="'.$attribute->id.'">'.$attribute->name.'</category>';
-            $xml .= '</category>';
+            $xml .= '<category id="'.$attribute->id.'">'.$attribute->name.'</category>'."\n";
+            $xml .= '</category>'."\n";
         }
-        $xml .= '</catalog>';
-        $xml .= '<items>';
+        $xml .= '</catalog>'."\n";
+        $xml .= '<items>'."\n";
 
         $shoes      = \Models\Shoes::find();
         foreach($shoes as $s){
-            $xml .= '<item id="'.$s->getCode().'" >';
-            $xml .= '<name>'.$s->name.'</name>';
+            $xml .= '<item id="'.$s->getCode().'" >'."\n";
+            $xml .= '<name>'.$s->name.'</name>'."\n";
             $category_id = null;
             foreach($group->attributes as $attribute){
                 if($s->hasAttribute($attribute)){
@@ -65,7 +65,7 @@ XML;
                     break;
                 }
             }
-            $xml .= '<categoryId>'.$category_id.'</categoryId>';
+            $xml .= '<categoryId>'.$category_id.'</categoryId>'."\n";
             $xml .= <<<PRICE
 <price>
 {$s->price}
@@ -77,16 +77,16 @@ XML;
   </price>
 </prices>
 PRICE;
-            $xml .= '<image>http://rumi.store/'.$s->mainImage->originalURL().'</image>';
-            $xml .= '<vendorCode>'.$s->article.'</vendorCode>';
-            $xml .= '<description><![CDATA['.$s->description->description.']]</description>';
+            $xml .= '<image>http://rumi.store'.$s->mainImage->originalURL().'</image>'."\n";
+            $xml .= '<vendorCode>'.$s->article.'</vendorCode>'."\n";
+            $xml .= '<description><![CDATA['.$s->description->description.']]</description>'."\n";
 
-            $xml .= '<available>true</available>';
+            $xml .= '<available>true</available>'."\n";
 
-            $xml .= '<keywords>Купить обувь Днепр наличие заказ</keywords>';
-            $xml .= '</item>';
+            $xml .= '<keywords>Купить обувь Днепр наличие заказ</keywords>'."\n";
+            $xml .= '</item>'."\n";
         }
-        $xml .= '</items>';
+        $xml .= '</items>'."\n";
 
         echo $xml;
         $this->view->disable();
