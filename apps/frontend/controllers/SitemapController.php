@@ -43,6 +43,8 @@ XML;
 
     public function promuaAction(){
         $xml = '<?xml version="1.0" encoding="utf-8"?>'."\n";
+        $xml .= '<price date="'.date('Y-m-d H:i').'">'."\n";
+        $xml .= '<name>rumi.store</name>'."\n";
         $xml .= '<currency code="UAH" rate="1"/>'."\n";
         $xml .= '<catalog>'."\n";
 
@@ -87,6 +89,7 @@ PRICE;
             $xml .= '</item>'."\n";
         }
         $xml .= '</items>'."\n";
+        $xml .= '</price>'."\n";
 
         echo $xml;
         $this->view->disable();
