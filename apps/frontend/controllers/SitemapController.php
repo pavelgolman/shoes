@@ -67,18 +67,7 @@ XML;
                 }
             }
             $xml .= '<categoryId>'.$category_id.'</categoryId>'."\n";
-            $xml .= <<<PRICE
-<price>
-{$s->price}
-</price>
-<prices>
-  <price>
-    <value>{$s->price}</value>
-   <quantity>1</quantity>
-  </price>
-</prices>
-
-PRICE;
+            $xml .= '<price>'.$s->price.'</price>'."\n";
             $xml .= '<image>http://rumi.store'.$s->mainImage->originalURL().'</image>'."\n";
             $xml .= '<vendorCode>'.$s->article.'</vendorCode>'."\n";
             $xml .= '<description><![CDATA['.$s->description->description.']]</description>'."\n";
