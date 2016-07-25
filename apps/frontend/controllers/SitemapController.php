@@ -42,40 +42,53 @@ XML;
     }
 
     public function promuaAction(){
-        $csv = "Код_товара,Название_позиции,Ключевые_слова,Описание,Тип_товара,Цена,Валюта,Скидка,Единица_измерения,Минимальный_объем_заказа,Оптовая_цена,Минимальный_заказ_опт,Ссылка_изображения,Наличие,Производитель,Страна_производитель,Номер_группы,Адрес_подраздела,Возможность_поставки,Срок_поставки,Способ_упаковки,Идентификатор_товара,Уникальный_идентификатор,Идентификатор_подраздела,Идентификатор_группы,ID_группы_разновидностей,Название_Характеристики,Измерение_Характеристики,Значение_Характеристики,Название_Характеристики,Измерение_Характеристики,Значение_Характеристики\n";
+        $xml = '<?xml version="1.0" encoding="utf-8"?>';
+        $xml .= '<currency code="UAH" rate="1"/>';
+        $xml .= '<catalog>';
+
+        $group = \Models\AttributesGroups::findFirstByConst(\Models\AttributesGroups::TYPE);
+        foreach($group->attributes as $attribute){
+            $xml .= '<category id="'.$attribute->id.'">'.$attribute->name.'</category>';
+            $xml .= '</category>';
+        }
+        $xml .= '</catalog>';
+        $xml .= '<items>';
 
         $shoes      = \Models\Shoes::find();
         foreach($shoes as $s){
-            $values = array(
-                $s->artile,
-                $s->name,
-                'Купить обувь Днепр наличие заказ',
-                $s->name,
-                'u',
-                $s->price,
-                'UAH',
-                0,
-                'шт.',
-                1,
-                $s->price,
-                1,
-                'http://rumi.store/'.$s->mainImage->originalURL,
-                '+',
-                'Rumi',
-                'Украина',
-                '',
-                '',
-                99,
-                10,
-                'коробка',
-                $s->getCode(),
-                '','','','','','','','','',''
-            );
+            $xml .= '<item id="'.$s->getCode().'" >';
+            $xml .= '<name>'.$s->name.'</name>';
+            $category_id = null;
+            foreach($group->attributes as $attribute){
+                if($s->hasAttribute($attribute)){
+                    $category_id = $attribute->id;
+                    break;
+                }
+            }
+            $xml .= '<categoryId>'.$category_id.'</categoryId>';
+            $xml .= <<<PRICE
+<price>
+{$s->price}
+</price>
+<prices>
+  <price>
+    <value>{$s->price}</value>
+   <quantity>1</quantity>
+  </price>
+</prices>
+PRICE;
+            $xml .= '<image>http://rumi.store/'.$s->mainImage->originalURL.'</image>';
+            $xml .= '<vendorCode>'.$s->article.'</vendorCode>';
+            $xml .= '<description><![CDATA['.$s->description->description.']]</description>';
 
-            $csv .= '"'.implode('", ", ', $values).'"'."\n";
+            $xml .= '<available>true</available>';
+
+            $xml .= '<keywords>Купить обувь Днепр наличие заказ</keywords>';
+            $xml .= '</item>';
         }
+        $xml .= '</items>';
 
-        echo $csv;
+        echo $xml;
         $this->view->disable();
     }
 
