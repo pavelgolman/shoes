@@ -49,7 +49,6 @@ XML;
         $group = \Models\AttributesGroups::findFirstByConst(\Models\AttributesGroups::TYPE);
         foreach($group->attributes as $attribute){
             $xml .= '<category id="'.$attribute->id.'">'.$attribute->name.'</category>'."\n";
-            $xml .= '</category>'."\n";
         }
         $xml .= '</catalog>'."\n";
         $xml .= '<items>'."\n";
