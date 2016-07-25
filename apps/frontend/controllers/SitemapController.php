@@ -77,7 +77,7 @@ XML;
   </price>
 </prices>
 PRICE;
-            $xml .= '<image>http://rumi.store/'.$s->mainImage->originalURL.'</image>';
+            $xml .= '<image>http://rumi.store/'.$s->mainImage->originalURL().'</image>';
             $xml .= '<vendorCode>'.$s->article.'</vendorCode>';
             $xml .= '<description><![CDATA['.$s->description->description.']]</description>';
 
