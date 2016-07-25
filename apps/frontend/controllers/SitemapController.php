@@ -68,6 +68,7 @@ XML;
             }
             $xml .= '<categoryId>'.$category_id.'</categoryId>'."\n";
             $xml .= '<price>'.$s->price.'</price>'."\n";
+            $xml .= '<bnprice>'.$s->price.'</bnprice>'."\n";
             $xml .= '<image>http://rumi.store'.$s->mainImage->originalURL().'</image>'."\n";
             $xml .= '<vendorCode>'.$s->article.'</vendorCode>'."\n";
             $xml .= '<description><![CDATA['.$s->description->description.']]</description>'."\n";
