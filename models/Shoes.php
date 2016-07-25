@@ -94,6 +94,10 @@ class Shoes extends Model
         return false;
     }
 
+    public function getCode(){
+        return $this->id + 198545;
+    }
+
     public function getURL(){
         return '/'.$this->get_in_translate_to_en($this->name.' '.$this->article.' в Днепропетровск цена — купить в интернет-магазине RUMI').'-'.(198545 + $this->id);
     }
