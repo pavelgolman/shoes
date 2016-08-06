@@ -51,13 +51,13 @@
                         <div class="banner-image">
                             <?php $temp = \Models\Shoes::findFirst(82)?>
                             <a href="<?=$temp->getURL()?>">
-                                <img src="/img/banner/cms11.jpg?3" alt="">
+                                <img src="<?=$temp->mainImage->thumbnailURL(281, 280)?>" alt="">
                             </a>
                         </div>
                         <div class="banner-image">
                             <?php $temp = \Models\Shoes::findFirst(9)?>
-                            <a href="<?=''//$temp->getURL()?>">
-                                <img src="/img/banner/cms12.jpg?3" alt="">
+                            <a href="<?=$temp->getURL()?>">
+                                <img src="<?=$temp->mainImage->thumbnailURL(281, 280)?>" alt="">
                             </a>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="banner-image">
                             <?php $temp = \Models\Shoes::findFirst(98)?>
                             <a href="<?=$temp->getURL()?>">
-                                <img src="/img/banner/cms13.jpg?3" alt="">
+                                <img src="<?=$temp->mainImage->thumbnailURL(283, 566)?>" alt="">
                             </a>
                         </div>
                     </div>
