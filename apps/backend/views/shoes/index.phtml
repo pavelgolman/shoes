@@ -23,7 +23,7 @@
                 <?php foreach($shoes as $s):?>
                 <tr class="even pointer" data-shoes-id="<?=$s->id?>">
                     <td class=" "><?=$s->id?></td>
-                    <td class=" "><?=$s->name?></td>
+                    <td class=" "><?=$s->name.($shoes->is_hidden ? ' (скрытый)' : '')?></td>
                     <td class=" ">
                         <?php foreach($s->images as $image):?>
                             <a target="_blank" href="<?=$image->originalURL()?>"></a><img alt="image" src="<?=$image->thumbnailURL(85, 85)?>" /></a>
