@@ -6,6 +6,7 @@ use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
 use Phalcon\Forms\Element\Select;
 use Phalcon\Forms\Element\Hidden;
+use Phalcon\Forms\Element\Check;
 use Models\Shoes;
 
 class ShoesForm extends Form
@@ -20,6 +21,6 @@ class ShoesForm extends Form
 
         $this->add(new Text("price"));
 
-        $this->add(new Checkbox("is_hidden"));
+        $this->add(new Check("is_hidden"));
     }
 }
