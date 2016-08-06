@@ -20,5 +20,13 @@ $SHOES_THUMBNAILS_MAP = array(
     array(
         'width' => 85,
         'height' => 85
+    ),
+    array(
+        'width' => 281,
+        'height' => 280
+    ),
+    array(
+        'width' => 283,
+        'height' => 566
     )
 );

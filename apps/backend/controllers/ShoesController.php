@@ -149,7 +149,7 @@ class ShoesController extends AdminController
     public function thumbnailsAction($id){
         $shoes = Shoes::findFirst($id);
         foreach($shoes->images as $image){
-
+            $image->reGenerateThumbnails();
         }
         return $this->response->redirect("admin/shoes/edit/".$shoes->id);
     }
