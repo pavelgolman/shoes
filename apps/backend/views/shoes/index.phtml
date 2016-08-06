@@ -34,6 +34,11 @@
                     <td class=" last">
                         <a href="/admin/shoes/edit/<?=$s->id?>">Редактировать</a>
                         <a href="/admin/shoes/delete/<?=$s->id?>" onclick="return confirm('Удалить \'<?=$s->name?>\'?');">Удалить</a>
+                        <?php if($s->is_hidden):?>
+                            <a href="/admin/shoes/show/<?=$s->id?>" onclick="return confirm('Показать \'<?=$s->name?>\'?');">Показать</a>
+                        <?php else:?>
+                            <a href="/admin/shoes/hide/<?=$s->id?>" onclick="return confirm('Скрыть \'<?=$s->name?>\'?');">Скрыть</a>
+                        <?php endif?>
                     </td>
                 </tr>
                 <?php endforeach?>

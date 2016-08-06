@@ -211,4 +211,23 @@ class ShoesController extends AdminController
     }
 
 
+    public function hideAction($id)
+    {
+        $shoes = Shoes::findFirstById($id);
+        $shoes->is_hidden = 1;
+        $shoes->save();
+        return $this->dispatcher->forward(array(
+            'action' => 'index'
+        ));
+    }
+
+    public function showAction($id)
+    {
+        $shoes = Shoes::findFirstById($id);
+        $shoes->is_hidden = 0;
+        $shoes->save();
+        return $this->dispatcher->forward(array(
+            'action' => 'index'
+        ));
+    }
 }
