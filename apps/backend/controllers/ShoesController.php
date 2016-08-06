@@ -102,7 +102,7 @@ class ShoesController extends AdminController
             $shoes->article = $this->request->getPost('article');
             $shoes->price = $this->request->getPost('price');
             $shoes->main_image_id = $this->request->getPost('main_image_id');
-            $shoes->hidden = $this->request->getPost('hidden');
+            $shoes->is_hidden = $this->request->getPost('is_hidden');
 
             if(!$shoes->description){
                 $shoes->description = new \Models\ShoesDescriptions();

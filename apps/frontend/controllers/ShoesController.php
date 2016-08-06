@@ -14,7 +14,7 @@ class ShoesController extends Controller
         $currentPage = 1;
 
         $shoes      = \Models\Shoes::find(array(
-            "conditions" => "hidden = 0",
+            "conditions" => "is_hidden = 0",
             'order' => 'order_index ASC'
         ));
 
@@ -38,7 +38,7 @@ class ShoesController extends Controller
 
 
         $this->view->featured = \Models\Shoes::find(array(
-            "conditions" => "hidden = 0",
+            "conditions" => "is_hidden = 0",
             'order' => 'RAND()',
             "limit" => 16
         ));

@@ -5,7 +5,7 @@ create table if not exists shoes(
   price int unsigned not null,
   main_image_id int unsigned default null,
   article  varchar(255) not null,
-  hidden tinyint(1) not null default 0,
+  is_hidden tinyint(1) not null default 0,
   order_index int unsigned not null default 0,
   primary key(id),
   index `name`(`name`),

@@ -20,6 +20,6 @@ class ShoesForm extends Form
 
         $this->add(new Text("price"));
 
-        $this->add(new Check("hidden"));
+        $this->add(new Check("is_hidden"));
     }
 }

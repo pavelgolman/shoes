@@ -15,7 +15,7 @@ class Shoes extends Model
 
     public $price;
 
-    public $hidden;
+    public $is_hidden;
 
     public $main_image_id;
 
