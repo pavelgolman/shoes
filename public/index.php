@@ -60,7 +60,14 @@ $di->set('router', function () {
         )
     );
 
-
+    $router->add(
+        "/redesign",
+        array(
+            'module'     => 'redesign',
+            'controller' => 'index',
+            'action'     => 'index'
+        )
+    );
 
     $router->add(
         "/redesign/:controller/:action/",

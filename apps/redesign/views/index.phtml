@@ -1,419 +1,1179 @@
-
-<!DOCTYPE html>
-<!--[if IE]><![endif]-->
-<!--[if lt IE 7 ]> <html lang="en" class="ie6">    <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie7">    <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="ie8">    <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="ie9">    <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html class="no-js" lang="">
+<!doctype html>
+<!--[if lt IE 8]><html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
+
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Redesign <?=!empty($title_for_page) ? $title_for_page : 'RUMI | Обувь в наличии и под заказ'?></title>
-    <meta name="description" content="<?=!empty($meta_description) ? $meta_description : 'Купить обувь в Днепропетровске в наличии и под заказ'?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <?php if(!empty($og_url)):?>
-        <meta property="og:url"           content="<?=$og_url?>" />
-    <?php endif?>
-    <meta property="og:type"          content="website" />
-    <?php if(!empty($og_url)):?>
-        <meta $og_title="og:title"         content="<?=$og_title?>" />
-    <?php endif?>
-    <?php if(!empty($og_description)):?>
-        <meta property="og:description"   content="<?=$og_description?>" />
-    <?php endif?>
-    <?php if(!empty($og_image)):?>
-        <meta property="og:image"         content="<?=$og_image?>" />
-    <?php endif?>
+    <title><?=!empty($title_for_page) ? $title_for_page : 'RUMI | Обувь в наличии и под заказ'?></title>
 
-    <!-- Favicon
-		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+    <link href="/redesign/css/third-parties.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/redesign/css/main.css" rel="stylesheet" type="text/css" media="all" />
 
-    <!-- Fonts  -->
-    <link href='https://fonts.googleapis.com/css?family=Khula:400,800,700,600,300' rel='stylesheet' type='text/css'>
+    <script>
+        //<![CDATA[
+        var Shopify = Shopify || {};
+        Shopify.shop = "dethrone.myshopify.com";
+        Shopify.theme = {"name":"Kingdom","id":40387652,"theme_store_id":725,"role":"main"};
 
-    <!-- CSS  -->
-
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- owl.carousel CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/owl.carousel.css">
-
-    <!-- owl.theme CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/owl.theme.css">
-
-    <!-- owl.transitions CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/owl.transitions.css">
-
-    <!-- font-awesome.min CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-
-    <!-- jquery.fancybox CSS
-        ============================================ -->
-    <link rel="stylesheet" href="/css/fancb/jquery.fancybox.css">
-
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/animate.css">
-
-    <!-- meanmenu CSS
-        ============================================ -->
-    <link rel="stylesheet" href="/css/meanmenu.min.css">
-
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/normalize.css">
-
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/main.css">
-
-    <link rel="stylesheet" href="/style.css">
-
-    <!-- nivo-slider CSS
-        ============================================ -->
-    <link rel="stylesheet" href="/css/nivo-slider.css">
-
-    <!-- style CSS
-		============================================ -->
-
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="/css/responsive.css">
-
-    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+        //]]>
+    </script>
 
 
-    <script src="/js/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/sweetalert.css">
+    <script>
+        //<![CDATA[
+        (function() {
+            function asyncLoad() {
+                var urls = ["\/\/secure.apps.shappify.com\/apps\/bundle\/generate_bundle.php?shop=dethrone.myshopify.com","https:\/\/s3.amazonaws.com\/lastsecondcoupon\/js\/freeshippingbar.js?shop=dethrone.myshopify.com","https:\/\/shop-ext.s3.amazonaws.com\/conversion-production-min.js?shop=dethrone.myshopify.com","https:\/\/shopifyapp.rontar.com\/ScriptTags\/onlinestore.js?advId=15571\u0026audienceId=1332c738-e525-490e-8fec-2571458b63b4\u0026priceId=544\u0026shop=dethrone.myshopify.com","https:\/\/sizeguides.eastsideco.io\/assets\/product.js?shop=dethrone.myshopify.com","\/\/assets.backinstock.org\/widget\/3615_1476238239.js?v=5\u0026shop=dethrone.myshopify.com"];
+                for (var i = 0; i < urls.length; i++) {
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = urls[i];
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                }
+            }
+            window.attachEvent ? window.attachEvent('onload', asyncLoad) : window.addEventListener('load', asyncLoad, false);
+        })();
+
+        //]]>
+    </script>
+    <script id="__st">
+        //<![CDATA[
+        var __st={"a":1867718,"offset":-28800,"reqid":"96b60124-1c2a-4d3c-80d8-3c8fd0c02de1","pageurl":"www.dethrone.com\/","u":"690684e4f532","p":"home"};
+        //]]>
+    </script>
+    <script>
+        //<![CDATA[
+        (function() {
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+            s.src = '//cdn.shopify.com/s/javascripts/shopify_stats.js?v=6';
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+
+        //]]>
+    </script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        var _gaUTrackerOptions = {'allowLinker': true};ga('create', 'UA-36421939-1', 'auto', _gaUTrackerOptions);ga('send', 'pageview');
+        (function(){
+            ga('require', 'linker');
+            function addListener(element, type, callback) {
+                if (element.addEventListener) {
+                    element.addEventListener(type, callback);
+                }
+                else if (element.attachEvent) {
+                    element.attachEvent('on' + type, callback);
+                }
+            }
+            function decorate(event) {
+                event = event || window.event;
+                var target = event.target || event.srcElement;
+                if (target && (target.action || target.href)) {
+                    ga(function (tracker) {
+                        var linkerParam = tracker.get('linkerParam');
+                        document.cookie = '_shopify_ga=' + linkerParam + '; ' + 'path=/';
+                    });
+                }
+            }
+            addListener(window, 'load', function(){
+                for (var i=0; i<document.forms.length; i++) {
+                    if(document.forms[i].action && document.forms[i].action.indexOf('/cart') >= 0) {
+                        addListener(document.forms[i], 'submit', decorate);
+                    }
+                }
+                for (var i=0; i<document.links.length; i++) {
+                    if(document.links[i].href && document.links[i].href.indexOf('/checkout') >= 0) {
+                        addListener(document.links[i], 'click', decorate);
+                    }
+                }
+            })
+        }());
+    </script><script src="//cdn.shopify.com/s/assets/themes_support/ga_urchin_forms-668547562549a84f5dfa01ef82607987f85ecbe1c8301faf25059becfa208199.js" defer="defer"></script>
+    <script type="text/javascript">
+
+        window.ShopifyAnalytics = window.ShopifyAnalytics || {};
+        window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
+        window.ShopifyAnalytics.meta.currency = 'USD';
+        var meta = {};
+        for (var attr in meta) {
+            window.ShopifyAnalytics.meta[attr] = meta[attr];
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        window.ShopifyAnalytics.merchantGoogleAnalytics = function() {
+
+        };
+    </script>
+
+    <script type="text/javascript" class="analytics">
+
+
+
+        (function () {
+            var customDocumentWrite = function(content) {
+                var jquery = null;
+
+                if (window.jQuery) {
+                    jquery = window.jQuery;
+                } else if (window.Checkout && window.Checkout.$) {
+                    jquery = window.Checkout.$;
+                }
+
+                if (jquery) {
+                    jquery('body').append(content);
+                }
+            };
+
+            window.__shopify_trekkie_canary = true;
+
+            var trekkie_version = '2016.11.01.1';
+            var trekkie = window.ShopifyAnalytics.lib = window.trekkie = window.trekkie || [];
+            if (trekkie.integrations) {
+                return;
+            }
+            trekkie.methods = [
+                'identify',
+                'page',
+                'ready',
+                'track',
+                'trackForm',
+                'trackLink'
+            ];
+            trekkie.factory = function(method) {
+                return function() {
+                    var args = Array.prototype.slice.call(arguments);
+                    args.unshift(method);
+                    trekkie.push(args);
+                    return trekkie;
+                };
+            };
+            for (var i = 0; i < trekkie.methods.length; i++) {
+                var key = trekkie.methods[i];
+                trekkie[key] = trekkie.factory(key);
+            }
+            trekkie.load = function(config) {
+                trekkie.config = config;
+                var script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.onerror = function(e) { (new Image()).src = '//v.shopify.com/internal_errors/track?error=trekkie_load'; };
+                script.async = true;
+                script.src = 'https://cdn.shopify.com/s/javascripts/tricorder/trekkie.' + config.Trekkie.appName + '.min.js?v=' + trekkie_version;
+                var first = document.getElementsByTagName('script')[0];
+                first.parentNode.insertBefore(script, first);
+            };
+            trekkie.load(
+                {"Trekkie":{"appName":"storefront","environment":"production","defaultAttributes":{"shopId":1867718}},"Performance":{"navigationTimingApiMeasurementsEnabled":true,"navigationTimingApiMeasurementsSampleRate":0.001},"Facebook Pixel":{"pixelIds":["142916019492950"],"agent":"plshopify1.2"}}
+            );
+
+            var loaded = false;
+            trekkie.ready(function() {
+                if (loaded) return;
+                loaded = true;
+
+                window.ShopifyAnalytics.lib = window.trekkie;
+
+
+                var originalDocumentWrite = document.write;
+                document.write = customDocumentWrite;
+                try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
+                document.write = originalDocumentWrite;
+
+
+                window.ShopifyAnalytics.lib.page(
+                    null,
+                    {"pageType":"home"}
+                );
+
+
+            });
+
+
+            var eventsListenerScript = document.createElement('script');
+            eventsListenerScript.async = true;
+            eventsListenerScript.src = "//cdn.shopify.com/s/assets/shop_events_listener-0f0d4352f69ee7a261e3c3adb4119f7887f607806e48f1306c3cefb38b33775f.js";
+            document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
+
+        })();
+    </script>
+
+    <script id="apple-pay-shop-capabilities" type="application/json">{"shopId":1867718,"countryCode":"US","currencyCode":"USD","merchantCapabilities":["supports3DS"],"merchantId":"gid:\/\/shopify\/Shop\/1867718","merchantName":"Dethrone","requiredBillingContactFields":["postalAddress","email"],"requiredShippingContactFields":["postalAddress","email"],"shippingType":"shipping","supportedNetworks":["visa","masterCard","amex","discover"]}</script>
+    <script src="//cdn.shopify.com/s/assets/storefront/express_buttons-811c958168c0513889b5e3eb1ef33bf7cf34b8c0c38bfc74f38ed3e9e43b6c92.js" defer="defer" crossorigin="anonymous" integrity="sha256-gRyVgWjAUTiJtePrHvM79880uMDDi/x0847T6eQ7bJI="></script>
+
+    <meta name="shopify-checkout-api-token" content="6ab582407aa89426a1879acc532b0ea0" />
+
+    <link rel="stylesheet" media="all" href="//cdn.shopify.com/s/assets/storefront/additional-checkout-buttons-e666b0b8a20c90d1eaafcc0f38897f2b4ab8af21f68426b37926e48a2ae452c2.css" />
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,400italic,500,600,700,700italic" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <link href="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="//www.dethrone.com/search?q=1e29614cdb1bb56afd8d2e06bc7e61af" id="respond-redirect" rel="respond-redirect" />
+    <script src="//www.dethrone.com/search?q=1e29614cdb1bb56afd8d2e06bc7e61af" type="text/javascript"></script>
+    <![endif]-->
+
+    <!--[if lt IE 10]>
+    <script src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/js_placeholder.min.js?15332220164954008954" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+            $('input, textarea').placeholder();
+        });
+    </script>
+    <![endif]-->
+
+
+
+
+
+    <script type="text/javascript" async="" src="//secure.apps.shappify.com/apps/upsell/upselljsscript.php?shop=dethrone.myshopify.com"></script>
+
 </head>
-<body class="home-1">
 
-<!-- Start main area -->
-<div class="main-area">
-    <!-- Start header -->
-    <header>
-        <!-- Start top call-to acction -->
-        <div class="top-bar-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 ">
-                        <div class="top-call-to-acction">
-                            <p>
-                                <a href="tel:0123-456-789"><i class="fa fa-phone"></i>050-985-11-00, Viber/Telegram: (098) 098-21-37</a>
-                                <a href="#" onclick="return false;">Бесплатная доставка по всей Украине: Нова Пошта, Ин-Тайм, АвтоЛюкс</a>
-                                <!--a href="mailto:admin@bootexperts.com"><i class="fa fa-envelope-o"></i> E-mail: admin@bootexperts.com</a-->
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
-                        <div class="social-and-menu">
-                            <div class="top-menu">
+<body id="dethrone-royalty-brand-official-store" class="template-index no-touch clearfix">
 
-                            </div>
-                            <div class="top-social">
-                                <!--p>
-                                    <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-                                </p-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div id="sidebar-holder">
+
+    <div id="sidebar">
+
+        <header id="logo">
+
+
+            <h1 itemscope itemtype="//schema.org/Organization">
+
+
+
+
+                <a href="/" itemprop="url">
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/logo.png?15332220164954008954" alt="Dethrone" itemprop="logo" class="regular-logo" />
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/logo_x2.png?15332220164954008954" alt="Dethrone" class="retina-logo" />
+                </a>
+
+
+
+
+            </h1>
+
+
+        </header>
+
+        <div id="meta">
+
+            <div class="item responsive-menu">
+                <a href="#">Menu</a>
+
+
+                <svg class="svg hamburger" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><rect x="18" y="20" width="25" height="4"/><rect x="18" y="28" width="25" height="4"/><rect x="18" y="36" width="25" height="4"/></g></svg>
+
             </div>
-        </div>
-        <!-- End top call-to acction -->
-        <!-- Start logo and search area -->
-        <div class="logo-and-search-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3">
-                        <div class="logo">
-                            <a href="/"><img src="/img/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-9 col-md-9">
-                        <!-- Start user info adn search -->
-                        <div class="user-info-adn-search">
-                            <div class="user-info">
-                                <a target="_blank" href="https://www.instagram.com/rumi.store"><img width="150px" src="/img/we-on-instagram.png" /></a>
-                                <a target="_blank" href="https://www.facebook.com/rumi.shoes"><img width="150px" src="/img/we-on-facebook.png" /></a>
-                                <a target="_blank" href="https://vk.com/rumi_store"><img width="150px" src="/img/we-on-vk.png" /></a>
 
-                            </div>
-                            <div class="search-and-cart">
-<p>&nbsp;</p>                                
-<!--div class="search-categori">
-                                    <div class="categori">
-                                        <form id="select-categoris" method="post" class="form-horizontal">
-                                            <select name="language">
-                                                <option value="">Categories</option>
-                                                <option value="12">Automotive</option>
-                                                <option value="21">electronic </option>
-                                                <option value="25">Camera</option>
-                                                <option value="26">Electronic </option>
-                                                <option value="27">Cosmetic </option>
-                                                <option value="28">Medical</option>
-                                                <option value="29">Laptop</option>
-                                                <option value="30">Phasellus</option>
-                                                <option value="22">mobile</option>
-                                                <option value="31">Camcorders </option>
-                                                <option value="32">Electronic </option>
-                                                <option value="33">Cosmetic </option>
-                                                <option value="34">Laptop</option>
-                                                <option value="35">Medical</option>
-                                                <option value="36">Phasellus</option>
-                                                <option value="23">laptop </option>
-                                                <option value="37">Phasellus</option>
-                                                <option value="38">Healthcare </option>
-                                                <option value="39">Electronic </option>
-                                                <option value="40">Cosmetic </option>
-                                                <option value="13">Electronics </option>
-                                                <option value="24">camcorder </option>
-                                                <option value="46">Healthcare </option>
-                                                <option value="47">Laptop</option>
-                                                <option value="48">Camera</option>
-                                                <option value="41">Medical</option>
-                                                <option value="49">Camera</option>
-                                                <option value="50">Camcorders</option>
-                                                <option value="51">Camcorders</option>
-                                                <option value="42">Healthcare</option>
-                                                <option value="52">Medical</option>
-                                                <option value="53">Healthcare</option>
-                                                <option value="54">Healthcare </option>
-                                                <option value="14">Sports</option>
-                                                <option value="43">category 1</option>
-                                                <option value="60">day </option>
-                                                <option value="61">evening </option>
-                                                <option value="62">night </option>
-                                                <option value="44">category 2 </option>
-                                                <option value="63">kids </option>
-                                                <option value="64">men </option>
-                                                <option value="65">Women </option>
-                                                <option value="45">category 3 </option>
-                                                <option value="66">clothing </option>
-                                                <option value="67">Accessories </option>
-                                                <option value="15">Smartphone</option>
-                                                <option value="55">category 1 </option>
-                                                <option value="56">category 2 </option>
-                                                <option value="57">category 3 </option>
-                                                <option value="16">Beauty </option>
-                                                <option value="58">category 1 </option>
-                                                <option value="59">category 2 </option>
-                                                <option value="17">Bags, Shoes</option>
-                                                <option value="18">Networking </option>
-                                                <option value="19">Accessories </option>
-                                                <option value="20">Entertainment </option>
-                                            </select>
-                                        </form>
-                                    </div-->
-                                    <!--div class="search-box">
-                                        <form action="#">
-                                            <input type="text" class="form-control input-sm" maxlength="64" placeholder="Enter your search key ... " />
-                                            <button type="submit">Search</button>
-                                        </form>
-                                    </div-->
-                                </div>
-                                <!--div class="shoping-cart">
-                                    <a href="cart.html"><span>My Cart (3)</span></a>
-                                    <div class="add-to-cart-product">
-                                        <div class="cart-product product-item11">
-                                            <div class="cart-product-image">
-                                                <a href="single-product.html"><img src="/img/cart/faded-short-sleeves-tshirt.jpg" alt="Product"></a>
-                                            </div>
-                                            <div class="cart-product-info">
-                                                <p><span>1</span>x<a href="single-product.html">Faded...</a></p>
-                                                <a href="single-product.html">S, Orange</a>
-                                                <span class="price">£ 19.81</span>
-                                            </div>
-                                            <div class="cart-product-remove">
-                                                <i class="fa fa-times"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cart-product">
-                                            <div class="cart-product-image">
-                                                <a href="single-product.html"><img src="/img/cart/printed-dress.jpg" alt="Product"></a>
-                                            </div>
-                                            <div class="cart-product-info">
-                                                <p><span>1</span>x<a href="single-product.html">blouse</a></p>
-                                                <a href="single-product.html">S, Black</a>
-                                                <span class="price">£ 32.40</span>
-                                            </div>
-                                            <div class="cart-product-remove">
-                                                <i class="fa fa-times"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cart-product">
-                                            <div class="cart-product-image">
-                                                <a href="single-product.html"><img src="/img/cart/printed-summer-dress.jpg" alt="Product"></a>
-                                            </div>
-                                            <div class="cart-product-info">
-                                                <p><span>1</span>x<a href="single-product.html">Printed...</a></p>
-                                                <a href="single-product.html">S, Yellow</a>
-                                                <span class="price">£ 36.60</span>
-                                            </div>
-                                            <div class="cart-product-remove">
-                                                <i class="fa fa-times"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cart-price">
-                                            <div class="cart-product-line fast-line">
-                                                <span>Shipping</span>
-                                                <span class="free-shiping">$10.50</span>
-                                            </div>
-                                            <div class="cart-product-line">
-                                                <span>Total</span>
-                                                <span class="total">£ 88.81</span>
-                                            </div>
-                                        </div>
-                                        <div class="cart-checkout">
-                                            <a href="checkout.html">Check out<i class="fa fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div-->
-                            </div>
-                        </div>
-                        <!-- End user info adn search -->
-                    </div>
-                </div>
+
+            <div class="item">
+
+                <a href="/account/login">Account</a>
+
+
+
+                <svg version="1.1" class="svg account" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><path d="M87.919,91.087l-3.563-29.478c-0.592-4.902-5.117-8.914-10.059-8.914h-48.6c-4.937,0-9.463,4.012-10.055,8.914l-3.565,29.478C11.485,95.988,15.04,100,19.98,100h43.195c4.939,0,12.771,0,17.4,0C85.207,100,88.511,95.988,87.919,91.087z"/><circle cx="49.999" cy="22.869" r="22.869"/></svg>
+
             </div>
-        </div>
-        <!-- End logo and search area -->
-        <?php $this->partial("partials/main_menu"); ?>
-    </header>
-    <!-- End header -->
-    <?php echo $this->getContent(); ?>
 
-    <!-- Start footer -->
-    <footer>
-        <!-- Start footer top -->
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <!-- Start footer top box -->
-                    <div class="col-xs-12 col-sm-3">
-                        <div class="footer-top-box">
-                            <i class="fa fa-phone-square"></i>
-                            <span>Viber: (098) 098-21-37</span>
-                            <p>050-985-11-00</p>
-                        </div>
-                    </div>
-                    <!-- End footer top box -->
-                    <!-- Start footer top box -->
-                    <div class="col-xs-12 col-sm-3">
-                        <div class="footer-top-box">
-                            <i class="fa fa-clock-o"></i>
-                            <span>Часы работы</span>
-                            <p>Ежедневно: 9.00 - 18.00</p>
-                        </div>
-                    </div>
-                    <!-- End footer top box -->
-                    <!-- Start footer top box -->
-                    <div class="col-xs-12 col-sm-3">
-                        <div class="footer-top-box">
-                            <i class="fa fa-paper-plane"></i>
-                            <span>Бесплатная доставка</span>
-                        </div>
-                    </div>
-                    <!-- End footer top box -->
-                    <!-- Start footer top box -->
-                    <div class="col-xs-12 col-sm-3">
-                        <div class="footer-top-box last">
-                            <i class="fa fa-history"></i>
-                            <!--span>Без предоплаты</span-->
-                        </div>
-                    </div>
-                    <!-- End footer top box -->
-                </div>
+
+            <div class="item">
+                <a href="#" id="main-search" class="overlay-button" data-overlay="#search-overlay">Search</a>
+
+
+                <svg version="1.1" class="svg search" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><g><path d="M91.473,78.791L75.877,63.193c4.237-6.103,6.729-13.512,6.729-21.49c0-20.844-16.963-37.799-37.806-37.799C23.956,3.904,7,20.859,7,41.703c0,20.849,16.956,37.803,37.8,37.803c5.744,0,11.189-1.29,16.069-3.593l16.742,16.744c1.805,1.799,4.214,2.79,6.777,2.79c2.627,0,5.105-1.032,6.979-2.901C95.188,88.725,95.234,82.55,91.473,78.791z M22.119,41.703c0-12.505,10.176-22.682,22.681-22.682c12.507,0,22.683,10.177,22.683,22.682c0,12.509-10.176,22.686-22.683,22.686C32.295,64.389,22.119,54.212,22.119,41.703z"/></g></g></svg>
+
             </div>
-        </div>
-        <!-- End footer top -->
-        <!-- Start footer medil -->
 
-        <!-- End footer copyright -->
-    </footer>
-    <!-- End footer -->
+            <div class="item">
+                <a href="/cart">Cart</a>
+
+
+                <svg version="1.1" class="svg cart" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="90px" height="90px" viewBox="0 0 90 90" enable-background="new 0 0 90 90" xml:space="preserve"><g><path d="M72.715,29.241H16.074c-4.416,0-2.961,3.613-2.961,8.03l3.802,38.897c0,4.416,3.614,4.229,8.031,4.229h38.896c4.416,0,8.664,0.188,8.664-4.229l3.167-38.897C75.674,32.854,77.131,29.241,72.715,29.241z"/><path d="M44.394,10.491c7.146,0,12.961,5.814,12.961,12.961h3.543c0-9.101-7.403-16.505-16.504-16.505c-9.1,0-16.503,7.404-16.503,16.505h3.543C31.434,16.306,37.249,10.491,44.394,10.491z"/></g></svg>
+
+                <span class="count">0</span>
+            </div>
+
+        </div>
+
+        <nav id="menu" role="navigation">
+            <div>
+
+
+                <ul class="top-menu collections-menu size-10">
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/shirts">Men's</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/women">Women's</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/ready-gear">Ready Collection</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/signature-line">Signature Series</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/hats">Hats</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/unofish">Unofish</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/fc">Dethrone FC</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/performance">Performance</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/kids-1">Kid's</a>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/clearance">CLEARANCE</a>
+                    </li>
+
+
+
+
+
+                </ul>
+
+                <ul class="top-menu size-2">
+
+
+
+
+
+
+
+
+
+
+                    <li class="submenu selected" aria-haspopup="true">
+                        <a href="/">
+                            Categories
+
+
+                            <svg version="1.0" class="svg arrow" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="7px" height="4px" viewBox="0 0 7 4" enable-background="new 0 0 7 4" xml:space="preserve"><polygon points="7.006,-0.044 3.5,3.961 -0.006,-0.044 "/></svg>
+
+                        </a>
+                        <ul class="sub-menu">
+
+                            <li><a href="/collections/shirts">Shirts</a></li>
+
+                            <li><a href="/collections/shorts">Shorts</a></li>
+
+                            <li><a href="/collections/sweatshirt">Hoodies</a></li>
+
+                            <li><a href="/collections/hats">Hats</a></li>
+
+                            <li class="selected"><a href="/">Accessories</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+
+
+                    <li>
+                        <a href="/collections/about-us">About Us</a>
+                    </li>
+
+
+
+
+
+
+
+                </ul>
+            </div>
+            <a class="responsive-close" href="#">
+
+                <svg version="1.1" class="svg close" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812   22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812 "/></svg>
+            </a>
+        </nav>
+
+        <aside id="footer" class="loading">
+            <div class="social-icons">
+
+
+                <a href="https://twitter.com/dethrone">https://twitter.com/dethrone<i class="fa fa-twitter fa-fw"></i></a>
+
+
+
+                <a href="https://www.facebook.com/official.dethrone">https://www.facebook.com/official.dethrone<i class="fa fa-facebook fa-fw"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <a href="https://instagram.com/dethrone/">https://instagram.com/dethrone/<i class="fa fa-instagram fa-fw"></i></a>
+
+
+
+
+
+
+
+                <a href="mailto:cs@dethrone.com">cs@dethrone.com<i class="fa fa-envelope-o fa-fw"></i></a>
+
+
+            </div>
+
+            <a class="footer-link" href="/pages/contact-us">Contact</a>
+
+            <a class="footer-link" href="/pages/wholesale">Wholesale</a>
+
+            <a class="footer-link" href="/pages/privacy-policy">Privacy</a>
+
+
+
+
+            <p>Copyright &copy; 2016 Dethrone</p>
+        </aside>
+
+    </div>
+
 </div>
-<!-- End main area -->
-<!-- JS -->
 
-<!-- jquery-1.11.3.min js
-		============================================ -->
-<script src="/js/vendor/jquery-1.11.3.min.js"></script>
+<div id="content-holder">
 
-<!-- bootstrap js
-		============================================ -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- owl.carousel.min js
-		============================================ -->
-<script src="/js/owl.carousel.min.js"></script>
-
-<!-- jquery.nivo.slider.pack js
-        ============================================ -->
-<script src="/js/jquery.nivo.slider.pack.js"></script>
-
-<!-- jqueryui js
-============================================ -->
-<script src="/js/jqueryui.js"></script>
-
-<!-- jqueryui js
-============================================ -->
-<script src="/js/quantty.js"></script>
-
-<!-- jqueryui js
-        ============================================ -->
-<script src="/js/jquery.fancybox.js"></script>
-
-<!-- jquery.scrollUp.min js
-        ============================================ -->
-<script src="/js/jquery.scrollUp.min.js"></script>
-
-<!-- wow js
-		============================================ -->
-<script src="/js/wow.js"></script>
-
-<!-- jquery.meanmenu js
-        ============================================ -->
-<script src="/js/jquery.meanmenu.js"></script>
-
-<!-- plugins js
-		============================================ -->
-<script src="/js/plugins.js"></script>
-
-<!-- main js
-		============================================ -->
-<script src="/js/main.js"></script>
+    <main id="content" role="main">
 
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-78074422-2', 'auto');
-  ga('send', 'pageview');
+        <div id="home-slider" class="swiper-container">
+
+            <div class="swiper-wrapper">
+
+
+
+                <div class="slide swiper-slide">
+
+                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide1_img.jpg?15332220164954008954)">
+
+                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide1_img.jpg?15332220164954008954" alt="" />
+
+                        <div class="slide-caption center dark">
+                            <div class="table-display">
+                                <div>
+
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <a class="slide-url" href="https://www.dethrone.com/collections/ready-gear"></a>
+
+
+                </div>
+
+
+
+
+
+                <div class="slide swiper-slide">
+
+                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide2_img.jpg?15332220164954008954)">
+
+                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide2_img.jpg?15332220164954008954" alt="" />
+
+                        <div class="slide-caption right dark">
+                            <div class="table-display">
+                                <div>
+
+
+
+
+                                    <h2 class="label b">NATE DIAZ COLLECTION</h2>
+
+
+
+
+
+                                    <a class="button label d" href="http://www.dethrone.com/collections/shirts">SHOP NOW<span>&rarr;</span></a>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <a class="slide-url" href="http://www.dethrone.com/collections/diaz"></a>
+
+
+                </div>
+
+
+
+
+
+                <div class="slide swiper-slide">
+
+                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide3_img.jpg?15332220164954008954)">
+
+                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide3_img.jpg?15332220164954008954" alt="" />
+
+                        <div class="slide-caption left dark">
+                            <div class="table-display">
+                                <div>
+
+
+
+
+                                    <h2 class="label b">READY COLLECTION</h2>
+
+
+
+
+
+                                    <a class="button label d" href="http://www.dethrone.com/collections/unofish">SHOP NOW<span>&rarr;</span></a>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <a class="slide-url" href="https://www.dethrone.com/collections/ready-gear"></a>
+
+
+                </div>
+
+
+
+
+
+                <div class="slide swiper-slide">
+
+                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide4_img.jpg?15332220164954008954)">
+
+                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide4_img.jpg?15332220164954008954" alt="" />
+
+                        <div class="slide-caption right dark">
+                            <div class="table-display">
+                                <div>
+
+
+
+
+                                    <h2 class="label b">THE PERCH</h2>
+
+
+
+
+
+                                    <a class="button label d" href="http://www.dethrone.com/collections/hats">SHOP HATS<span>&rarr;</span></a>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <a class="slide-url" href="http://www.dethrone.com/collections/hats"></a>
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="draw-buttons gal three" aria-hidden="true">
+                <div class="holder">
+                    <span class="swiper-no"><span class="cur">1</span><span class="tot">1</span></span>
+				<span class="btn-prev">
+
+	<svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"/></g></svg>
+<a href="#" class="swiper-prev"></a>
+				</span><span class="btn-next">
+
+	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"/></g></svg>
+<a href="#" class="swiper-next"></a></span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+
+
+
+
+        <div id="page-content" class=" hide-content clearfix">
+
+
+
+            <div class="home-content wpadding">
+
+
+                <div class="rte">
+                    <a href="http://www.dethrone.com/collections/shirts"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_mens2.jpg?6870402870374115032" alt="" /></a><a href="http://www.dethrone.com/collections/women"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_womens.jpg?14788447540709416282" alt="" width="50%" /></a><a href="http://www.dethrone.com/collections/hats"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_perch.jpg?8825408228288257708" alt="" width="50%" /></a><a href="http://www.dethrone.com/collections/unofish"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_unofish.jpg?12640750231487243345" alt="" /></a><a href="http://www.dethrone.com/collections/fc"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_fc.jpg?1080028231664942819" alt="" width="50%" /></a><a href="http://www.dethrone.com/collections/athletic-gear"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_performance2_5cae1e1b-ea33-4dd5-836f-d293650924a8.jpg?16999425398620676144" alt="" width="50%" /></a>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div id="products-grid" class="home-content products-list border-true tiny no-loader">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <a href="/products/ready-tee-charcoal-heather" class="grid-item two light">
+
+
+
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/products/Original-Ready-CHH-FR_1024x1024.jpg?v=1478661734" alt="Dethrone, ORIGINAL READY TEE - Charcoal Heather">
+
+
+
+                    <div class="caption">
+
+
+                        <div>
+
+                            <h2>ORIGINAL READY TEE - Charcoal Heather</h2>
+
+                            <div class="price">
+
+                                <strong>$24.00</strong>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </a>
+
+
+
+
+
+
+
+
+
+
+
+                <a href="/products/the-king-black" class="grid-item two light">
+
+
+
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/products/KING-BLK-FR-SHP_1024x1024.jpg?v=1478651873" alt="THE KING - Black">
+
+
+
+                    <div class="caption">
+
+
+                        <div>
+
+                            <h2>THE KING - Black</h2>
+
+                            <div class="price">
+
+                                <strong>$24.00</strong>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </a>
+
+
+
+
+
+
+
+
+
+
+
+                <a href="/products/the-invasion" class="grid-item two light">
+
+
+
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/products/SHP-Invasion-FR_1024x1024.jpg?v=1470458242" alt="THE INVASION">
+
+
+
+                    <div class="caption">
+
+
+                        <div>
+
+                            <h2>THE INVASION</h2>
+
+                            <div class="price">
+
+                                <strong>$20.00</strong>
+
+
+                                <span class="info">$24.00</span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <span class="add sale"><span>On Sale</span></span>
+
+
+                </a>
+
+
+
+
+
+
+
+
+
+
+
+                <a href="/products/nyc" class="grid-item two light">
+
+
+
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/products/NYC-FR-SHP_1024x1024.jpg?v=1478764517" alt="NYC">
+
+
+
+                    <div class="caption">
+
+
+                        <div>
+
+                            <h2>NYC</h2>
+
+                            <div class="price">
+
+                                <strong>$24.00</strong>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </a>
+
+
+
+
+
+
+
+
+
+
+
+                <a href="/products/ready-snapback-black-white" class="grid-item two light">
+
+
+
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/products/SHP-Ready-BLK-FR_1024x1024.jpg?v=1471310610" alt="READY SNAPBACK - Black &amp; White">
+
+
+
+                    <div class="caption">
+
+
+                        <div>
+
+                            <h2>READY SNAPBACK - Black & White</h2>
+
+                            <div class="price">
+
+                                <strong>$32.00</strong>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </a>
+
+
+
+
+
+
+
+
+
+
+
+                <a href="/products/smoothangel" class="grid-item two light">
+
+
+
+                    <img src="//cdn.shopify.com/s/files/1/0186/7718/products/SHP_Angel2_FR_1024x1024.jpg?v=1454366771" alt="SMOOTH ANGEL">
+
+
+
+                    <div class="caption">
+
+
+                        <div>
+
+                            <h2>SMOOTH ANGEL</h2>
+
+                            <div class="price">
+
+                                <strong>$24.00</strong>
+
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </a>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </main>
+
+</div>
+
+<div id="main-overlay">
+
+    <div id="search-overlay" class="table-display">
+        <div>
+            <div class="simple-overlay-box">
+
+                <h5>Search the store</h5>
+
+
+
+
+                <form action="/search" method="get" class="input-group search-bar" role="search">
+                    <input type="search" name="q" value="" placeholder=" Type keyword and hit enter ">
+
+                    <button type="submit">
+
+                        <svg version="1.1" class="svg search" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"><g><g><path d="M91.473,78.791L75.877,63.193c4.237-6.103,6.729-13.512,6.729-21.49c0-20.844-16.963-37.799-37.806-37.799C23.956,3.904,7,20.859,7,41.703c0,20.849,16.956,37.803,37.8,37.803c5.744,0,11.189-1.29,16.069-3.593l16.742,16.744c1.805,1.799,4.214,2.79,6.777,2.79c2.627,0,5.105-1.032,6.979-2.901C95.188,88.725,95.234,82.55,91.473,78.791z M22.119,41.703c0-12.505,10.176-22.682,22.681-22.682c12.507,0,22.683,10.177,22.683,22.682c0,12.509-10.176,22.686-22.683,22.686C32.295,64.389,22.119,54.212,22.119,41.703z"/></g></g></svg>
+                    </button>
+                </form>
+                <a href="#" class="close main">
+
+                    <svg version="1.1" class="svg close" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812   22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812 "/></svg>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+
+    // Saving theme settings and local translations as global variables
+
+    jQuery.themeSettings = {
+        newsletter_check: "false",
+        newsletter_auto: "10",
+        newsletter_mobile: "false",
+        carousel_transition: "slide",
+        carousel_autoplay: "true",
+        carousel_timer: "6",
+        collections_size: "small",
+        collections_border: "true tiny",
+        truncated_description: "true",
+        truncated_description_lines: 217,
+        cart_action: "overlay",
+        gallery_max_size: "true",
+        gallery_resizing: "fill",
+        gallery_transition: "fade",
+    }
+
+    jQuery.themeWords = {
+        general_newsletter_content_html: "Stay up to date on the latest product releases, special offers & news by signing up for our newsletter. ",
+        products_page_share_text: "Spread the word",
+        products_page_more_description_label: "Show more",
+        products_page_less_description_label: "Show less",
+        suffixAgo: "ago",
+        suffixFromNow: "from now",
+        seconds: "less than a minute",
+        minute: "about a minute",
+        minutes: "%d minutes",
+        hour: "about an hour",
+        hours: "about %d hours",
+        day: "a day",
+        days: "%d days",
+        month: "about a month",
+        months: "%d months",
+        year: "%d years",
+        years: "ago"
+    }
+
+
+
+
+
+    jQuery.themeAssets = {
+        arrowLeft: '<svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"/></g></svg>',
+        arrowRight: '<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"/></g></svg>',
+        arrowDown: '<svg version="1.0" class="svg arrow" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="7px" height="4px" viewBox="0 0 7 4" enable-background="new 0 0 7 4" xml:space="preserve"><polygon points="7.006,-0.044 3.5,3.961 -0.006,-0.044 "/></svg>'
+    }
 
 </script>
 
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.6";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+<script src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/js_plugins.min.js?15332220164954008954" type="text/javascript"></script>
+<script src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/js_scripts.min.js?15332220164954008954" type="text/javascript"></script>
 
 </body>
 </html>
