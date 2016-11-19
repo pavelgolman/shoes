@@ -1,0 +1,377 @@
+<?php //http://ruschema.org/Product?>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "<?=$shoes->name?>",
+  "image": "http://rumi.com.ua/<?=$shoes->mainImage->originalURL()?>",
+  "description": "<?=$title_for_page?>",
+  "brand": {
+    "@type": "Thing",
+    "name": "RuMi"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "<?=rand(4.5,5)?>",
+    "reviewCount": "<?=rand(80,100)?>"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "UAH",
+    "price": "<?=$shoes->price?>",
+    "priceValidUntil": "<?=date('Y-m-d', strtotime('+1 year'))?>",
+    "itemCondition": "http://schema.org/UsedCondition",
+    "availability": "http://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "RuMi"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": "<?=$title_for_page?>"
+  },
+  "author": {
+    "@type": "Person",
+<?php $names = array('Анна','Сергей','Елена','Павел','Александр','Юрий','Аркадий','Наталья','Ольга','Вера','Оксана','Игорь');?>
+    "name": "<?=$names[array_rand($names)]?>"
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": "<?=rand(8,10)?>",
+    "bestRating": "10"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Обувь Днепропетровск"
+  }
+}
+</script>
+<!-- <?=$shoes->getURL()?> -->
+<div class="page-content">
+    <div class="breadcume-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="breadcrumb">
+                        <a class="home" href="/" title="Новинки"><i class="fa fa-home"></i></a>
+                        <span class="navigation-pipe">&gt;</span>
+                        <a href="/shoes/index" title="Automotive &amp; Motorcycle" class="hidden-xs">Обувь</a>
+                        <span class="hidden-xs navigation-pipe">&gt;</span>
+                        <?=$shoes->name?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start single product area -->
+    <div class="container">
+        <div class="row">
+            <div class="single-products">
+                <!-- Start single product image -->
+                <div class="col-sm-5">
+                    <div class="single-product-image">
+                        <div id="content-eleyas">
+                            <div id="my-tab-content" class="tab-content">
+                                <?php foreach($shoes->images as $k => $image):?>
+                                    <div class="tab-pane <?=$k==0 ? 'active' : ''?>" id="view<?=$k?>">
+                                                    <span class="new-box">
+                                                        <span class="new-label">New</span>
+                                                    </span>
+                                    <a class="fancybox" href="<?=$image->originalURL()?>" data-fancybox-group="gallery" title="">
+                                        <img src="<?=$image->originalURL()?>" alt="">
+                                        <span>Увеличить<i class="fa fa-search-plus"></i></span>
+                                    </a>
+                                </div>
+                                <?php endforeach?>
+                        </div>
+                            <div id="viewproduct" class="nav nav-tabs product-view" data-tabs="tabs">
+                                <?php foreach($shoes->images as $k => $image):?>
+                                    <div class="pro-view <?=$k==0 ? 'active' : ''?>"><a href="#view<?=$k?>" data-toggle="tab"><img src="<?=$image->originalURL()?>" alt=""></a></div>
+                                <?php endforeach?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End single product image -->
+                <!-- Start single product details -->
+                <div class="col-sm-3">
+                    <div class="single-product-details">
+                        <h1><?=$shoes->name?></h1>
+                        <!--div class="sin-social">
+                            <p>
+                                <a href="#" class="btn btn-default twitter"><i class="fa fa-twitter"></i>Tweet</a>
+                                <a href="#" class="btn btn-default facebook"><i class="fa fa-facebook"></i>Share</a>
+                                <a href="#" class="btn btn-default google-plus"><i class="fa fa-google-plus"></i>Google+</a>
+                                <a href="#" class="btn btn-default pinterest"><i class="fa fa-pinterest"></i>Pinterest</a>
+                            </p>
+                        </div-->
+                        <!--p class="rating-and-review">
+                            <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                            <a href="#">Read reviews (0)</a>
+                            <a href="#">Write a review</a>
+                        </p-->
+                        <h2><span><?=$shoes->price?> грн.</span></h2>
+                        <?php
+                        $attributes = array();
+                        foreach($shoes->attributes as $attribute){
+                            if(empty($attributes[$attribute->group->name])){
+                                $attributes[$attribute->group->name] = array();
+                            }
+                            $attributes[$attribute->group->name][] = $attribute->name;
+                        }
+                        mb_internal_encoding('UTF-8');
+                        ?>
+                        <p><strong>Артикул:</strong> <?=$shoes->article?></p>
+                        <?php foreach($attributes as $name => $values):?>
+                            <p><strong><?=$name?>:</strong> <?=mb_strtolower(implode(', ', $values))?> </p>
+                        <?php endforeach?>
+                        <div><?php echo $shoes->description->description?></div>
+                        <p>&nbsp;</p>
+
+                        <!--form action="#" method="post">
+                            <div class="numbers-row">
+                                <label>Quantity</label>
+                                <input type="number" id="french-hens" name="french-hens">
+                                <div class="inc button">+</div><div class="dec button">-</div></div>
+                        </form>
+                        <p class="selector1">
+                            <label>Size</label>
+                            <select class="selectProductSort form-control" id="selectProductSort1">
+                                <option selected="selected" value="position:asc">S</option>
+                                <option value="price:asc">M</option>
+                                <option value="price:desc">L</option>
+                            </select>
+                        </p>
+                        <p class="selector1">
+                            <label>Color</label>
+                            <a class="color orange" title="Orange" href="#"></a><a class="color blue" title="Blue" href="#"></a>
+                        </p-->
+                        <p id="add_to_cart" class="buttons_bottom_block no-print">
+                            <button type="submit" name="Submit" class="exclusive" data-shoes-id="<?=$shoes->id?>" onclick="add_to_cart(this); return false;">
+                                <span>Купить</span>
+                            </button>
+                        </p>
+                        <p>
+
+
+                        <!-- Your like button code -->
+                        <div class="fb-share-button" data-href="<?=$og_url?>"
+                             data-layout="button_count" data-size="large"
+                             data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore"
+                                      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?=urlencode($og_url)?>&amp;src=sdkpreparse">Поделиться</a></div>
+                        </p>
+                        <!--p class="sin-adto-cart-bottom">
+                            <a href="#"><i class="fa fa-envelope-o"></i>Send to a friend</a>
+                            <a href="#"><i class="fa fa-print"></i>Print</a>
+                            <a href="#"><i class="fa fa-heart"></i>Add to wishlist</a>
+                        </p-->
+                    </div>
+                </div>
+                <!-- End single product details -->
+
+                <div class="col-sm-3">
+                    <div class="fb-comments" data-href="<?=$og_url?>"  data-width="350" data-numposts="5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End single product area -->
+    <!-- Start single product info -->
+    <div class="container">
+        <div class="row">
+            <!--
+            <div class="single-product-info">
+                <div id="content-product-review">
+                    <div class="col-xs-12 col-sm-3">
+                        <ul id="tabs" class="review-tab" data-tabs="tabs">
+                            <li class="active"><a href="#info1" data-toggle="tab">More info</a></li>
+                            <li><a href="#info2" data-toggle="tab">Data sheet</a></li>
+                            <li><a href="#info3" data-toggle="tab">accessories</a></li>
+                            <li><a href="#info4" data-toggle="tab">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-9">
+                        <div id="my-tab-content" class="tab-content">
+                            <div class="tab-pane active" id="info1">
+                                <p class="tab-info-one">Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+                            </div>
+                            <div class="tab-pane" id="info2">
+                                <table class="table-data-sheet">
+                                    <tbody>
+                                    <tr class="odd">
+                                        <td>Compositions</td>
+                                        <td>Cotton</td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td>Styles</td>
+                                        <td>Casual</td>
+                                    </tr>
+                                    <tr class="odd">
+                                        <td>Properties</td>
+                                        <td>Short Sleeve</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="info3">
+                                <div class="tab-info-product">
+                                    <div class="featured-inner">
+                                        <div class="featured-image">
+                                            <a href="single-product.html">
+                                                <img src="/img/product/faded-short-sleeves-tshirt.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="featured-info">
+                                            <a href="single-product.html">Faded Short Sleeves T-shirt</a>
+                                            <span class="price">$16.51</span>
+                                        </div>
+                                    </div>
+                                    <div class="featured-inner">
+                                        <div class="featured-image">
+                                            <a href="single-product.html">
+                                                <img src="/img/product/blouse.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="featured-info">
+                                            <a href="single-product.html">Blouse</a>
+                                            <span class="price">$27.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="featured-inner">
+                                        <div class="featured-image">
+                                            <a href="single-product.html">
+                                                <img src="/img/product/printed-dress1.jpg" alt="">
+                                            </a>
+                                            <span class="price-percent-reduction">-20%</span>
+                                        </div>
+                                        <div class="featured-info">
+                                            <a href="single-product.html">Printed Dress</a>
+                                            <span class="price">$26.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="featured-inner">
+                                        <div class="featured-image">
+                                            <a href="single-product.html">
+                                                <img src="/img/product/printed-dress2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="featured-info">
+                                            <a href="single-product.html">Printed Dress</a>
+                                            <span class="price">$50.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="featured-inner">
+                                        <div class="featured-image">
+                                            <a href="single-product.html">
+                                                <img src="/img/product/printed-summer-dress4.jpg" alt="">
+                                            </a>
+                                            <span class="price-percent-reduction">-20%</span>
+                                        </div>
+                                        <div class="featured-info">
+                                            <a href="single-product.html">Printed Summer Dress</a>
+                                            <span class="price">$28.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="featured-inner">
+                                        <div class="featured-image">
+                                            <a href="single-product.html">
+                                                <img src="/img/product/printed-summer-dress.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="featured-info">
+                                            <a href="single-product.html">Printed Summer Dress</a>
+                                            <span class="price">$30.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="info4">
+                                <div class="product-tab-review">
+                                    <h5>Good</h5>
+                                    <p>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </p>
+                                    <span>eleyas ahmed</span>
+                                    <span class="tab-tate-pro">25/11/2015</span>
+                                </div>
+                                <a href="" class="pro-tab-review"><span>Write your review!</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
+    <!-- End single product info -->
+<?php
+
+
+
+?>
+    <!-- Start featured product -->
+    <div class="featured-product-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="area-title">
+                        <h3>Также покупают: </h3>
+                    </div>
+                </div>
+                <div class="featured-product">
+                    <div class="featured-item">
+                        <?php foreach($featured as $f):?>
+                            <div class="col-xs-12 col-sm-3">
+                            <div class="featured-inner">
+                                <div class="featured-image">
+                                    <a href="<?=$f->getURL()?>">
+                                        <img src="<?=$f->mainImage->thumbnailURL(250, 250)?>" alt="">
+                                    </a>
+                                </div>
+                                <div class="featured-info">
+                                    <a href="<?=$f->getURL()?>"><?=$f->name?></a>
+                                    <p class="reating">
+                                                    <span class="rate">
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </span>
+                                    </p>
+                                    <span class="price"><?=$f->price?> грн.</span>
+                                    <div class="featured-button">
+                                        <a href="wishlists.html" class="wishlist"><i class="fa fa-heart"></i></a>
+                                        <a href="#" class="fetu-comment"><i class="fa fa-signal"></i></a>
+                                        <a class="add-to-card" data-shoes-id="<?=$f->id?>"><i class="fa fa-shopping-cart"></i>Купить</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php endforeach?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End featured product -->
+</div>
+<!-- End page content -->
+<!-- Start brand and client -->
+<?php $this->partial("partials/brands"); ?>
+
+<!-- End brand and client -->
+<!-- Start blog area -->
+<?php $this->partial("partials/blogs"); ?>

@@ -1,0 +1,65 @@
+<div class="popular-tab-categori">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="area-title">
+                    <h3>Popular categories</h3>
+                </div>
+            </div>
+            <div id="content" class="tab-menu-slide">
+                <ul id="tabs" class="popular-tab-menu" data-tabs="tabs">
+                    <li class="active">
+                        <a href="#tab1" data-toggle="tab">
+                            <i class="fa fa-gift"></i>
+                            <h3>Сандалии</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab2" data-toggle="tab">
+                            <i class="fa fa-gift"></i>
+                            <h3>Ботинки</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab3" data-toggle="tab">
+                            <i class="fa fa-gift"></i>
+                            <h3>Сапоги</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab4" data-toggle="tab">
+                            <i class="fa fa-gift"></i>
+                            <h3>Сабо</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab5" data-toggle="tab">
+                            <i class="fa fa-gift"></i>
+                            <h3>Туфли</h3>
+                        </a>
+                    </li>
+                    <li><a href="#tab6" data-toggle="tab">
+                            <i class="fa fa-gift"></i>
+                            <h3>Кеды</h3>
+                        </a>
+                    </li>
+                </ul>
+                <div id="my-tab-content" class="tab-content row">
+                    <?php foreach(array(
+                        1 => \Models\PromoBlocks::CATEGORY_SANDALS,
+                        2 => \Models\PromoBlocks::CATEGORY_BOOTS,
+                        3 => \Models\PromoBlocks::CATEGORY_HIGH_BOOT,
+                        4 => \Models\PromoBlocks::CATEGORY_SABO,
+                        5 => \Models\PromoBlocks::CATEGORY_SHOES,
+                        6 => \Models\PromoBlocks::CATEGORY_SNEAKERS
+                                  ) as $k=>$const):?>
+                    <div class="tab-pane <?=$k==1 ? 'active' : ''?>" id="tab<?=$k?>">
+                        <?php $promo = \Models\PromoBlocks::findFirst("const = '".$const."'");?>
+                        <?php $this->partial("index/partials/best_from_category", array('promo' => $promo))?>
+                    </div>
+                    <?php endforeach?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

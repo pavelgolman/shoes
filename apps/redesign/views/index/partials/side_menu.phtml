@@ -1,0 +1,20 @@
+<?php
+
+$group = \Models\AttributesGroups::findFirstByConst(\Models\AttributesGroups::TYPE);
+?>
+<!-- Start categori menu -->
+<div class="col-xs-12 col-sm-4 col-md-3">
+    <div class="categori-menu">
+        <div class="sidebar-menu-title">
+            <h2><i class="fa fa-th-list"></i>Категории</h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <?php foreach($group->attributes as $attribute):?>
+                    <li><a href="/shoes/index?filter[<?=$attribute->id?>]=1" class="single-menu"><?=$attribute->name?></a></li>
+                <?php endforeach?>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End categori menu -->
