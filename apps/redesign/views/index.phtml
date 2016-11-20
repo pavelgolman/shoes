@@ -205,9 +205,9 @@
         <div id="page-content" class=" hide-content clearfix">
             <div class="home-content wpadding">
                 <div class="rte">
-                    <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::AUTUMN_WINTER."'");?>
+                    <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
                     <?php foreach($promo->shoes as $k => $shoes):?>
-                        <a href="http://www.dethrone.com/collections/shirts"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" <?=$k > 1 ? 'width="50%"' : ''?> /></a>
+                        <a href="<?=$shoes->getURL()?>"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" <?=$k > 0 ? 'width="50%"' : ''?> /></a>
                     <?php endforeach?>
                 </div>
 
