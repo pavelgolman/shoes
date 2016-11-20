@@ -1,377 +1,148 @@
-<?php //http://ruschema.org/Product?>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Product",
-  "name": "<?=$shoes->name?>",
-  "image": "http://rumi.com.ua/<?=$shoes->mainImage->originalURL()?>",
-  "description": "<?=$title_for_page?>",
-  "brand": {
-    "@type": "Thing",
-    "name": "RuMi"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "<?=rand(4.5,5)?>",
-    "reviewCount": "<?=rand(80,100)?>"
-  },
-  "offers": {
-    "@type": "Offer",
-    "priceCurrency": "UAH",
-    "price": "<?=$shoes->price?>",
-    "priceValidUntil": "<?=date('Y-m-d', strtotime('+1 year'))?>",
-    "itemCondition": "http://schema.org/UsedCondition",
-    "availability": "http://schema.org/InStock",
-    "seller": {
-      "@type": "Organization",
-      "name": "RuMi"
-    }
-  }
-}
-</script>
+<main id="content" role="main" style="top: 0px;">
+    <article id="product-page" class="" itemscope="" itemtype="//schema.org/Product">
+        <div id="product-content" class="clearfix" style="margin-top: 0px;">
+            <header id="product-header">
+                <nav id="breadcrumb" role="navigation" aria-label="breadcrumbs">
+                    <a href="/">Новинки</a>
+                    <span aria-hidden="true">/</span>
+                    <a href="/shoes" title="">Магазин</a>
+                    <span aria-hidden="true">/</span>
+                    <span><?=$shoes->name?></span>
+                </nav>
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Review",
-  "itemReviewed": {
-    "@type": "Thing",
-    "name": "<?=$title_for_page?>"
-  },
-  "author": {
-    "@type": "Person",
-<?php $names = array('Анна','Сергей','Елена','Павел','Александр','Юрий','Аркадий','Наталья','Ольга','Вера','Оксана','Игорь');?>
-    "name": "<?=$names[array_rand($names)]?>"
-  },
-  "reviewRating": {
-    "@type": "Rating",
-    "ratingValue": "<?=rand(8,10)?>",
-    "bestRating": "10"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Обувь Днепропетровск"
-  }
-}
-</script>
-<!-- <?=$shoes->getURL()?> -->
-<div class="page-content">
-    <div class="breadcume-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="breadcrumb">
-                        <a class="home" href="/" title="Новинки"><i class="fa fa-home"></i></a>
-                        <span class="navigation-pipe">&gt;</span>
-                        <a href="/shoes/index" title="Automotive &amp; Motorcycle" class="hidden-xs">Обувь</a>
-                        <span class="hidden-xs navigation-pipe">&gt;</span>
-                        <?=$shoes->name?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Start single product area -->
-    <div class="container">
-        <div class="row">
-            <div class="single-products">
-                <!-- Start single product image -->
-                <div class="col-sm-5">
-                    <div class="single-product-image">
-                        <div id="content-eleyas">
-                            <div id="my-tab-content" class="tab-content">
-                                <?php foreach($shoes->images as $k => $image):?>
-                                    <div class="tab-pane <?=$k==0 ? 'active' : ''?>" id="view<?=$k?>">
-                                                    <span class="new-box">
-                                                        <span class="new-label">New</span>
-                                                    </span>
-                                    <a class="fancybox" href="<?=$image->originalURL()?>" data-fancybox-group="gallery" title="">
-                                        <img src="<?=$image->originalURL()?>" alt="">
-                                        <span>Увеличить<i class="fa fa-search-plus"></i></span>
-                                    </a>
-                                </div>
-                                <?php endforeach?>
-                        </div>
-                            <div id="viewproduct" class="nav nav-tabs product-view" data-tabs="tabs">
-                                <?php foreach($shoes->images as $k => $image):?>
-                                    <div class="pro-view <?=$k==0 ? 'active' : ''?>"><a href="#view<?=$k?>" data-toggle="tab"><img src="<?=$image->originalURL()?>" alt=""></a></div>
-                                <?php endforeach?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single product image -->
-                <!-- Start single product details -->
-                <div class="col-sm-3">
-                    <div class="single-product-details">
-                        <h1><?=$shoes->name?></h1>
-                        <!--div class="sin-social">
-                            <p>
-                                <a href="#" class="btn btn-default twitter"><i class="fa fa-twitter"></i>Tweet</a>
-                                <a href="#" class="btn btn-default facebook"><i class="fa fa-facebook"></i>Share</a>
-                                <a href="#" class="btn btn-default google-plus"><i class="fa fa-google-plus"></i>Google+</a>
-                                <a href="#" class="btn btn-default pinterest"><i class="fa fa-pinterest"></i>Pinterest</a>
-                            </p>
-                        </div-->
-                        <!--p class="rating-and-review">
-                            <span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
-                            <a href="#">Read reviews (0)</a>
-                            <a href="#">Write a review</a>
-                        </p-->
-                        <h2><span><?=$shoes->price?> грн.</span></h2>
-                        <?php
-                        $attributes = array();
-                        foreach($shoes->attributes as $attribute){
-                            if(empty($attributes[$attribute->group->name])){
-                                $attributes[$attribute->group->name] = array();
+                <h1 itemprop="name"><?=$shoes->name?></h1>
+
+
+                <!--p id="product-vendor" itemprop="brand">By <a href="/collections/vendors?q=Dethrone" title="Dethrone">Dethrone</a></p-->
+			
+			<span id="price" itemprop="price">
+				<span id="productPrice"><?=$shoes->price?></span>
+				
+			</span>
+
+            </header>
+
+            <section id="product-description">
+
+                <div itemprop="description">
+                    <div style="height: auto;">
+                        <ul>
+                            <?php
+                            $attributes = array();
+                            foreach($shoes->attributes as $attribute){
+                                if(empty($attributes[$attribute->group->name])){
+                                    $attributes[$attribute->group->name] = array();
+                                }
+                                $attributes[$attribute->group->name][] = $attribute->name;
                             }
-                            $attributes[$attribute->group->name][] = $attribute->name;
-                        }
-                        mb_internal_encoding('UTF-8');
-                        ?>
-                        <p><strong>Артикул:</strong> <?=$shoes->article?></p>
-                        <?php foreach($attributes as $name => $values):?>
-                            <p><strong><?=$name?>:</strong> <?=mb_strtolower(implode(', ', $values))?> </p>
-                        <?php endforeach?>
-                        <div><?php echo $shoes->description->description?></div>
-                        <p>&nbsp;</p>
-
-                        <!--form action="#" method="post">
-                            <div class="numbers-row">
-                                <label>Quantity</label>
-                                <input type="number" id="french-hens" name="french-hens">
-                                <div class="inc button">+</div><div class="dec button">-</div></div>
-                        </form>
-                        <p class="selector1">
-                            <label>Size</label>
-                            <select class="selectProductSort form-control" id="selectProductSort1">
-                                <option selected="selected" value="position:asc">S</option>
-                                <option value="price:asc">M</option>
-                                <option value="price:desc">L</option>
-                            </select>
-                        </p>
-                        <p class="selector1">
-                            <label>Color</label>
-                            <a class="color orange" title="Orange" href="#"></a><a class="color blue" title="Blue" href="#"></a>
-                        </p-->
-                        <p id="add_to_cart" class="buttons_bottom_block no-print">
-                            <button type="submit" name="Submit" class="exclusive" data-shoes-id="<?=$shoes->id?>" onclick="add_to_cart(this); return false;">
-                                <span>Купить</span>
-                            </button>
-                        </p>
-                        <p>
-
-
-                        <!-- Your like button code -->
-                        <div class="fb-share-button" data-href="<?=$og_url?>"
-                             data-layout="button_count" data-size="large"
-                             data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore"
-                                      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?=urlencode($og_url)?>&amp;src=sdkpreparse">Поделиться</a></div>
-                        </p>
-                        <!--p class="sin-adto-cart-bottom">
-                            <a href="#"><i class="fa fa-envelope-o"></i>Send to a friend</a>
-                            <a href="#"><i class="fa fa-print"></i>Print</a>
-                            <a href="#"><i class="fa fa-heart"></i>Add to wishlist</a>
-                        </p-->
-                    </div>
-                </div>
-                <!-- End single product details -->
-
-                <div class="col-sm-3">
-                    <div class="fb-comments" data-href="<?=$og_url?>"  data-width="350" data-numposts="5"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End single product area -->
-    <!-- Start single product info -->
-    <div class="container">
-        <div class="row">
-            <!--
-            <div class="single-product-info">
-                <div id="content-product-review">
-                    <div class="col-xs-12 col-sm-3">
-                        <ul id="tabs" class="review-tab" data-tabs="tabs">
-                            <li class="active"><a href="#info1" data-toggle="tab">More info</a></li>
-                            <li><a href="#info2" data-toggle="tab">Data sheet</a></li>
-                            <li><a href="#info3" data-toggle="tab">accessories</a></li>
-                            <li><a href="#info4" data-toggle="tab">Reviews</a></li>
+                            mb_internal_encoding('UTF-8');
+                            ?>
+                            <li><span style="line-height: 1.5;"><?=$shoes->article?></span></li>
+                            <?php foreach($attributes as $name => $values):?>
+                                <li><span style="line-height: 1.5;"><?=$name?>: <?=mb_strtolower(implode(', ', $values))?></span></li>
+                            <?php endforeach?>
                         </ul>
                     </div>
-                    <div class="col-xs-12 col-sm-9">
-                        <div id="my-tab-content" class="tab-content">
-                            <div class="tab-pane active" id="info1">
-                                <p class="tab-info-one">Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
-                            </div>
-                            <div class="tab-pane" id="info2">
-                                <table class="table-data-sheet">
-                                    <tbody>
-                                    <tr class="odd">
-                                        <td>Compositions</td>
-                                        <td>Cotton</td>
-                                    </tr>
-                                    <tr class="even">
-                                        <td>Styles</td>
-                                        <td>Casual</td>
-                                    </tr>
-                                    <tr class="odd">
-                                        <td>Properties</td>
-                                        <td>Short Sleeve</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="tab-pane" id="info3">
-                                <div class="tab-info-product">
-                                    <div class="featured-inner">
-                                        <div class="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="/img/product/faded-short-sleeves-tshirt.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="featured-info">
-                                            <a href="single-product.html">Faded Short Sleeves T-shirt</a>
-                                            <span class="price">$16.51</span>
-                                        </div>
-                                    </div>
-                                    <div class="featured-inner">
-                                        <div class="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="/img/product/blouse.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="featured-info">
-                                            <a href="single-product.html">Blouse</a>
-                                            <span class="price">$27.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="featured-inner">
-                                        <div class="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="/img/product/printed-dress1.jpg" alt="">
-                                            </a>
-                                            <span class="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div class="featured-info">
-                                            <a href="single-product.html">Printed Dress</a>
-                                            <span class="price">$26.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="featured-inner">
-                                        <div class="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="/img/product/printed-dress2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="featured-info">
-                                            <a href="single-product.html">Printed Dress</a>
-                                            <span class="price">$50.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="featured-inner">
-                                        <div class="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="/img/product/printed-summer-dress4.jpg" alt="">
-                                            </a>
-                                            <span class="price-percent-reduction">-20%</span>
-                                        </div>
-                                        <div class="featured-info">
-                                            <a href="single-product.html">Printed Summer Dress</a>
-                                            <span class="price">$28.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="featured-inner">
-                                        <div class="featured-image">
-                                            <a href="single-product.html">
-                                                <img src="/img/product/printed-summer-dress.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="featured-info">
-                                            <a href="single-product.html">Printed Summer Dress</a>
-                                            <span class="price">$30.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="info4">
-                                <div class="product-tab-review">
-                                    <h5>Good</h5>
-                                    <p>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </p>
-                                    <span>eleyas ahmed</span>
-                                    <span class="tab-tate-pro">25/11/2015</span>
-                                </div>
-                                <a href="" class="pro-tab-review"><span>Write your review!</span></a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            -->
+
+
+
+                <div itemprop="offers" itemscope="" itemtype="//schema.org/Offer">
+
+
+
+                    <meta itemprop="priceCurrency" content="USD">
+
+                    <link itemprop="availability" href="//schema.org/InStock">
+
+
+
+                </div>
+
+                <a href="#" id="share-link" class="overlay-button" data-overlay="#share-overlay">
+
+                    <svg version="1.0" class="svg share" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path d="M15.278,12.512c-0.806,0-1.538,0.309-2.09,0.812L7.241,10.29c0.023-0.154,0.04-0.312,0.04-0.474c0-0.091-0.006-0.18-0.014-0.27l6.004-3.061c0.542,0.458,1.242,0.736,2.008,0.736c1.718,0,3.111-1.393,3.111-3.111S16.996,1,15.278,1c-1.719,0-3.111,1.393-3.111,3.111c0,0.095,0.006,0.188,0.015,0.281L6.185,7.449C5.642,6.986,4.939,6.706,4.169,6.706c-1.718,0-3.111,1.393-3.111,3.11c0,1.719,1.393,3.111,3.111,3.111c0.693,0,1.331-0.229,1.847-0.612l6.159,3.14c-0.003,0.056-0.009,0.111-0.009,0.167c0,1.719,1.393,3.111,3.111,3.111c1.718,0,3.111-1.393,3.111-3.111C18.39,13.905,16.996,12.512,15.278,12.512z"></path></svg>
+                    Share this</a>
+
+                <div data-app="eastsideco_sizeGuides" data-shop="dethrone.myshopify.com" data-tags="60/40,men" data-metafields="">
+                    <div class="esc-size-guide"><h5 class="esc-size-guide--title">Men's Shirts - 60/40 Cotton Poly Blends</h5><div class="esc-size-guide--table-wrap"><table class="esc-size-guide--table"><tbody><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">&nbsp;</th><th class="esc-size-guide--heading">S</th><th class="esc-size-guide--heading">M</th><th class="esc-size-guide--heading">L</th><th class="esc-size-guide--heading">XL</th><th class="esc-size-guide--heading">XXL</th><th class="esc-size-guide--heading">XXXL</th></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Neck (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row2">6.75</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row2">6.75</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row2">6.88</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row2">7</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row2">7.25</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row2">7.75</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Chest (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row3">18</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row3">20</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row3">22</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row3">24</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row3">26</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row3">28</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Length (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row4">27</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row4">28</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row4">29</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row4">30</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row4">31.5</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row4">33</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Sleeve (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row5">8</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row5">8.25</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row5">8.5</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row5">8.75</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row5">9</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row5">9</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Neck (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row6">17</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row6">17</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row6">17.5</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row6">17.75</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row6">18.5</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row6">19.7</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Chest (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row7">45.75</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row7">51</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row7">56</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row7">61</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row7">66</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row7">71</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Length (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row8">68.5</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row8">71</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row8">73.5</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row8">76</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row8">80</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row8">84</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Sleeve (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row9">20.3</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row9">21</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row9">21.6</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row9">22.25</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row9">22.8</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row9">22.8</td></tr></tbody></table></div></div></div>
+
+
+
+            </section>
+
         </div>
-    </div>
-    <!-- End single product info -->
-<?php
+
+
+        <section id="product-gallery" class="scale-up-true loaded">
 
 
 
-?>
-    <!-- Start featured product -->
-    <div class="featured-product-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                    <div class="area-title">
-                        <h3>Также покупают: </h3>
+            <div class="swiper-container force-fade" >
+
+                <div class="swiper-wrapper">
+                    <?php foreach($shoes->images as $k => $image):?>
+                    <div class="swiper-slide swiper-slide-duplicate" data-index="2">
+                        <img src="<?=$image->originalURL()?>" alt="NYC" class="swiper-img" >
                     </div>
+                    <?php endforeach?>
+
+
                 </div>
-                <div class="featured-product">
-                    <div class="featured-item">
-                        <?php foreach($featured as $f):?>
-                            <div class="col-xs-12 col-sm-3">
-                            <div class="featured-inner">
-                                <div class="featured-image">
-                                    <a href="<?=$f->getURL()?>">
-                                        <img src="<?=$f->mainImage->thumbnailURL(250, 250)?>" alt="">
-                                    </a>
-                                </div>
-                                <div class="featured-info">
-                                    <a href="<?=$f->getURL()?>"><?=$f->name?></a>
-                                    <p class="reating">
-                                                    <span class="rate">
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </span>
-                                    </p>
-                                    <span class="price"><?=$f->price?> грн.</span>
-                                    <div class="featured-button">
-                                        <a href="wishlists.html" class="wishlist"><i class="fa fa-heart"></i></a>
-                                        <a href="#" class="fetu-comment"><i class="fa fa-signal"></i></a>
-                                        <a class="add-to-card" data-shoes-id="<?=$f->id?>"><i class="fa fa-shopping-cart"></i>Купить</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <?php endforeach?>
-                    </div>
-                </div>
+
             </div>
-        </div>
-    </div>
-    <!-- End featured product -->
-</div>
-<!-- End page content -->
-<!-- Start brand and client -->
-<?php $this->partial("partials/brands"); ?>
 
-<!-- End brand and client -->
-<!-- Start blog area -->
-<?php $this->partial("partials/blogs"); ?>
+            <div class="draw-buttons gal swiper-nav three"><div class="holder"><span class="swiper-no"><span class="cur">1</span><span class="tot">2</span></span><span class="btn-prev"><svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"></path></g></svg><a href="#" class="swiper-prev"></a></span><span class="btn-next"><svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"></path></g></svg><a href="#" class="swiper-next"></a></span></div></div></section>
+
+
+
+
+
+
+
+
+        <nav class="draw-buttons nav">
+
+            <div class="holder">
+
+					
+
+					<span class="btn-close">
+						<span class="back">
+							
+
+	<svg version="1.1" class="svg close" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812   22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812 "></polygon></svg>
+
+							<a href="/collections/shirts"></a>
+						</span>
+						<span class="front">
+							
+
+	<svg version="1.1" class="svg grid" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><rect x="35.75" y="20" width="5" height="5"></rect><rect x="27.75" y="20" width="5" height="5"></rect><rect x="19.75" y="20" width="5" height="5"></rect><rect x="35.75" y="28" width="5" height="5"></rect><rect x="27.75" y="28" width="5" height="5"></rect><rect x="19.75" y="28" width="5" height="5"></rect><rect x="35.75" y="36" width="5" height="5"></rect><rect x="27.75" y="36" width="5" height="5"></rect><rect x="19.75" y="36" width="5" height="5"></rect></svg>
+
+						</span>
+					</span>
+
+					
+						
+						<span class="btn-next">
+							
+
+	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"></path></g></svg>
+
+							<a href="/collections/shirts/products/the-king-black" title="">→</a>
+						</span>
+
+
+            </div>
+
+        </nav>
+
+
+
+
+
+    </article>
+
+
+</main>
