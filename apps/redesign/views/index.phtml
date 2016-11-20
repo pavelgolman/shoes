@@ -203,14 +203,12 @@
 
 
         <div id="page-content" class=" hide-content clearfix">
-
-
-
             <div class="home-content wpadding">
-
-
                 <div class="rte">
-                    <a href="http://www.dethrone.com/collections/shirts"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_mens2.jpg?6870402870374115032" alt="" /></a><a href="http://www.dethrone.com/collections/women"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_womens.jpg?14788447540709416282" alt="" width="50%" /></a><a href="http://www.dethrone.com/collections/hats"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_perch.jpg?8825408228288257708" alt="" width="50%" /></a><a href="http://www.dethrone.com/collections/unofish"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_unofish.jpg?12640750231487243345" alt="" /></a><a href="http://www.dethrone.com/collections/fc"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_fc.jpg?1080028231664942819" alt="" width="50%" /></a><a href="http://www.dethrone.com/collections/athletic-gear"><img src="//cdn.shopify.com/s/files/1/0186/7718/files/promos_performance2_5cae1e1b-ea33-4dd5-836f-d293650924a8.jpg?16999425398620676144" alt="" width="50%" /></a>
+                    <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::AUTUMN_WINTER."'");?>
+                    <?php foreach($promo->shoes as $k => $shoes):?>
+                        <a href="http://www.dethrone.com/collections/shirts"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" <?=$k > 1 ? 'width="50%"' : ''?> /></a>
+                    <?php endforeach?>
                 </div>
 
             </div>
