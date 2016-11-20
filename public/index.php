@@ -59,7 +59,7 @@ $di->set('router', function () {
             "params"     => 3
         )
     );
-    
+
 
     $router->add(
         "/redesign/:controller/:action/",
