@@ -218,6 +218,7 @@
             <div id="products-grid" class="home-content products-list border-true tiny no-loader">
                 <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
                 <?php foreach($promo->shoes as $k => $shoes):?>
+                    <?php if($k > 14 || $k < 9) {continue;}?>
                 <a href="<?=$shoes->getURL()?>" class="grid-item two light">
                     <img src="<?=$shoes->mainImage->originalURL()?>" alt="<?=$shoes->name?>">
                     <div class="caption">
@@ -229,7 +230,6 @@
                         </div>
                     </div>
                 </a>
-                    <?php if($k > 14 || $k < 9) {continue;}?>
                 <?php endforeach?>
             </div>
 
