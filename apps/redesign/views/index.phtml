@@ -121,26 +121,8 @@
 
         <aside id="footer" class="loading">
             <div class="social-icons">
-
-
                 <a href="https://twitter.com/dethrone">https://twitter.com/dethrone<i class="fa fa-twitter fa-fw"></i></a>
-
-
-
                 <a href="https://www.facebook.com/official.dethrone">https://www.facebook.com/official.dethrone<i class="fa fa-facebook fa-fw"></i></a>
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <a href="https://instagram.com/dethrone/">https://instagram.com/dethrone/<i class="fa fa-instagram fa-fw"></i></a>
 
 
@@ -174,160 +156,28 @@
 
     <main id="content" role="main">
 
-
-
         <div id="home-slider" class="swiper-container">
 
             <div class="swiper-wrapper">
-
-
-
-                <div class="slide swiper-slide">
-
-                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide1_img.jpg?15332220164954008954)">
-
-                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide1_img.jpg?15332220164954008954" alt="" />
-
+                <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
+                <?php foreach($promo->shoes as $shoes):?>
+                    <div class="slide swiper-slide">
+                    <div class="slide-img" style="background-image:url(<?=$shoes->MainImage->originalURL()?>)">
+                        <img src="<?=$shoes->MainImage->originalURL()?>" alt="" />
                         <div class="slide-caption center dark">
                             <div class="table-display">
                                 <div>
-
-
-
-
-
-
-
-
-
+                                    <h2 class="label b" style="opacity: 1; top: 0px; visibility: visible;"><?=$shoes->name?></h2>
+                                    <a class="button label d" href="<?=$shoes->getURL()?>" style="opacity: 1; top: 0px; visibility: visible;">КУПИТЬ<span>→</span></a>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
-
-                    <a class="slide-url" href="https://www.dethrone.com/collections/ready-gear"></a>
+                    <a class="slide-url" href="<?=$shoes->getURL()?>"></a>
 
 
                 </div>
-
-
-
-
-
-                <div class="slide swiper-slide">
-
-                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide2_img.jpg?15332220164954008954)">
-
-                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide2_img.jpg?15332220164954008954" alt="" />
-
-                        <div class="slide-caption right dark">
-                            <div class="table-display">
-                                <div>
-
-
-
-
-                                    <h2 class="label b">NATE DIAZ COLLECTION</h2>
-
-
-
-
-
-                                    <a class="button label d" href="http://www.dethrone.com/collections/shirts">SHOP NOW<span>&rarr;</span></a>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <a class="slide-url" href="http://www.dethrone.com/collections/diaz"></a>
-
-
-                </div>
-
-
-
-
-
-                <div class="slide swiper-slide">
-
-                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide3_img.jpg?15332220164954008954)">
-
-                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide3_img.jpg?15332220164954008954" alt="" />
-
-                        <div class="slide-caption left dark">
-                            <div class="table-display">
-                                <div>
-
-
-
-
-                                    <h2 class="label b">READY COLLECTION</h2>
-
-
-
-
-
-                                    <a class="button label d" href="http://www.dethrone.com/collections/unofish">SHOP NOW<span>&rarr;</span></a>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <a class="slide-url" href="https://www.dethrone.com/collections/ready-gear"></a>
-
-
-                </div>
-
-
-
-
-
-                <div class="slide swiper-slide">
-
-                    <div class="slide-img" style="background-image:url(//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide4_img.jpg?15332220164954008954)">
-
-                        <img src="//cdn.shopify.com/s/files/1/0186/7718/t/17/assets/slide4_img.jpg?15332220164954008954" alt="" />
-
-                        <div class="slide-caption right dark">
-                            <div class="table-display">
-                                <div>
-
-
-
-
-                                    <h2 class="label b">THE PERCH</h2>
-
-
-
-
-
-                                    <a class="button label d" href="http://www.dethrone.com/collections/hats">SHOP HATS<span>&rarr;</span></a>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <a class="slide-url" href="http://www.dethrone.com/collections/hats"></a>
-
-
-                </div>
-
-
-
+                <?php endforeach?>
             </div>
 
             <div class="draw-buttons gal three" aria-hidden="true">
