@@ -1,180 +1,73 @@
-<!-- Start slider area -->
-<div class="slider-area">
-    <div id="slider" class="nivoSlider">
-        <img style ="display:none" src="/img/slider/1.jpg?135"  data-thumb="/img/slider/1.jpg?135"  alt="" title="#htmlcaption1"/>
-        <img style ="display:none" src="/img/slider/2.jpg?456"  data-thumb="/img/slider/2.jpg?456"  alt="" title="#htmlcaption2"/>
-    </div>
-    <div id="htmlcaption1" class="pos-slideshow-caption nivo-html-caption nivo-caption">
-        <div class="timing-bar"></div>
-        <div class="pos-slideshow-info pos-slideshow-info1">
-            <div class="container">
-                <div class="pos_description hidden-xs hidden-sm">
-                    <div class="title1"><span class="txt">В наличии</span></div>
-                    <div class="title2"><span class="txt">и под заказ до 10 дней</span></div>
-                    <div class="pos-slideshow-readmore">
-                        <?php $temp = \Models\Shoes::findFirst(87)?>
-                        <a href="<?=$temp->getURL()?>" title="Shop now">Купить</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="htmlcaption2" class="pos-slideshow-caption nivo-html-caption nivo-caption">
-        <div class="timing-bar"></div>
-        <div class="pos-slideshow-info pos-slideshow-info2">
-            <div class="container">
-                <div class="pos_description hidden-xs hidden-sm">
-                    <div class="title1"><span class="txt">В наличии</span></div>
-                    <div class="title2"><span class="txt">и под заказ до 10 дней</span></div>
-                    <!--div class="pos-slideshow-readmore">
-                        <a href="#" title="Shop now">Купить</a>
-                    </div-->
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End slider area -->
+<div id="home-slider" class="swiper-container">
 
-
-
-
-<!-- Start categori area -->
-<div class="categori-area">
-    <div class="container">
-        <div class="row">
-            <?php $this->partial("index/partials/side_menu"); ?>
-            <!-- Start categori banner -->
-            <div class="col-xs-12 col-sm-8 col-md-6">
-                <div class="categori-banner">
-                    <div class="banner-left">
-                        <div class="banner-image">
-                            <?php $temp = \Models\Shoes::findFirst(82)?>
-                            <a href="<?=$temp->getURL()?>">
-                                <img src="<?=$temp->mainImage->thumbnailURL(281, 280)?>" alt="">
-                            </a>
-                        </div>
-                        <div class="banner-image">
-                            <?php $temp = \Models\Shoes::findFirst(9)?>
-                            <a href="<?=$temp->getURL()?>">
-                                <img src="<?=$temp->mainImage->thumbnailURL(281, 280)?>" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="banner-right">
-                        <div class="banner-image">
-                            <?php $temp = \Models\Shoes::findFirst(78)?>
-                            <a href="<?=$temp->getURL()?>">
-                                <img src="<?=$temp->mainImage->thumbnailURL(281, 280)?>" alt="">
-                            </a>
-                        </div>
-                        <div class="banner-image">
-                            <?php $temp = \Models\Shoes::findFirst(89)?>
-                            <a href="<?=$temp->getURL()?>">
-                                <img src="<?=$temp->mainImage->thumbnailURL(281, 280)?>" alt="">
-                            </a>
+    <div class="swiper-wrapper">
+        <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
+        <?php foreach($promo->shoes as $shoes):?>
+            <div class="slide swiper-slide">
+                <div class="slide-img" style="background-image:url(<?=$shoes->MainImage->originalURL()?>)">
+                    <img src="<?=$shoes->MainImage->originalURL()?>" alt="" />
+                    <div class="slide-caption center dark">
+                        <div class="table-display">
+                            <div>
+                                <h2 class="label b" style="opacity: 1; top: 0px; visibility: visible;"><?=$shoes->name?></h2>
+                                <a class="button label d" href="<?=$shoes->getURL()?>" style="opacity: 1; top: 0px; visibility: visible;">КУПИТЬ<span>→</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End categori banner -->
+                <a class="slide-url" href="<?=$shoes->getURL()?>"></a>
 
-            <?php $this->partial("index/partials/sale_off"); ?>
+
+            </div>
+        <?php endforeach?>
+    </div>
+
+    <div class="draw-buttons gal three" aria-hidden="true">
+        <div class="holder">
+            <span class="swiper-no"><span class="cur">1</span><span class="tot">1</span></span>
+				<span class="btn-prev">
+
+	<svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"/></g></svg>
+<a href="#" class="swiper-prev"></a>
+				</span><span class="btn-next">
+
+	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"/></g></svg>
+<a href="#" class="swiper-next"></a></span>
         </div>
     </div>
+
 </div>
-<!-- End categori area -->
 
+<div class="swiper-pagination"></div>
 
-<!-- Start purches progress -->
-<div class="purches-progress-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12">
-                <div class="area-title">
-                    <h3>Purchase progress</h3>
-                </div>
-            </div>
-            <div class="progress-area">
-                <div class="col-sm-3">
-                    <div class="progrtee-box icon">
-                        <h4>ШАГ 1</h4>
-                        <p>выберите товар</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="progrtee-box icon1">
-                        <h4>ШАГ 2</h4>
-                        <p>Нажмите Купить</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="progrtee-box icon2">
-                        <h4>ШАГ 3</h4>
-                        <p>подтвердите заказ</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="progrtee-box icon3">
-                        <h4>ШАГ 4</h4>
-                        <p>получите и оплатите</p>
-                    </div>
-                </div>
-            </div>
+<div id="page-content" class=" hide-content clearfix">
+    <div class="home-content wpadding">
+        <div class="rte">
+            <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
+            <?php foreach($promo->shoes as $k => $shoes):?>
+                <a href="<?=$shoes->getURL()?>"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" width="49%" /></a>
+                <?php if($k > 4) {break;}?>
+            <?php endforeach?>
         </div>
+
+    </div>
+
+
+    <div id="products-grid" class="home-content products-list border-true tiny no-loader">
+        <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
+        <?php foreach($promo->shoes as $k => $shoes):?>
+            <?php if($k > 14 || $k < 9) {continue;}?>
+            <a href="<?=$shoes->getURL()?>" class="grid-item two light">
+                <img src="<?=$shoes->mainImage->originalURL()?>" alt="<?=$shoes->name?>">
+                <div class="caption">
+                    <div>
+                        <h2><?=$shoes->name?></h2>
+                        <div class="price">
+                            <strong><?=$shoes->price?> грн.</strong>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        <?php endforeach?>
     </div>
 </div>
-<!-- End purches progress -->
-<!-- Start featured product -->
-<?php $this->partial("index/partials/featured"); ?>
-<!-- End featured product -->
-<!-- Start two banner area -->
-<div class="two-banner-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                <div class="banner-left">
-                    <div class="banner-image">
-                        <a href="#">
-                            <img src="/img/banner/cms14.jpg?123" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="banner-right">
-                    <div class="banner-image">
-                        <a href="#">
-                            <img src="/img/banner/cms15.jpg?123" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End two banner area -->
-<!-- Start best sellar area -->
-<?php $this->partial("index/partials/bestsellers"); ?>
-
-<!-- End best sellar area -->
-<!-- Start camera and cosmatic area -->
-<div class="camera-and-cosmatic-area">
-    <div class="container">
-        <div class="row">
-            <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::SPRING_SUMMER."'");?>
-            <?php $this->partial("index/partials/season", array('promo' => $promo)); ?>
-
-            <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::AUTUMN_WINTER."'");?>
-            <?php $this->partial("index/partials/season", array('promo' => $promo)); ?>
-        </div>
-    </div>
-</div>
-
-
-<?php $this->partial("index/partials/best_from_categories")?>
-
-<?php $this->partial("partials/brands"); ?>
-
-<?php $this->partial("partials/blogs"); ?>
-

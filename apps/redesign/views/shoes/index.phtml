@@ -1,106 +1,69 @@
-<div class="page-content">
-    <!-- Start breadcume area -->
-    <div class="breadcume-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="breadcrumb">
-                        <a class="home" href="/" title="Новинки"><i class="fa fa-home"></i></a>
-                        <span class="navigation-pipe">&gt;</span>
-                        Обувь
+    <div id="products-grid" class="border-true tiny loaded" style="width: 1151px; position: relative; height: 4887px;">
+        <?php foreach($shoes->items as $item):?>
+        <?php
+        if($filter) {
+            foreach ($filter as $attribute_id => $v) {
+                if (!$item->hasAttributeId($attribute_id)) {
+                    continue 2;
+                }
+            }
+        }
+        ?>
+        <a href="<?=$item->getURL()?>" class="grid-item two light" style="width: 383px; position: absolute; left: 0px; top: 0px;">
+            <img src="<?=$shoes->MainImage->originalURL()?>" alt="NYC" style="opacity: 1;">
+            <div class="caption">
+                <div>
+
+                    <h2><?=$item->name?></h2>
+
+                    <div class="price">
+
+                        <strong><?=$item->price?> грн.</strong>
+
+
                     </div>
+
                 </div>
+
+
             </div>
-        </div>
+
+
+
+
+        </a>
+        <?php endforeach?>
     </div>
-    <!-- End breadcume area -->
-    <!-- Start shop area -->
-    <div class="shop-area">
-        <div class="container">
-            <div class="row">
-                <?php $this->partial("shoes/partials/filter", array('filter' => $filter)); ?>
-                <!-- Start categori content -->
-                <div class="col-xs-12 col-sm-8 col-md-9">
-                    <div class="categori-content" id="content-shop">
-
-                        <!-- Start catagori short -->
-                        <div class="catagori-short">
-                            <!--h1 class="page-heading product-listing"><span class="cat-name">Обувь</span>
-                            </h1-->
-                            <!--div class="chose-box">
-                                <p class="selector1 hidden-xs">
-                                    <label>Sort by</label>
-                                    <select id="selectProductSort1" class="selectProductSort form-control">
-                                        <option value="position:asc" selected="selected">--</option>
-                                        <option value="price:asc">Price: Lowest first</option>
-                                        <option value="price:desc">Price: Highest first</option>
-                                        <option value="name:asc">Product Name: A to Z</option>
-                                        <option value="name:desc">Product Name: Z to A</option>
-                                        <option value="quantity:desc">In stock</option>
-                                        <option value="reference:asc">Reference: Lowest first</option>
-                                        <option value="reference:desc">Reference: Highest first</option>
-                                    </select>
-                                </p>
-                            </div-->
-                        </div>
-                        <!-- End catagori short -->
-                        <div class="tab-content" id="my-tab-content">
-                            <!-- Start categori grid view -->
-                            <div class="tab-pane active categoti-grid-view row" id="grid">
-                                <?php foreach($shoes->items as $item):?>
-                                    <?php
-                                    if($filter) {
-                                        foreach ($filter as $attribute_id => $v) {
-                                            if (!$item->hasAttributeId($attribute_id)) {
-                                                continue 2;
-                                            }
-                                        }
-                                    }
-                                    ?>
-
-                                    <div class="col-xs-12 col-sm-6 col-md-4">
-                                        <div class="featured-inner">
-                                            <div class="featured-image">
-                                                <a href="<?=$item->getURL()?>">
-                                                    <img alt="" src="<?=$item->mainImage->thumbnailURL(250, 250)?>">
-                                                </a>
-                                            </div>
-                                            <div class="featured-info">
-                                                <a href="<?=$item->getURL()?>"><?=$item->name?></a>
-
-                                                <span class="price"><?=$item->price?> грн.</span>
-                                                <div class="featured-button">
-                                                    <a class="wishlist" href="wishlists.html"><i class="fa fa-heart"></i></a>
-                                                    <a class="fetu-comment" href="#"><i class="fa fa-signal"></i></a>
-                                                    <a class="add-to-card" data-shoes-id="<?=$item->id?>"><i class="fa fa-shopping-cart"></i>Купить</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach?>
-                            </div>
-
-                        </div>
-                        <!-- Start categori show item -->
-                        <!--div class="categori-show-item">
-                            <div class="cat-show-item">
-                                <p>Showing 1 - 8 of 8 items</p>
-                            </div>
-                            <div class="cat-show-button">
-                                <a href="#" class="cat-button"><span>Compare(0)<i class="fa fa-angle-right"></i></span></a>
-                            </div>
-                        </div-->
-                        <!-- End categori show item -->
-                    </div>
-                </div>
-                <!-- Start categori content -->
-            </div>
-        </div>
-    </div>
-    <!-- End shop area -->
-</div>
 
 
-<?php $this->partial("partials/brands"); ?>
+    <!--div class="infobar bottom"><ul class="main-pagination">
 
-<?php $this->partial("partials/blogs"); ?>
+
+
+
+
+
+            <li class="active"><span>1</span></li>
+
+
+
+
+            <li><a href="/collections/shirts?page=2" title="">2</a></li>
+
+
+
+            <li><a href="/collections/shirts?page=3" title="">3</a></li>
+
+
+
+            <li><a href="/collections/shirts?page=4" title="">4</a></li>
+
+
+
+
+            <li class="arrow"><a href="/collections/shirts?page=2" title="Next »">→</a></li>
+
+
+        </ul></div-->
+
+
