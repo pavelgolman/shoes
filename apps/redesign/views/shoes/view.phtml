@@ -74,7 +74,7 @@
         </div>
 
 
-        <section id="product-gallery" class="scale-up-true loaded">
+        <section id="product-gallery" class="scale-up-true">
 
 
 
@@ -82,7 +82,7 @@
 
                 <div class="swiper-wrapper">
                     <?php foreach($shoes->images as $k => $image):?>
-                    <div class="swiper-slide swiper-slide-duplicate" data-index="<?=$k?>">
+                    <div class="swiper-slide " data-index="<?=($k + 1)?>">
                         <img src="<?=$image->originalURL()?>" alt="NYC" class="swiper-img" >
                     </div>
                     <?php endforeach?>
