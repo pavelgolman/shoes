@@ -82,7 +82,7 @@
 
                 <div class="swiper-wrapper">
                     <?php foreach($shoes->images as $k => $image):?>
-                    <div class="swiper-slide swiper-slide-duplicate" data-index="2">
+                    <div class="swiper-slide swiper-slide-duplicate" data-index="<?=$k?>">
                         <img src="<?=$image->originalURL()?>" alt="NYC" class="swiper-img" >
                     </div>
                     <?php endforeach?>
