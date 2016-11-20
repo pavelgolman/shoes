@@ -208,6 +208,7 @@
                     <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
                     <?php foreach($promo->shoes as $k => $shoes):?>
                         <a href="<?=$shoes->getURL()?>"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" width="49%" /></a>
+                        <?php if($k > 5) {break;}?>
                     <?php endforeach?>
                 </div>
 
