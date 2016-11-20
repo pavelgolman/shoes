@@ -207,7 +207,7 @@
                 <div class="rte">
                     <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
                     <?php foreach($promo->shoes as $k => $shoes):?>
-                        <a href="<?=$shoes->getURL()?>"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" <?=$k > 0 ? 'width="50%"' : ''?> /></a>
+                        <a href="<?=$shoes->getURL()?>"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" width="49%"?> /></a>
                     <?php endforeach?>
                 </div>
 
