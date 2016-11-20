@@ -1,4 +1,4 @@
-    <div id="products-grid" class="border-true tiny loaded" style="width: 1151px; position: relative; height: 4887px;">
+    <div id="products-grid" class="border-true tiny loaded" >
         <?php foreach($shoes->items as $item):?>
         <?php
         if($filter) {
@@ -9,8 +9,8 @@
             }
         }
         ?>
-        <a href="<?=$item->getURL()?>" class="grid-item two light" style="width: 383px; position: absolute; left: 0px; top: 0px;">
-            <img src="<?=$item->MainImage->originalURL()?>" alt="NYC" style="opacity: 1;">
+        <a href="<?=$item->getURL()?>" class="grid-item two light" >
+            <img src="<?=$item->MainImage->originalURL()?>" alt="<?=$item->name?>" >
             <div class="caption">
                 <div>
 
