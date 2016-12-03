@@ -197,7 +197,7 @@ $(".popular-tab-product").owlCarousel({
 
 
 function add_to_cart(button){
-    swal("Отличный выбор!", "Телефон для заказа: (050) 985-11-00", "success")
+    swal("Отличный выбор!", "Телефон для заказа: (050) 872-46-98", "success")
     /*
     swal({
             title: "Отличный выбор!",

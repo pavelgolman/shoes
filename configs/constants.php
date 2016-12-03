@@ -7,6 +7,7 @@ const THUMBNAILS_IMAGES_PATH = '/var/www/html/dom.tkani.dp/public/uploads/thumbn
 const PUBLIC_ORIGINALS_PATH = '/uploads/originals/';
 const PUBLIC_THUMBNAILS_PATH = '/uploads/thumbnails/';
 
+const PHONE_NUMBER = '(050) 872-46-98';
 
 $SHOES_THUMBNAILS_MAP = array(
     array(
