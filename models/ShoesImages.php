@@ -45,7 +45,7 @@ class ShoesImages extends Model
         if($withName) {
             $path .= $width . '_' . $height . '.' . $this->extension;
         }
-        if($generateIfNotExists && !file_exists($path)){
+        if($generateIfNotExists && !file_exists(APP_PATH . 'public' . $path)){
             $this->reGenerateThumbnail($width, $height);
         }
         return $path;
