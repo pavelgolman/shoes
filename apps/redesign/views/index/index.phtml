@@ -7,14 +7,14 @@
 
 
             <div class="slide swiper-slide slide--1484211369679"  data-index="1">
+                <?php $slide1 = \Models\Shoes::findFirst(139)?>
+
+
+                <div class="slide-img image" style="background-image:url(<?=$slide1->MainImage->originalURL()?>)">
 
 
 
-                <div class="slide-img image" style="background-image:url( //cdn.shopify.com/s/files/1/0691/8855/files/slide1_img_1920x.jpg?v=1484911098 )">
-
-
-
-                    <img src=" //cdn.shopify.com/s/files/1/0691/8855/files/slide1_img_1920x.jpg?v=1484911098 " alt="" />
+                    <img src="<?=$slide1->MainImage->originalURL()?> " alt="" />
 
                     <div class="slide-caption right light">
                         <div class="table-display">
