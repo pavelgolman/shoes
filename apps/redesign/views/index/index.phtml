@@ -118,7 +118,7 @@
     <div class="isotope-products home-content products-list border-no" data-section-id="1484911254397" data-collections_size="large" data-collections_border="no" data-collections_thumb_bg="#ffffff">
         <?php foreach(array(66, 131, 87, 75, 9, 91) as $id):?>
         <?php $shoes = \Models\Shoes::findFirst($id)?>
-        <a href="/products/louis-erard" class="grid-item three light">
+        <a href="<?=$shoes->getURL()?>" class="grid-item three light">
             <img src="<?=$shoes->MainImage->thumbnailURL(800, 800)?>" data-src-retina="<?=$shoes->MainImage->thumbnailURL(800, 800)?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="<?=$shoes->name?>">
 
             <div class="caption">

@@ -1,4 +1,8 @@
-    <div id="products-grid" class="border-true tiny loaded" >
+<div id="shopify-section-collection-page" class="shopify-section reload-isotope collection-page mount-overlay">
+
+    <?php $this->partial("shoes/filter"); ?>
+
+    <div class="isotope-products border-no" data-section-id="collection-page" data-collections_size="small" data-collections_border="no" data-collections_thumb_bg="#ffffff">
         <?php foreach($shoes->items as $item):?>
         <?php
         if($filter) {
@@ -9,61 +13,20 @@
             }
         }
         ?>
-        <a href="<?=$item->getURL()?>" class="grid-item two light" >
-            <img src="<?=$item->MainImage->originalURL()?>" alt="<?=$item->name?>" >
+
+        <a href="<?=$item->getURL()?>" class="grid-item three light">
+
+            <img src="<?=$item->MainImage->thumbnailURL(800, 800)?>" data-src-retina="<?=$item->MainImage->thumbnailURL(800, 800)?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Wild Clock">
+
             <div class="caption">
                 <div>
-
-                    <h2><?=$item->name?></h2>
-
-                    <div class="price">
-
-                        <strong><?=$item->price?> грн.</strong>
-
-
+                    <div>
+                        <h2><?=$item->name?></h2>
+                        <div class="price"><strong><?=$item->price?> грн.</strong></div>
                     </div>
-
                 </div>
-
-
             </div>
-
-
-
-
         </a>
         <?php endforeach?>
     </div>
-
-
-    <!--div class="infobar bottom"><ul class="main-pagination">
-
-
-
-
-
-
-            <li class="active"><span>1</span></li>
-
-
-
-
-            <li><a href="/collections/shirts?page=2" title="">2</a></li>
-
-
-
-            <li><a href="/collections/shirts?page=3" title="">3</a></li>
-
-
-
-            <li><a href="/collections/shirts?page=4" title="">4</a></li>
-
-
-
-
-            <li class="arrow"><a href="/collections/shirts?page=2" title="Next »">→</a></li>
-
-
-        </ul></div-->
-
-
+</div>
