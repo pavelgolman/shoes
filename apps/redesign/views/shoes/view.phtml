@@ -1,22 +1,48 @@
-<main id="content" role="main" style="top: 0px;">
-    <article id="product-page" class="" itemscope="" itemtype="//schema.org/Product">
-        <div id="product-content" class="clearfix" style="margin-top: 0px;">
+<div id="shopify-section-product-page" class="shopify-section reload-product-page mount-overlay"><article id="product-page" class="loading" itemscope itemtype="//schema.org/Product" data-collection="all">
+
+        <meta itemprop="url" content="http://king-theme.myshopify.com/products/unicon-test-short-sleeve">
+        <meta itemprop="image" content="//cdn.shopify.com/s/files/1/0691/8855/products/2_grande.jpg?v=1455787064">
+
+        <div id="product-content" class="clearfix">
+
             <header id="product-header">
+
+
+
+
                 <nav id="breadcrumb" role="navigation" aria-label="breadcrumbs">
-                    <a href="/">Новинки</a>
+
+                    <a href="/">Home</a>
+
+
+
+
                     <span aria-hidden="true">/</span>
-                    <a href="/shoes" title="">Магазин</a>
+
+
+                    <a href="/collections/all" title="">Shop</a>
+
+
+
                     <span aria-hidden="true">/</span>
-                    <span><?=$shoes->name?></span>
+                    <span>Retro Radio</span>
+
+
+
                 </nav>
 
-                <h1 itemprop="name"><?=$shoes->name?></h1>
 
 
-                <!--p id="product-vendor" itemprop="brand">By <a href="/collections/vendors?q=Dethrone" title="Dethrone">Dethrone</a></p-->
+
+
+                <h1 itemprop="name">Retro Radio</h1>
+
+
+                <p id="product-vendor" itemprop="brand">By <a href="/collections/vendors?q=King" title="King">King</a></p>
 			
-			<span id="price" itemprop="price">
-				<span id="productPrice"><?=$shoes->price?></span>
+
+			<span id="price">
+				<span id="productPrice">$187.00</span>
 				
 			</span>
 
@@ -24,75 +50,164 @@
 
             <section id="product-description">
 
+
+                <style type="text/css">
+                    #product-content div[itemprop="description"] > div {
+                        height: 123px;
+                        overflow: hidden;
+                    }
+                </style>
+
+
                 <div itemprop="description">
-                    <div style="height: auto;">
-                        <ul>
-                            <?php
-                            $attributes = array();
-                            foreach($shoes->attributes as $attribute){
-                                if(empty($attributes[$attribute->group->name])){
-                                    $attributes[$attribute->group->name] = array();
-                                }
-                                $attributes[$attribute->group->name][] = $attribute->name;
-                            }
-                            mb_internal_encoding('UTF-8');
-                            ?>
-                            <li><span style="line-height: 1.5;"><?=$shoes->article?></span></li>
-                            <?php foreach($attributes as $name => $values):?>
-                                <li><span style="line-height: 1.5;"><?=$name?>: <?=mb_strtolower(implode(', ', $values))?></span></li>
-                            <?php endforeach?>
-                        </ul>
+                    <div>
+                        <p><span class="fbPhotosPhotoCaption" aria-live="polite" data-ft='{"tn":"K"}' id="fbPhotoSnowliftCaption" tabindex="0"><span class="hasCaption">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</span></span></p>
                     </div>
                 </div>
 
-
-
-                <div itemprop="offers" itemscope="" itemtype="//schema.org/Offer">
+                <div itemprop="offers" itemscope itemtype="//schema.org/Offer">
 
 
 
-                    <meta itemprop="priceCurrency" content="USD">
+                    <meta itemprop="price" content="USD">
+                    <meta itemprop="priceCurrency" content="18700">
 
                     <link itemprop="availability" href="//schema.org/InStock">
 
+                    <form action="/cart/add.js" method="post" enctype="multipart/form-data" id="add-to-cart">
 
+
+                        <div class="product-variant selector-wrapper">
+                            <label class="hidden">Color</label>
+                            <select class="product-variants">
+
+                                <option selected>
+                                    Dark Grey
+                                </option>
+
+                                <option >
+                                    Sky Blue
+                                </option>
+
+                            </select>
+                        </div>
+
+
+                        <select id="productSelect" name="id" class="styled" style="display: none !important">
+
+
+                            <option  selected="selected"  value="974521877">
+                                Dark Grey
+                            </option>
+
+
+
+                            <option  value="993985765">
+                                Sky Blue
+                            </option>
+
+
+                        </select>
+
+
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
+
+
+                        <button type="submit" name="add" id="addToCart" class="button color"><span id="addToCartText">Add to cart</span></button>
+
+
+                        <a id="ajaxCartButton" class="overlay-button hidden" data-overlay="#cart-overlay" aria-hidden="true"></a>
+
+
+                        <span id="variantQuantity" class="variant-quantity"></span>
+
+                    </form>
 
                 </div>
 
                 <a href="#" id="share-link" class="overlay-button" data-overlay="#share-overlay">
 
-                    <svg version="1.0" class="svg share" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path d="M15.278,12.512c-0.806,0-1.538,0.309-2.09,0.812L7.241,10.29c0.023-0.154,0.04-0.312,0.04-0.474c0-0.091-0.006-0.18-0.014-0.27l6.004-3.061c0.542,0.458,1.242,0.736,2.008,0.736c1.718,0,3.111-1.393,3.111-3.111S16.996,1,15.278,1c-1.719,0-3.111,1.393-3.111,3.111c0,0.095,0.006,0.188,0.015,0.281L6.185,7.449C5.642,6.986,4.939,6.706,4.169,6.706c-1.718,0-3.111,1.393-3.111,3.11c0,1.719,1.393,3.111,3.111,3.111c0.693,0,1.331-0.229,1.847-0.612l6.159,3.14c-0.003,0.056-0.009,0.111-0.009,0.167c0,1.719,1.393,3.111,3.111,3.111c1.718,0,3.111-1.393,3.111-3.111C18.39,13.905,16.996,12.512,15.278,12.512z"></path></svg>
+                    <svg version="1.0" class="svg share" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path d="M15.278,12.512c-0.806,0-1.538,0.309-2.09,0.812L7.241,10.29c0.023-0.154,0.04-0.312,0.04-0.474c0-0.091-0.006-0.18-0.014-0.27l6.004-3.061c0.542,0.458,1.242,0.736,2.008,0.736c1.718,0,3.111-1.393,3.111-3.111S16.996,1,15.278,1c-1.719,0-3.111,1.393-3.111,3.111c0,0.095,0.006,0.188,0.015,0.281L6.185,7.449C5.642,6.986,4.939,6.706,4.169,6.706c-1.718,0-3.111,1.393-3.111,3.11c0,1.719,1.393,3.111,3.111,3.111c0.693,0,1.331-0.229,1.847-0.612l6.159,3.14c-0.003,0.056-0.009,0.111-0.009,0.167c0,1.719,1.393,3.111,3.111,3.111c1.718,0,3.111-1.393,3.111-3.111C18.39,13.905,16.996,12.512,15.278,12.512z"/></svg>
                     Share this</a>
-
-                <div data-app="eastsideco_sizeGuides" data-shop="dethrone.myshopify.com" data-tags="60/40,men" data-metafields="">
-                    <div class="esc-size-guide"><h5 class="esc-size-guide--title">Men's Shirts - 60/40 Cotton Poly Blends</h5><div class="esc-size-guide--table-wrap"><table class="esc-size-guide--table"><tbody><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">&nbsp;</th><th class="esc-size-guide--heading">S</th><th class="esc-size-guide--heading">M</th><th class="esc-size-guide--heading">L</th><th class="esc-size-guide--heading">XL</th><th class="esc-size-guide--heading">XXL</th><th class="esc-size-guide--heading">XXXL</th></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Neck (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row2">6.75</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row2">6.75</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row2">6.88</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row2">7</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row2">7.25</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row2">7.75</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Chest (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row3">18</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row3">20</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row3">22</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row3">24</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row3">26</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row3">28</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Length (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row4">27</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row4">28</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row4">29</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row4">30</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row4">31.5</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row4">33</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Sleeve (inches)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row5">8</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row5">8.25</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row5">8.5</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row5">8.75</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row5">9</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row5">9</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Neck (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row6">17</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row6">17</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row6">17.5</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row6">17.75</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row6">18.5</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row6">19.7</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Chest (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row7">45.75</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row7">51</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row7">56</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row7">61</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row7">66</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row7">71</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Length (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row8">68.5</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row8">71</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row8">73.5</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row8">76</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row8">80</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row8">84</td></tr><tr class="esc-size-guide--row"><th class="esc-size-guide--heading">Sleeve (cm)</th><td class="esc-size-guide--cell esc-size-guide--col1 esc-size-guide--row9">20.3</td><td class="esc-size-guide--cell esc-size-guide--col2 esc-size-guide--row9">21</td><td class="esc-size-guide--cell esc-size-guide--col3 esc-size-guide--row9">21.6</td><td class="esc-size-guide--cell esc-size-guide--col4 esc-size-guide--row9">22.25</td><td class="esc-size-guide--cell esc-size-guide--col5 esc-size-guide--row9">22.8</td><td class="esc-size-guide--cell esc-size-guide--col6 esc-size-guide--row9">22.8</td></tr></tbody></table></div></div></div>
-
-
 
             </section>
 
         </div>
 
+        <section id="product-gallery" class="scale-up-fill">
 
-        <section id="product-gallery" class="scale-up-true">
+            <style type="text/css">
+                #product-gallery {
+                    background: #f4f4f4;
+                }
+                #product-gallery  .swiper-container .swiper-slide {
+                    background: #f4f4f4;
+                }
+            </style>
 
 
 
-            <div class="swiper-container force-fade" >
+            <div class="swiper-container">
 
                 <div class="swiper-wrapper">
-                    <?php foreach($shoes->images as $k => $image):?>
-                    <div class="swiper-slide " data-index="<?=($k + 1)?>">
-                        <img src="<?=$image->originalURL()?>" alt="NYC" class="swiper-img" >
+
+
+
+
+
+
+
+
+
+                    <!-- skip featured image -->
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="swiper-slide" data-index="2" data-variant-img="1200682449">
+                        <div class="swiper-zoom-container">
+                            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/2-1_1920x.jpg?v=1455787064"  srcset="//cdn.shopify.com/s/files/1/0691/8855/products/2-1_1920x.jpg?v=1455787064 1920w, //cdn.shopify.com/s/files/1/0691/8855/products/2-1_1480x.jpg?v=1455787064 1480w, //cdn.shopify.com/s/files/1/0691/8855/products/2-1_1024x.jpg?v=1455787064 1024w, //cdn.shopify.com/s/files/1/0691/8855/products/2-1_768x.jpg?v=1455787064 768w"  alt="Retro Radio" class="swiper-img">
+                        </div>
                     </div>
-                    <?php endforeach?>
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="swiper-slide" data-index="3" data-variant-img="1200694961">
+                        <div class="swiper-zoom-container">
+                            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/2-2_1920x.jpg?v=1455787064"  srcset="//cdn.shopify.com/s/files/1/0691/8855/products/2-2_1920x.jpg?v=1455787064 1920w, //cdn.shopify.com/s/files/1/0691/8855/products/2-2_1480x.jpg?v=1455787064 1480w, //cdn.shopify.com/s/files/1/0691/8855/products/2-2_1024x.jpg?v=1455787064 1024w, //cdn.shopify.com/s/files/1/0691/8855/products/2-2_768x.jpg?v=1455787064 768w"  alt="Retro Radio" class="swiper-img">
+                        </div>
+                    </div>
+
+
+
+
+
 
 
                 </div>
 
+                <div class="swiper-pagination"></div>
+
             </div>
 
-            <div class="draw-buttons gal swiper-nav three"><div class="holder"><span class="swiper-no"><span class="cur">1</span><span class="tot">2</span></span><span class="btn-prev"><svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"></path></g></svg><a href="#" class="swiper-prev"></a></span><span class="btn-next"><svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"></path></g></svg><a href="#" class="swiper-next"></a></span></div></div></section>
+
+
+        </section>
 
 
 
@@ -101,24 +216,33 @@
 
 
 
-        <nav class="draw-buttons nav">
+        <nav class="draw-buttons nav three">
 
             <div class="holder">
 
+					
+						
+						<span class="btn-prev">
+							
+
+	<svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"/></g></svg>
+
+							<a href="/collections/all/products/louis-erard" title="">&larr;</a>
+						</span>
 					
 
 					<span class="btn-close">
 						<span class="back">
 							
 
-	<svg version="1.1" class="svg close" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812   22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812 "></polygon></svg>
+	<svg version="1.1" class="svg close" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><polygon points="38.936,23.561 36.814,21.439 30.562,27.691 24.311,21.439 22.189,23.561 28.441,29.812   22.189,36.064 24.311,38.186 30.562,31.934 36.814,38.186 38.936,36.064 32.684,29.812 "/></svg>
 
-							<a href="/collections/shirts"></a>
+							<a href="/collections/all"></a>
 						</span>
 						<span class="front">
 							
 
-	<svg version="1.1" class="svg grid" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><rect x="35.75" y="20" width="5" height="5"></rect><rect x="27.75" y="20" width="5" height="5"></rect><rect x="19.75" y="20" width="5" height="5"></rect><rect x="35.75" y="28" width="5" height="5"></rect><rect x="27.75" y="28" width="5" height="5"></rect><rect x="19.75" y="28" width="5" height="5"></rect><rect x="35.75" y="36" width="5" height="5"></rect><rect x="27.75" y="36" width="5" height="5"></rect><rect x="19.75" y="36" width="5" height="5"></rect></svg>
+	<svg version="1.1" class="svg grid" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><rect x="35.75" y="20" width="5" height="5"/><rect x="27.75" y="20" width="5" height="5"/><rect x="19.75" y="20" width="5" height="5"/><rect x="35.75" y="28" width="5" height="5"/><rect x="27.75" y="28" width="5" height="5"/><rect x="19.75" y="28" width="5" height="5"/><rect x="35.75" y="36" width="5" height="5"/><rect x="27.75" y="36" width="5" height="5"/><rect x="19.75" y="36" width="5" height="5"/></svg>
 
 						</span>
 					</span>
@@ -128,9 +252,9 @@
 						<span class="btn-next">
 							
 
-	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"></path></g></svg>
+	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"/></g></svg>
 
-							<a href="/collections/shirts/products/the-king-black" title="">→</a>
+							<a href="/collections/all/products/maple-ipad-sleeve" title="">&rarr;</a>
 						</span>
 
 
@@ -144,5 +268,8 @@
 
     </article>
 
+    <div id="product-page-settings" data-truncated_description="true" data-truncated_description_lines="123" data-gallery_max_size="true" data-gallery_resizing="fill" data-gallery_transition="slide" data-gallery_autoplay="true" data-gallery_timer="6" data-gallery-posfix="false" data-zoom="false"></div>
 
-</main>
+
+</div>
+
