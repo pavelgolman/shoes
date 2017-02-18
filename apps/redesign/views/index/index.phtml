@@ -1,73 +1,454 @@
-<div id="home-slider" class="swiper-container">
+<div id="shopify-section-slideshow" class="shopify-section">
 
-    <div class="swiper-wrapper">
-        <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
-        <?php foreach($promo->shoes as $shoes):?>
-            <div class="slide swiper-slide">
-                <div class="slide-img" style="background-image:url(<?=$shoes->MainImage->originalURL()?>)">
-                    <img src="<?=$shoes->MainImage->originalURL()?>" alt="" />
-                    <div class="slide-caption center dark">
+    <div id="home-slider" class="swiper-container" data-section-id="slideshow" data-transition="slide" data-autoplay="true" data-timer="7">
+
+        <div class="swiper-wrapper">
+
+
+
+            <div class="slide swiper-slide slide--1484211369679"  data-index="1">
+
+
+
+                <div class="slide-img image" style="background-image:url( //cdn.shopify.com/s/files/1/0691/8855/files/slide1_img_1920x.jpg?v=1484911098 )">
+
+
+
+                    <img src=" //cdn.shopify.com/s/files/1/0691/8855/files/slide1_img_1920x.jpg?v=1484911098 " alt="" />
+
+                    <div class="slide-caption right light">
                         <div class="table-display">
                             <div>
-                                <h2 class="label b" style="opacity: 1; top: 0px; visibility: visible;"><?=$shoes->name?></h2>
-                                <a class="button label d" href="<?=$shoes->getURL()?>" style="opacity: 1; top: 0px; visibility: visible;">КУПИТЬ<span>→</span></a>
+
+
+                                <span class="label a">Final Clearance Sale</span>
+
+
+
+                                <h2 class="label b">NATURAL COSMETICS FOR MEN</h2>
+
+
+
+                                <span class="label c">STARTING FROM $39.00</span>
+
+
+
+                                <a class="button dark label d" href="http://king-theme.myshopify.com/collections/furniture">Learn more<span>&rarr;</span></a>
+
+
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <a class="slide-url" href="<?=$shoes->getURL()?>"></a>
+
 
 
             </div>
-        <?php endforeach?>
-    </div>
 
-    <div class="draw-buttons gal three" aria-hidden="true">
-        <div class="holder">
-            <span class="swiper-no"><span class="cur">1</span><span class="tot">1</span></span>
-				<span class="btn-prev">
+
+
+            <div class="slide swiper-slide slide--1484211385979"  data-index="2">
+
+
+
+                <div class="slide-img image" style="background-image:url( //cdn.shopify.com/s/files/1/0691/8855/files/slide2_img_1920x.jpg?v=1484911136 )">
+
+
+
+                    <img src=" //cdn.shopify.com/s/files/1/0691/8855/files/slide2_img_1920x.jpg?v=1484911136 " alt="" />
+
+                    <div class="slide-caption right light">
+                        <div class="table-display">
+                            <div>
+
+
+                                <span class="label a">New Arrival</span>
+
+
+
+                                <h2 class="label b">PERSONAL ENVIRONMENT</h2>
+
+
+
+                                <span class="label c">STARTING FROM $68.00</span>
+
+
+
+                                <a class="button dark label d" href="http://king-theme.myshopify.com/collections/gadgets/products/personal-environment-monitor">Learn more<span>&rarr;</span></a>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+        <div class="draw-buttons gal three" aria-hidden="true">
+            <div class="holder">
+                <span class="swiper-no"><span class="cur">1</span><span class="tot">1</span></span>
+	      <span class="btn-prev">
 
 	<svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"/></g></svg>
-<a href="#" class="swiper-prev"></a>
-				</span><span class="btn-next">
+<a href="#" class="swiper-prev"></a></span>
+	      <span class="btn-next">
 
 	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"/></g></svg>
 <a href="#" class="swiper-next"></a></span>
+            </div>
         </div>
+
     </div>
+
+    <div class="swiper-pagination"></div>
+
+
 
 </div>
-
-<div class="swiper-pagination"></div>
-
-<div id="page-content" class=" hide-content clearfix">
-    <div class="home-content wpadding">
-        <div class="rte">
-            <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
-            <?php foreach($promo->shoes as $k => $shoes):?>
-                <a href="<?=$shoes->getURL()?>"><img src="<?=$shoes->MainImage->originalURL()?>" alt="" width="49%" /></a>
-                <?php if($k > 4) {break;}?>
-            <?php endforeach?>
-        </div>
-
-    </div>
+<!-- BEGIN content_for_index --><div id="shopify-section-1484911254397" class="shopify-section index-section featured-products-section reload-isotope home-nomargin"> <div class="isotope-products home-content products-list border-no" data-section-id="1484911254397" data-collections_size="large" data-collections_border="no" data-collections_thumb_bg="#ffffff">
 
 
-    <div id="products-grid" class="home-content products-list border-true tiny no-loader">
-        <?php $promo = \Models\PromoBlocks::findFirst("const = '".\Models\PromoBlocks::BESTSELLER."'");?>
-        <?php foreach($promo->shoes as $k => $shoes):?>
-            <?php if($k > 14 || $k < 9) {continue;}?>
-            <a href="<?=$shoes->getURL()?>" class="grid-item two light">
-                <img src="<?=$shoes->mainImage->originalURL()?>" alt="<?=$shoes->name?>">
-                <div class="caption">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <a href="/products/louis-erard" class="grid-item three light">
+
+
+
+
+
+
+            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/1_640x.jpg?v=1427791042" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/1_1024x.jpg?v=1427791042" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Wild Clock">
+
+
+
+            <div class="caption">
+
+
+                <div>
+
                     <div>
-                        <h2><?=$shoes->name?></h2>
+
+                        <h2>Wild Clock</h2>
+
                         <div class="price">
-                            <strong><?=$shoes->price?> грн.</strong>
+
+
+
+                            <strong>$130.00</strong>
+
+
+
                         </div>
+
                     </div>
+
                 </div>
-            </a>
-        <?php endforeach?>
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="/products/unicon-test-short-sleeve" class="grid-item three light">
+
+
+
+
+
+
+            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/2_640x.jpg?v=1455787064" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/2_1024x.jpg?v=1455787064" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Retro Radio">
+
+
+
+            <div class="caption">
+
+
+                <div>
+
+                    <div>
+
+                        <h2>Retro Radio</h2>
+
+                        <div class="price">
+
+
+                            From
+
+
+                            <strong>$187.00</strong>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="/products/maple-ipad-sleeve" class="grid-item three light">
+
+
+
+
+
+
+            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/3_new_640x.jpg?v=1427796941" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/3_new_1024x.jpg?v=1427796941" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Cuber Lamp">
+
+
+
+            <div class="caption">
+
+
+                <div>
+
+                    <div>
+
+                        <h2>Cuber Lamp</h2>
+
+                        <div class="price">
+
+
+
+                            <strong>$89.00</strong>
+
+
+                            <span class="info">$109.00</span>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <span class="add sale"><span>On Sale</span></span>
+
+
+
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="/products/withings-activite" class="grid-item three light">
+
+
+
+
+
+
+            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/4_640x.jpg?v=1420809371" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/4_1024x.jpg?v=1420809371" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Activité Watch">
+
+
+
+            <div class="caption">
+
+
+                <div>
+
+                    <div>
+
+                        <h2>Activité Watch</h2>
+
+                        <div class="price">
+
+
+
+                            <strong>$450.00</strong>
+
+
+                            <span class="info">$500.00</span>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <span class="add sale"><span>On Sale</span></span>
+
+
+
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="/products/key-fold" class="grid-item three light">
+
+
+
+
+
+
+            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/5_640x.jpg?v=1427782899" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/5_1024x.jpg?v=1427782899" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Curvy Shelf">
+
+
+
+            <div class="caption">
+
+
+                <div>
+
+                    <div>
+
+                        <h2>Curvy Shelf</h2>
+
+                        <div class="price">
+
+
+
+                            <strong>$23.00</strong>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+        <a href="/products/molded-plywood-lounge-chair" class="grid-item three light">
+
+
+
+
+
+
+            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/15_640x.jpg?v=1427792647" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/15_1024x.jpg?v=1427792647" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Scotch Holder">
+
+
+
+            <div class="caption">
+
+
+                <div>
+
+                    <div>
+
+                        <h2>Scotch Holder</h2>
+
+                        <div class="price">
+
+
+
+                            <strong>$24.00</strong>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </a>
+
+
+
+
+
+
     </div>
-</div>
+
+</div><!-- END content_for_index -->
