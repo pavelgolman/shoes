@@ -270,6 +270,17 @@
 
     <div id="product-page-settings" data-truncated_description="true" data-truncated_description_lines="123" data-gallery_max_size="true" data-gallery_resizing="fill" data-gallery_transition="slide" data-gallery_autoplay="true" data-gallery_timer="6" data-gallery-posfix="false" data-zoom="false"></div>
 
-
+    <script src="/redesign/js/js_product.js" type="text/javascript"></script>
+    <?php
+    $images = array();
+    foreach($shoes->images as $k => $image){
+        $images[] = $image->originalURL();
+    }
+    $info = array(
+        'images' => $images,
+        'featured_image' => $image->MainImage->originalURL()
+    );
+    ?>
+    <script type="application/json" id="ProductJson"><?=json_encode($info)?></script>
 </div>
 
