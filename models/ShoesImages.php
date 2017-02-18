@@ -40,10 +40,13 @@ class ShoesImages extends Model
         return PUBLIC_ORIGINALS_PATH.$this->shoes_id.'/'.$this->storage_id.'.'.$this->extension;
     }
 
-    public function thumbnailURL($width, $height, $withName = true){
+    public function thumbnailURL($width, $height, $withName = true, $generateIfNotExists = true){
         $path = PUBLIC_THUMBNAILS_PATH.$this->shoes_id.'/'.$this->storage_id.'/';
         if($withName) {
             $path .= $width . '_' . $height . '.' . $this->extension;
+        }
+        if($generateIfNotExists && !file_exists($path)){
+            $this->reGenerateThumbnail($width, $height);
         }
         return $path;
     }
@@ -55,17 +58,21 @@ class ShoesImages extends Model
     public function reGenerateThumbnails(){
         global $SHOES_THUMBNAILS_MAP;
         foreach($SHOES_THUMBNAILS_MAP as $size){
-            $image = new Phalcon\Image\Adapter\Imagick($this->originalPath());
-            $image->resize($size['width'], $size['height']);
+            $this->reGenerateThumbnail($size['width'], $size['height']);
+        }
+    }
 
-            $path = APP_PATH.'public'.$this->thumbnailURL($size['width'], $size['height'], false);
-            if (is_dir($path) == false)
-            {
-                mkdir($path, 0777, true); // Create directory if it does not exist
-            }
-            if ($image->save(APP_PATH.'public'.$this->thumbnailURL($size['width'], $size['height']))) {
+    public function reGenerateThumbnail($width, $height)
+    {
+        $image = new Phalcon\Image\Adapter\Imagick($this->originalPath());
+        $image->resize($width, $height);
 
-            }
+        $path = APP_PATH . 'public' . $this->thumbnailURL($width, $height, false);
+        if (is_dir($path) == false) {
+            mkdir($path, 0777, true); // Create directory if it does not exist
+        }
+        if ($image->save(APP_PATH . 'public' . $this->thumbnailURL($width, $height))) {
+
         }
     }
 }
