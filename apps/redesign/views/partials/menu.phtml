@@ -15,22 +15,16 @@
 
 
             <li class="submenu" aria-haspopup="true">
-                <a href="/collections/all">
-                    Collections
 
+                <ul class="sub-menu" style="display: block; overflow: visible;">
 
-                    <svg version="1.0" class="svg arrow" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="7px" height="4px" viewBox="0 0 7 4" enable-background="new 0 0 7 4" xml:space="preserve"><polygon points="7.006,-0.044 3.5,3.961 -0.006,-0.044 "/></svg>
-
-                </a>
-                <ul class="sub-menu">
-
-                    <li><a href="/collections/all">All</a></li>
-
-                    <li><a href="/collections/accessories">Accessories</a></li>
-
-                    <li><a href="/collections/gadgets">Gadgets</a></li>
-
-                    <li><a href="/collections/furniture">Cosmetics</a></li>
+                    <li><a href="/shoes/index">Все коллекции</a></li>
+                    <?php
+                    $group = \Models\AttributesGroups::findFirstByConst(\Models\AttributesGroups::TYPE);
+                    ?>
+                    <?php foreach($group->attributes as $attribute):?>
+                        <li><a href="/shoes/index?filter[<?=$attribute->id?>]=1"><?=$attribute->name?></a></li>
+                    <?php endforeach?>
 
                 </ul>
             </li>
@@ -59,44 +53,6 @@
 
 
 
-
-
-
-            <li>
-                <a href="/blogs/news">Our Blog</a>
-            </li>
-
-
-
-
-
-
-
-
-
-            <li>
-                <a href="/pages/theme-features">Theme Features</a>
-            </li>
-
-
-
-
-
-
-
-
-
-            <li>
-                <a href="/pages/contact-us">Contact Us</a>
-            </li>
-
-
-
-
-
-            <li class="sidebar-popup-button">
-                <a href="#" id="newsletter-button" class="overlay-button" data-overlay="#shopify-section-popup">Newsletter</a>
-            </li>
 
         </ul>
     </div>
