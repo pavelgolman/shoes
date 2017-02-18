@@ -119,13 +119,9 @@
 
         <?php $shoes = \Models\Shoes::findFirst(66)?>
         <a href="/products/louis-erard" class="grid-item three light">
-            <img src="<?=$shoes->MainImage->thumbnailURL(640)?>" data-src-retina="<?=$shoes->MainImage->originalURL()?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="<?=$shoes->name?>">
-
-
+            <img src="<?=$shoes->MainImage->thumbnailURL(640)?>" data-src-retina="<?=$shoes->MainImage->thumbnailURL(640)?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="<?=$shoes->name?>">
 
             <div class="caption">
-
-
                 <div>
 
                     <div>
@@ -154,23 +150,9 @@
         </a>
 
 
-
-
-
-
-
-
-
-
-
+        <?php $shoes = \Models\Shoes::findFirst(131)?>
         <a href="/products/unicon-test-short-sleeve" class="grid-item three light">
-
-
-
-
-
-
-            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/2_640x.jpg?v=1455787064" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/2_1024x.jpg?v=1455787064" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Retro Radio">
+            <img src="<?=$shoes->MainImage->thumbnailURL(640)?>" data-src-retina="<?=$shoes->MainImage->thumbnailURL(640)?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="<?=$shoes->name?>">
 
 
 
@@ -181,15 +163,15 @@
 
                     <div>
 
-                        <h2>Retro Radio</h2>
+                        <h2><?=$shoes->name?></h2>
 
                         <div class="price">
 
 
-                            From
 
 
-                            <strong>$187.00</strong>
+
+                            <strong><?=$shoes->price?> грн.</strong>
 
 
 
