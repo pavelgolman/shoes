@@ -46,7 +46,7 @@ class ShoesImages extends Model
             $path .= $width . '_' . $height . '.' . $this->extension;
         }
         if($generateIfNotExists && !file_exists(APP_PATH . 'public' . $path)){
-            //$this->reGenerateThumbnail($width, $height);
+            $this->reGenerateThumbnail($width, $height);
         }
         return $path;
     }
@@ -69,9 +69,9 @@ class ShoesImages extends Model
 
         $path = APP_PATH . 'public' . $this->thumbnailURL($width, $height, false);
         if (is_dir($path) == false) {
-            mkdir($path, 0777, true); // Create directory if it does not exist
+            mkdir($path, 0777, true);
         }
-        if ($image->save(APP_PATH . 'public' . $this->thumbnailURL($width, $height))) {
+        if ($image->save(APP_PATH . 'public' . $this->thumbnailURL($width, $height, true, false))) {
 
         }
     }
