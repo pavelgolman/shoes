@@ -12,7 +12,7 @@
 
                 <nav id="breadcrumb" role="navigation" aria-label="breadcrumbs">
 
-                    <a href="/">Home</a>
+                    <a href="/">Главная</a>
 
 
 
@@ -20,12 +20,12 @@
                     <span aria-hidden="true">/</span>
 
 
-                    <a href="/collections/all" title="">Shop</a>
+                    <a href="/shoes/index" title="">Все Коллекции</a>
 
 
 
                     <span aria-hidden="true">/</span>
-                    <span>Retro Radio</span>
+                    <span><?=$shoes->name?></span>
 
 
 
@@ -35,14 +35,14 @@
 
 
 
-                <h1 itemprop="name">Retro Radio</h1>
+                <h1 itemprop="name"><?=$shoes->name?></h1>
 
 
-                <p id="product-vendor" itemprop="brand">By <a href="/collections/vendors?q=King" title="King">King</a></p>
+                <p id="product-vendor" itemprop="brand"><?=$shoes->article?></p>
 			
 
 			<span id="price">
-				<span id="productPrice">$187.00</span>
+				<span id="productPrice"><?=$shoes->price?> грн.</span>
 				
 			</span>
 
