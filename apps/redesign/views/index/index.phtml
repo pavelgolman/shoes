@@ -119,7 +119,7 @@
 
         <?php $shoes = \Models\Shoes::findFirst(66)?>
         <a href="/products/louis-erard" class="grid-item three light">
-            <img src="<?=$shoes->MainImage->originalURL()?>" data-src-retina="<?=$shoes->MainImage->originalURL()?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Wild Clock">
+            <img src="<?=$shoes->MainImage->originalURL()?>" data-src-retina="<?=$shoes->MainImage->originalURL()?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="<?=$shoes->name?>">
 
 
 
@@ -130,13 +130,13 @@
 
                     <div>
 
-                        <h2>Wild Clock</h2>
+                        <h2><?=$shoes->name?></h2>
 
                         <div class="price">
 
 
 
-                            <strong>$130.00</strong>
+                            <strong><?=$shoes->price?> грн.</strong>
 
 
 
