@@ -113,35 +113,13 @@
 
 
 </div>
-<!-- BEGIN content_for_index --><div id="shopify-section-1484911254397" class="shopify-section index-section featured-products-section reload-isotope home-nomargin"> <div class="isotope-products home-content products-list border-no" data-section-id="1484911254397" data-collections_size="large" data-collections_border="no" data-collections_thumb_bg="#ffffff">
 
+<div id="shopify-section-1484911254397" class="shopify-section index-section featured-products-section reload-isotope home-nomargin">
+    <div class="isotope-products home-content products-list border-no" data-section-id="1484911254397" data-collections_size="large" data-collections_border="no" data-collections_thumb_bg="#ffffff">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <?php $shoes = \Models\Shoes::findFirst(66)?>
         <a href="/products/louis-erard" class="grid-item three light">
-
-
-
-
-
-
-            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/1_640x.jpg?v=1427791042" data-src-retina="//cdn.shopify.com/s/files/1/0691/8855/products/1_1024x.jpg?v=1427791042" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Wild Clock">
+            <img src="<?=$shoes->MainImage->originalURL()?>" data-src-retina="<?=$shoes->MainImage->originalURL()?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="Wild Clock">
 
 
 
