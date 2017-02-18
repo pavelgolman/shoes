@@ -134,7 +134,7 @@
 
         </div>
 
-        <section id="product-gallery" class="scale-up-fill">
+        <section id="product-gallery-" class="scale-up-fill">
 
             <style type="text/css">
                 #product-gallery {
@@ -149,55 +149,40 @@
 
             <div class="swiper-container">
 
-                <div class="swiper-wrapper">
+                <div id="home-slider" class="swiper-container" data-section-id="slideshow" data-transition="slide" data-autoplay="true" data-timer="7">
+
+                    <div class="swiper-wrapper">
+
+                        <?php foreach($shoes->images as $k => $image) : ?>
+
+                        <div class="slide swiper-slide slide--1484211369679"  data-index="1">
+
+                            <div class="slide-img image" style="background-image:url(<?=$image->originalURL()?>)">
+                                <img src="<?=$image->originalURL()?> " alt="" />
+
+
+                            </div>
 
 
 
-
-
-
-
-
-
-                    <!-- skip featured image -->
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="swiper-slide" data-index="2" data-variant-img="1200682449">
-                        <div class="swiper-zoom-container">
-                            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/2-1_1920x.jpg?v=1455787064"  srcset="//cdn.shopify.com/s/files/1/0691/8855/products/2-1_1920x.jpg?v=1455787064 1920w, //cdn.shopify.com/s/files/1/0691/8855/products/2-1_1480x.jpg?v=1455787064 1480w, //cdn.shopify.com/s/files/1/0691/8855/products/2-1_1024x.jpg?v=1455787064 1024w, //cdn.shopify.com/s/files/1/0691/8855/products/2-1_768x.jpg?v=1455787064 768w"  alt="Retro Radio" class="swiper-img">
                         </div>
+                        <?php endforeach?>
+
                     </div>
 
+                    <div class="draw-buttons gal three" aria-hidden="true">
+                        <div class="holder">
+                            <span class="swiper-no"><span class="cur">1</span><span class="tot">1</span></span>
+	      <span class="btn-prev">
 
+	<svg version="1.1" class="svg left" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M24.294,33.641c-0.908-0.991-1.694-1.745-2.357-2.261c-0.663-0.517-1.289-0.901-1.877-1.154v-0.461c0.677-0.329,1.333-0.748,1.969-1.256c0.635-0.51,1.395-1.257,2.276-2.242h0.79c-0.643,1.375-1.316,2.431-2.021,3.169l16.355,0v1.036l-16.355,0c0.52,0.657,0.882,1.147,1.086,1.471c0.206,0.325,0.51,0.891,0.912,1.697H24.294z"/></g></svg>
+<a href="#" class="swiper-prev"></a></span>
+	      <span class="btn-next">
 
-
-
-
-
-
-
-
-
-                    <div class="swiper-slide" data-index="3" data-variant-img="1200694961">
-                        <div class="swiper-zoom-container">
-                            <img src="//cdn.shopify.com/s/files/1/0691/8855/products/2-2_1920x.jpg?v=1455787064"  srcset="//cdn.shopify.com/s/files/1/0691/8855/products/2-2_1920x.jpg?v=1455787064 1920w, //cdn.shopify.com/s/files/1/0691/8855/products/2-2_1480x.jpg?v=1455787064 1480w, //cdn.shopify.com/s/files/1/0691/8855/products/2-2_1024x.jpg?v=1455787064 1024w, //cdn.shopify.com/s/files/1/0691/8855/products/2-2_768x.jpg?v=1455787064 768w"  alt="Retro Radio" class="swiper-img">
+	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"/></g></svg>
+<a href="#" class="swiper-next"></a></span>
                         </div>
                     </div>
-
-
-
-
-
-
 
                 </div>
 
@@ -270,17 +255,6 @@
 
     <div id="product-page-settings" data-truncated_description="true" data-truncated_description_lines="123" data-gallery_max_size="true" data-gallery_resizing="fill" data-gallery_transition="slide" data-gallery_autoplay="true" data-gallery_timer="6" data-gallery-posfix="false" data-zoom="false"></div>
 
-    <script src="/redesign/js/js_product.js" type="text/javascript"></script>
-    <?php
-    $images = array();
-    foreach($shoes->images as $k => $image){
-        $images[] = $image->originalURL();
-    }
-    $info = array(
-        'images' => $images,
-        'featured_image' => $shoes->MainImage->originalURL()
-    );
-    ?>
-    <script type="application/json" id="ProductJson"><?=json_encode($info)?></script>
+
 </div>
 
