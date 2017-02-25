@@ -61,7 +61,23 @@
 
                 <div itemprop="description">
                     <div>
-                        <p><span class="fbPhotosPhotoCaption" aria-live="polite" data-ft='{"tn":"K"}' id="fbPhotoSnowliftCaption" tabindex="0"><span class="hasCaption">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</span></span></p>
+                        <p><span class="fbPhotosPhotoCaption" aria-live="polite" data-ft='{"tn":"K"}' id="fbPhotoSnowliftCaption" tabindex="0"><span class="hasCaption">
+                                    <?php
+                                    $attributes = array();
+                                    foreach($shoes->attributes as $attribute){
+                                        if(empty($attributes[$attribute->group->name])){
+                                            $attributes[$attribute->group->name] = array();
+                                        }
+                                        $attributes[$attribute->group->name][] = $attribute->name;
+                                    }
+                                    mb_internal_encoding('UTF-8');
+                                    ?>
+                                    <strong>Артикул:</strong> <?=$shoes->article?><br />
+                                    <?php foreach($attributes as $name => $values):?>
+                                        <strong><?=$name?>:</strong> <?=mb_strtolower(implode(', ', $values))?><br />
+                                    <?php endforeach?>
+                                    <?php echo $shoes->description->description?><br />
+                                </span></span></p>
                     </div>
                 </div>
 
@@ -74,61 +90,16 @@
 
                     <link itemprop="availability" href="//schema.org/InStock">
 
-                    <form action="/cart/add.js" method="post" enctype="multipart/form-data" id="add-to-cart">
+                    <form action="#" method="post" onsubmit="return false;" ">
+
+                        <button type="submit" name="add" id="addToCart" class="button color"><span id="addToCartText">КУПИТЬ</span></button>
 
 
-                        <div class="product-variant selector-wrapper">
-                            <label class="hidden">Color</label>
-                            <select class="product-variants">
-
-                                <option selected>
-                                    Dark Grey
-                                </option>
-
-                                <option >
-                                    Sky Blue
-                                </option>
-
-                            </select>
-                        </div>
-
-
-                        <select id="productSelect" name="id" class="styled" style="display: none !important">
-
-
-                            <option  selected="selected"  value="974521877">
-                                Dark Grey
-                            </option>
-
-
-
-                            <option  value="993985765">
-                                Sky Blue
-                            </option>
-
-
-                        </select>
-
-
-                        <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selector">
-
-
-                        <button type="submit" name="add" id="addToCart" class="button color"><span id="addToCartText">Add to cart</span></button>
-
-
-                        <a id="ajaxCartButton" class="overlay-button hidden" data-overlay="#cart-overlay" aria-hidden="true"></a>
-
-
-                        <span id="variantQuantity" class="variant-quantity"></span>
 
                     </form>
 
                 </div>
 
-                <a href="#" id="share-link" class="overlay-button" data-overlay="#share-overlay">
-
-                    <svg version="1.0" class="svg share" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path d="M15.278,12.512c-0.806,0-1.538,0.309-2.09,0.812L7.241,10.29c0.023-0.154,0.04-0.312,0.04-0.474c0-0.091-0.006-0.18-0.014-0.27l6.004-3.061c0.542,0.458,1.242,0.736,2.008,0.736c1.718,0,3.111-1.393,3.111-3.111S16.996,1,15.278,1c-1.719,0-3.111,1.393-3.111,3.111c0,0.095,0.006,0.188,0.015,0.281L6.185,7.449C5.642,6.986,4.939,6.706,4.169,6.706c-1.718,0-3.111,1.393-3.111,3.11c0,1.719,1.393,3.111,3.111,3.111c0.693,0,1.331-0.229,1.847-0.612l6.159,3.14c-0.003,0.056-0.009,0.111-0.009,0.167c0,1.719,1.393,3.111,3.111,3.111c1.718,0,3.111-1.393,3.111-3.111C18.39,13.905,16.996,12.512,15.278,12.512z"/></svg>
-                    Share this</a>
 
             </section>
 
@@ -170,7 +141,7 @@
 
                     </div>
 
-                    <div class="draw-buttons gal three" aria-hidden="true">
+                    <!--div class="draw-buttons gal three" aria-hidden="true">
                         <div class="holder">
                             <span class="swiper-no"><span class="cur">1</span><span class="tot">1</span></span>
 	      <span class="btn-prev">
@@ -182,7 +153,7 @@
 	<svg version="1.1" class="svg right" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve"><g><path d="M35.195,26.268c0.908,0.991,1.694,1.745,2.357,2.261c0.663,0.517,1.289,0.901,1.877,1.154v0.461c-0.677,0.328-1.333,0.747-1.969,1.256c-0.636,0.51-1.395,1.257-2.276,2.241h-0.79c0.643-1.375,1.316-2.431,2.021-3.169H20.06v-1.036h16.355c-0.52-0.656-0.882-1.146-1.087-1.471s-0.51-0.891-0.912-1.697H35.195z"/></g></svg>
 <a href="#" class="swiper-next"></a></span>
                         </div>
-                    </div>
+                    </div-->
 
                 </div>
 
@@ -201,7 +172,7 @@
 
 
 
-        <nav class="draw-buttons nav three">
+        <!--nav class="draw-buttons nav three">
 
             <div class="holder">
 
@@ -245,7 +216,7 @@
 
             </div>
 
-        </nav>
+        </nav-->
 
 
 
