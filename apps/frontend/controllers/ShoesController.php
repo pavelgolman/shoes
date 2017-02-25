@@ -8,6 +8,10 @@ use Phalcon\Paginator\Adapter\Model as PaginatorModel;
 class ShoesController extends Controller
 {
 
+    public function cartAction(){
+        return json_encode(array('test' => 'test'));
+    }
+
     public function indexAction()
     {
         $this->view->filter = $this->request->get('filter');
