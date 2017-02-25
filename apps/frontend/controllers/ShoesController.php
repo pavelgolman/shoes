@@ -9,7 +9,7 @@ class ShoesController extends Controller
 {
 
     public function cartAction(){
-        return json_encode(array('test' => 'test'));
+        return json_encode(array('description' => ''));
     }
 
     public function indexAction()
