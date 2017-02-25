@@ -61,25 +61,6 @@ $di->set('router', function () {
     );
 
 
-    $router->add(
-        "/redesign/:controller/:action/",
-        array(
-            'module'     => 'redesign',
-            'controller' => 1,
-            'action'     => 2
-        )
-    );
-
-    $router->add(
-        "/redesign/:controller/:action/:params",
-        array(
-            'module'     => 'redesign',
-            'controller' => 1,
-            'action'     => 2,
-            "params"     => 3
-        )
-    );
-
 
     return $router;
 });

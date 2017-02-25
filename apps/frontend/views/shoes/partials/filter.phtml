@@ -1,51 +1,349 @@
+<!--div class="infobar clearfix">
 
-<div class="col-xs-12 col-sm-4 col-md-3">
-    <div class="shop-categori-area">
-        <div class="sidebar-menu-title">
-            <h2><i class="fa fa-th-list"></i>Каталог</h2>
+    <div class="hidden">
+
+        <svg version="1.0" class="svg arrow" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="7px" height="4px" viewBox="0 0 7 4" enable-background="new 0 0 7 4" xml:space="preserve"><polygon points="7.006,-0.044 3.5,3.961 -0.006,-0.044 "/></svg>
+    </div>
+
+    <div id="options">
+
+
+        <strong>
+            Shop
+        </strong>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="option">
+            <label for="filter-by">Brand:</label>
+            <select name="filter-by" class="filter-by">
+
+                <option value="">None</option>
+
+
+
+
+
+
+
+
+                <option class="advanced-filter" data-group="Brand" value="brand_cottage"><a title="Narrow selection to products matching tag Brand_Cottage" href="/collections/all/brand_cottage">Cottage</a></option>
+
+
+
+
+
+
+
+
+
+
+
+                <option class="advanced-filter" data-group="Brand" value="brand_king"><a title="Narrow selection to products matching tag Brand_King" href="/collections/all/brand_king">King</a></option>
+
+
+
+
+
+
+
+
+
+
+
+                <option class="advanced-filter" data-group="Brand" value="brand_retro"><a title="Narrow selection to products matching tag Brand_Retro" href="/collections/all/brand_retro">Retro</a></option>
+
+
+            </select>
         </div>
-        <div class="shop-categori">
-            <div class="shop-categori-inner">
-                <?php $groups = \Models\AttributesGroups::find()?>
-                <?php foreach($groups as $group):?>
-                <!-- Start Categori -->
-                <div class="categoris categori-border">
-                    <span class="cat-title"><?=$group->name?></span>
-                    <ul>
-                        <?php foreach($group->attributes as $attribute):?>
-                            <?php
-                                $filter_url = '/shoes/index?';
-                                $filter_add = $filter_url;
-                                if(empty($filter)){
-                                    $filter = array();
-                                }
-                                foreach($filter as $key => $value) {
-                                    if($key != $attribute->id){
-                                        $filter_add .= 'filter['.$key.']='.$value.'&';
-                                    }
-                                }
-                                $filter_remove = $filter_add;
 
-                                $filter_add .= 'filter['.$attribute->id.']=1';
-                            ?>
-                        <li>
-                            <span><input disabled="disabled" type="checkbox" class="checkbox" <?=!empty($filter[$attribute->id]) ? 'checked="checked"' : ''?> ></span>
-                            <label>
-                                <a href="<?=$filter_add?>"><?=$attribute->name?></a>
-                                <?php if(!empty($filter[$attribute->id])):?>
-                                    <a href="<?=$filter_remove?>">X</a>
-                                <?php endif?>
-                            </label>
-                        </li>
-                        <?php endforeach?>
-                    </ul>
-                </div>
-                <?php endforeach?>
 
-                </div>
-                <!-- End Categori -->
-            </div>
+
+        <div class="option">
+            <label for="filter-by">For:</label>
+            <select name="filter-by" class="filter-by">
+
+                <option value="">None</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <option class="advanced-filter" data-group="For" value="for_her"><a title="Narrow selection to products matching tag For_Her" href="/collections/all/for_her">Her</a></option>
+
+
+
+
+
+
+
+
+
+
+
+                <option class="advanced-filter" data-group="For" value="for_him"><a title="Narrow selection to products matching tag For_Him" href="/collections/all/for_him">Him</a></option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </select>
         </div>
+
+
+
+        <div class="option">
+            <label for="filter-by">Package:</label>
+            <select name="filter-by" class="filter-by">
+
+                <option value="">None</option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <option class="advanced-filter" data-group="Package" value="package_single"><a title="Narrow selection to products matching tag Package_Single" href="/collections/all/package_single">Single</a></option>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </select>
+        </div>
+
+
+
+        <script type="text/javascript">
+
+            var $filters = jQuery('.filter-by');
+
+            $filters.change(function() {
+                var newTags = [];
+                $filters.each(function() {
+                    if (jQuery(this).val()) {
+                        newTags.push(jQuery(this).val());
+                    }
+                });
+                if (newTags.length) {
+                    var query = newTags.join('+');
+                    window.location.href = jQuery('<a title="Show products matching tag tag" href="/collections/all/tag">tag</a>').attr('href').replace('tag', query);
+                } else {
+
+                    window.location.href = '/collections/all';
+
+                }
+            });
+
+        </script>
+
+
+
+
+
+
+        <div class="option">
+            <label for="sort-by">Sort by:</label>
+            <select name="sort-by" id="sort-by">
+                <option value="manual">Featured</option>
+                <option value="best-selling">Best Selling</option>
+                <option value="title-ascending">A-Z</option>
+                <option value="title-descending">Z-A</option>
+                <option value="price-ascending">Price, low to high</option>
+                <option value="price-descending">Price, high to low</option>
+                <option value="created-descending">Date, new to old</option>
+                <option value="created-ascending">Date, old to new</option>
+            </select>
+        </div>
+
+
 
     </div>
-<!-- End shop categori area -->
+
+
+    <a href="#" id="share-link" class="overlay-button" data-overlay="#share-overlay">
+
+        <svg version="1.0" class="svg share" xmlns="//www.w3.org  /2000/svg" xmlns:xlink="//www.w3.org  /1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve"><path d="M15.278,12.512c-0.806,0-1.538,0.309-2.09,0.812L7.241,10.29c0.023-0.154,0.04-0.312,0.04-0.474c0-0.091-0.006-0.18-0.014-0.27l6.004-3.061c0.542,0.458,1.242,0.736,2.008,0.736c1.718,0,3.111-1.393,3.111-3.111S16.996,1,15.278,1c-1.719,0-3.111,1.393-3.111,3.111c0,0.095,0.006,0.188,0.015,0.281L6.185,7.449C5.642,6.986,4.939,6.706,4.169,6.706c-1.718,0-3.111,1.393-3.111,3.11c0,1.719,1.393,3.111,3.111,3.111c0.693,0,1.331-0.229,1.847-0.612l6.159,3.14c-0.003,0.056-0.009,0.111-0.009,0.167c0,1.719,1.393,3.111,3.111,3.111c1.718,0,3.111-1.393,3.111-3.111C18.39,13.905,16.996,12.512,15.278,12.512z"/></svg>
+        Share this</a>
+
+
+</div-->
+

@@ -1,6 +1,6 @@
 <?php
 
-namespace Multiple\Redesign\Controllers;
+namespace Multiple\Frontend\Controllers;
 
 use Phalcon\Mvc\Controller;
 

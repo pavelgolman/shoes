@@ -1,6 +1,6 @@
 <?php
 
-namespace Multiple\Redesign;
+namespace Multiple\Frontend;
 
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
@@ -21,7 +21,7 @@ class Module implements ModuleDefinitionInterface
 
         $loader->registerNamespaces(
             array(
-                'Multiple\Redesign\Controllers' => '../apps/redesign/controllers/',
+                'Multiple\Frontend\Controllers' => '../apps/frontend/controllers/',
                 'Models'      => '../models/',
             )
         );
@@ -59,7 +59,7 @@ class Module implements ModuleDefinitionInterface
 
 
             $dispatcher = new Dispatcher();
-            $dispatcher->setDefaultNamespace("Multiple\Redesign\Controllers");
+            $dispatcher->setDefaultNamespace("Multiple\Frontend\Controllers");
             $dispatcher->setEventsManager($eventsManager);
 
             return $dispatcher;
@@ -68,7 +68,7 @@ class Module implements ModuleDefinitionInterface
         // Registering the view component
         $di->set('view', function () {
             $view = new View();
-            $view->setViewsDir('../apps/redesign/views/');
+            $view->setViewsDir('../apps/frontend/views/');
             return $view;
         });
     }
