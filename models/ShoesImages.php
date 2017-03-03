@@ -67,7 +67,7 @@ class ShoesImages extends Model
         $image = new Phalcon\Image\Adapter\Imagick($this->originalPath());
         $image->resize($width, $height);
 
-        $path = APP_PATH . 'public' . $this->thumbnailURL($width, $height, true, false);
+        $path = APP_PATH . 'public' . $this->thumbnailURL($width, $height, false, false);
         if (is_dir($path) == false) {
             mkdir($path, 0777, true);
         }
