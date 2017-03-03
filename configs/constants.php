@@ -1,9 +1,9 @@
 <?php
 
-const APP_PATH = '/var/www/html/dom.tkani.dp/';
-const UPLOAD_PATH = '/var/www/html/dom.tkani.dp/public/uploads/';
-const ORIGINALS_IMAGES_PATH = '/var/www/html/dom.tkani.dp/public/uploads/originals/';
-const THUMBNAILS_IMAGES_PATH = '/var/www/html/dom.tkani.dp/public/uploads/thumbnails/';
+const APP_PATH = '/var/www/shoes/';
+const UPLOAD_PATH = '/var/www/shoes/public/uploads/';
+const ORIGINALS_IMAGES_PATH = '/var/www/shoes/public/uploads/originals/';
+const THUMBNAILS_IMAGES_PATH = '/var/www/shoes/public/uploads/thumbnails/';
 const PUBLIC_ORIGINALS_PATH = '/uploads/originals/';
 const PUBLIC_THUMBNAILS_PATH = '/uploads/thumbnails/';
 

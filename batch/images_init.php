@@ -17,24 +17,14 @@ $loader->registerDirs(
     )
 )->register();
 
-/*
- * Images path:
- *
- * /images/shoes/<shoes id>/original.png
- * /images/shoes/<shoes id>/<image storage id>/<width>_<height>.png
- *
- */
+$si = ShoesImages::findFirst(364);
 
-$images = ShoesImages::find();
-foreach($images as $si){
-    if(empty($si->storage_id)){
-        $si-
-        $si->save();
-    }
+if(empty($si->storage_id)){
+    $si->save();
+}
 
-    $image = new Phalcon\Image\Adapter\Imagick("/var/www/html/domtkani.dp.ua/public/images/shoes/".$si->shoes_id.'/'.$si->image_original);
-    $image->resize(125, 125);
-    if ($image->save($si->thumbnailURL(125, 125))) {
-        echo 'success';
-    }
+$image = new Phalcon\Image\Adapter\Imagick("/var/www/html/domtkani.dp.ua/public/images/shoes/".$si->shoes_id.'/'.$si->image_original);
+$image->resize(90, 90);
+if ($image->save($si->thumbnailURL(90, 90, false))) {
+    echo 'success';
 }
