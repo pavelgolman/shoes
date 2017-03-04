@@ -48,13 +48,13 @@ class ShoesController extends Controller
             "limit" => 16
         ));
 
-        $this->view->title_for_page = $this->view->shoes->name.' в Днепропетровск, цена — купить в интернет-магазине RUMI';
+        $this->view->title_for_page = $this->view->shoes->name.' '.$this->view->shoes->article.' '.$this->view->shoes->price.'грн. в Днепропетровск, цена — купить в интернет-магазине RUMI';
 
         $this->view->og_url = 'http://rumi.store'.$this->view->shoes->getURL();
         $this->view->og_title = $this->view->title_for_page;
         $this->view->og_image = 'http://rumi.store'.$this->view->shoes->mainImage->originalURL();
 
-        $this->view->meta_description = $this->view->shoes->name.' по лучшей цене в Днепропетровске. Огромный выбор обуви ждет Вас в интернет-магазине RUMI. Доставка по всей Украине. Оформите заказ онлайн прямо сейчас!';
+        $this->view->meta_description = $this->view->shoes->name.' '.$this->view->shoes->article.' '.$this->view->shoes->price.'грн. по лучшей цене в Днепропетровске. Огромный выбор обуви ждет Вас в интернет-магазине RUMI. Доставка по всей Украине. Оформите заказ онлайн прямо сейчас!';
         $this->view->og_description = $this->view->meta_description;
     }
 
