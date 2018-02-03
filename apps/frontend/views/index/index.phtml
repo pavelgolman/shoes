@@ -8,7 +8,7 @@
 
             <div class="slide swiper-slide slide--1484211369679"  data-index="1">
                 <?php $slide = \Models\Shoes::findFirst(140)?>
-
+                <?php if($slide):?>
 
                 <div class="slide-img image" style="background-image:url(<?=$slide->MainImage->originalURL()?>)">
 
@@ -27,6 +27,7 @@
                     </div>
 
                 </div>
+              <?php endif?>
 
 
 
@@ -36,7 +37,7 @@
 
             <div class="slide swiper-slide slide--1484211385979"  data-index="2">
                 <?php $slide = \Models\Shoes::findFirst(141)?>
-
+                <?php if($slide):?>
 
                 <div class="slide-img image" style="background-image:url(<?=$slide->MainImage->originalURL()?>)">
 
@@ -57,7 +58,7 @@
                     </div>
 
                 </div>
-
+              <?php endif?>
 
 
             </div>
@@ -92,6 +93,7 @@
     <div class="isotope-products home-content products-list border-no" data-section-id="1484911254397" data-collections_size="large" data-collections_border="no" data-collections_thumb_bg="#ffffff">
         <?php foreach(array(66, 131, 87, 75, 9, 91) as $id):?>
         <?php $shoes = \Models\Shoes::findFirst($id)?>
+        <?php if($shoes):?>
         <a href="<?=$shoes->getURL()?>" class="grid-item three light">
             <img src="<?=$shoes->MainImage->thumbnailURL(800, 800)?>" data-src-retina="<?=$shoes->MainImage->thumbnailURL(800, 800)?>" srcset="data:image/gif;base64,R0lGODlhAQABAJH/AP///wAAAMDAwAAAACH5BAEAAAIALAAAAAABAAEAAAICVAEAOw==" alt="<?=$shoes->name?>">
 
@@ -104,6 +106,7 @@
                 </div>
             </div>
         </a>
+      <?php endif?>
         <?php endforeach?>
     </div>
 
