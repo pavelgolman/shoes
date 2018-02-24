@@ -3,7 +3,6 @@
 namespace Multiple\Backend\Controllers;
 
 use Models\AttributesShoes;
-use Models\PromoBlocksShoes;
 use Models\ShoesDescriptions;
 use Phalcon\Mvc\Controller;
 use Phalcon\Http\Response;
@@ -116,14 +115,6 @@ class ShoesController extends AdminController
                 $attribute->shoes_id = $shoes->id;
                 $attribute->attributes_id = $attribute_id;
                 $attribute->save();
-            }
-
-            $shoes->blocksShoes->delete();
-            foreach($this->request->getPost('blocks') as $promo_blocks_id => $value){
-                $block = new PromoBlocksShoes();
-                $block->shoes_id = $shoes->id;
-                $block->promo_blocks_id = $promo_blocks_id;
-                $block->save();
             }
 
             if (!$shoes->save()) {

@@ -7,7 +7,7 @@ const THUMBNAILS_IMAGES_PATH = '/var/www/shoes/public/uploads/thumbnails/';
 const PUBLIC_ORIGINALS_PATH = '/uploads/originals/';
 const PUBLIC_THUMBNAILS_PATH = '/uploads/thumbnails/';
 
-const PHONE_NUMBER = '(050) 872-46-98';
+const PHONE_NUMBER = '(050) 142-22-68';
 
 $SHOES_THUMBNAILS_MAP = array(
     array(
