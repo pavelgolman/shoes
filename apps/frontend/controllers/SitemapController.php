@@ -16,7 +16,7 @@ class SitemapController extends Controller
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>http://rumi.store</loc>
+    <loc>http://mnogoobuvi.com</loc>
     <lastmod>{$date}</lastmod>
   </url>
 
@@ -27,7 +27,7 @@ XML;
             //<xhtml:link rel="amphtml" href="http://example.com/dogs/poodles/poodle1.amp.html"/>
             $xml .= <<<XML
 <url>
-    <loc>http://rumi.store{$s->getURL()}</loc>
+    <loc>http://mnogoobuvi.com{$s->getURL()}</loc>
     <lastmod>{$date}</lastmod>
   </url>
 
@@ -44,7 +44,7 @@ XML;
     public function promuaAction(){
         $xml = '<?xml version="1.0" encoding="utf-8"?>'."\n";
         $xml .= '<price date="'.date('Y-m-d H:i').'">'."\n";
-        $xml .= '<name>rumi.store</name>'."\n";
+        $xml .= '<name>mnogoobuvi.com</name>'."\n";
         $xml .= '<currency code="USD">1.00</currency>'."\n";
         $xml .= '<catalog>'."\n";
 
@@ -68,7 +68,7 @@ XML;
             }
             $xml .= '<categoryId>'.$category_id.'</categoryId>'."\n";
             $xml .= '<price>'.$s->price.'</price>'."\n";
-            $xml .= '<image>http://rumi.store'.$s->mainImage->originalURL().'</image>'."\n";
+            $xml .= '<image>http://mnogoobuvi.com'.$s->mainImage->originalURL().'</image>'."\n";
             $xml .= '<description><![CDATA['.$s->description->description.']]></description>'."\n";
 
             $xml .= '<available>true</available>'."\n";
