@@ -158,6 +158,11 @@ class ShoesController extends AdminController
                 $shoes = new Shoes();
                 $shoes->name = 'Обувь';
                 $shoes->price = 1;
+                $shoes->order_index = Shoes::maximum(
+                    array(
+                        "column" => "order_index"
+                    )
+                ) + 1;
                 $shoes->save();
 
                 $shoes->description = new \Models\ShoesDescriptions();
