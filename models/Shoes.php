@@ -67,7 +67,7 @@ class Shoes extends Model
     }
 
     public function getURL(){
-        return '/'.$this->get_in_translate_to_en($this->name.' в Днепропетровск цена — купить в интернет-магазине mnogoobuvi').'-'.(198545 + $this->id);
+        return '/'.$this->get_in_translate_to_en($this->name.' цена — купить в интернет-магазине mnogoobuvi').'-'.(198545 + $this->id);
     }
 
     public function get_in_translate_to_en($string)
