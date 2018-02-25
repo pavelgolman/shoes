@@ -11,8 +11,6 @@ class Shoes extends Model
 
     public $name;
 
-    public $article;
-
     public $price;
 
     public $is_hidden;
@@ -69,7 +67,7 @@ class Shoes extends Model
     }
 
     public function getURL(){
-        return '/'.$this->get_in_translate_to_en($this->name.' '.$this->article.' в Днепропетровск цена — купить в интернет-магазине RUMI').'-'.(198545 + $this->id);
+        return '/'.$this->get_in_translate_to_en($this->name.' в Днепропетровск цена — купить в интернет-магазине RUMI').'-'.(198545 + $this->id);
     }
 
     public function get_in_translate_to_en($string)

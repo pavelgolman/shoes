@@ -98,7 +98,6 @@ class ShoesController extends AdminController
                 ) + 1;
             }
             $shoes->name = $this->request->getPost('name');
-            $shoes->article = $this->request->getPost('article');
             $shoes->price = $this->request->getPost('price');
             $shoes->main_image_id = $this->request->getPost('main_image_id');
 
@@ -143,6 +142,56 @@ class ShoesController extends AdminController
             $image->reGenerateThumbnails();
         }
         return $this->response->redirect("admin/shoes/edit/".$shoes->id);
+    }
+
+    public function batchAction()
+    {
+    }
+
+    public function blankAction()
+    {
+        if($this->request->hasFiles() == true){
+            $uploads = $this->request->getUploadedFiles();
+            $isUploaded = false;
+            #do a loop to handle each file individually
+            foreach($uploads as $upload){
+                $shoes = new Shoes();
+                $shoes->name = 'Обувь';
+                $shoes->price = 1;
+                $shoes->save();
+
+                $shoes->description = new \Models\ShoesDescriptions();
+                $shoes->description->description = 'Обувь';
+                $shoes->description->shoes_id = $shoes->id;
+                $shoes->description->save();
+
+                $image = new ShoesImages();
+                $image->generateUniqueHash();
+                $image->shoes_id = $shoes->id;
+                $image->upload_date_year = date('Y');
+                $image->upload_date_month = date('n');
+                $image->upload_date_day = date('d');
+                $image->extension = $upload->getExtension();
+                $image->save();
+
+                $shoes->main_image_id = $image->id;
+                $shoes->save();
+
+                if (is_dir($image->originalPath()) == false)
+                {
+                    mkdir($image->originalPath(false), 0777, true); // Create directory if it does not exist
+                }
+                ($result = $upload->moveTo($image->originalPath())) ? $isUploaded = true : $isUploaded = false;
+
+                if($isUploaded){
+                    $image->reGenerateThumbnails();
+                }
+
+            }
+            ($isUploaded) ? die('Files successfully uploaded.') : die('Some error ocurred.');
+        }else{
+            die('You must choose at least one file to send. Please try again.');
+        }
     }
 
     public function imageAction($id)

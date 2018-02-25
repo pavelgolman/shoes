@@ -13,7 +13,7 @@ class ShoppingController extends Controller
         $to      = 'rumi.shoes@gmail.com, pavelgolman@gmail.com';
 
         $subject = "Сделан заказ на '{$shoes->name}'";
-        $message = "Заказ: '{$shoes->name}', артикул '{$shoes->article}'. Телефон: ".$this->request->getPost('phone');
+        $message = "Заказ: '{$shoes->name}'. Телефон: ".$this->request->getPost('phone');
         $headers = 'From: sale@rumi.store' . "\r\n" .
             'X-Mailer: PHP/' . phpversion();
 
